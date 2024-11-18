@@ -8,8 +8,6 @@ public class ScoreManager : MonoBehaviour
    static ScoreManager instance; // make script a singleton so it can be called without reference 
    
    public float score;
-   [SerializeField] int maxScore;
-   private float noteWorth;
    public int noteCount; // The DrumNote Count that is in the current song
 
    [Header("List of notes hit")] 
@@ -17,6 +15,9 @@ public class ScoreManager : MonoBehaviour
    public int earlyHits;
    public int lateHits;
    public int missedNotes;
+   
+   private int maxScore = 1000000;
+   private float noteWorth;
    void Awake()
    {
       instance = this;
