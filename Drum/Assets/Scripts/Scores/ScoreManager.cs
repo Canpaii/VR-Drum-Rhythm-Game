@@ -6,17 +6,17 @@ public class ScoreManager : MonoBehaviour
 {
    
    static ScoreManager instance; // make script a singleton so it can be called without reference 
-   
-   public float score;
-   public int noteCount; // The DrumNote Count that is in the current song
+ 
+   static float score; // The players score 
+   static int noteCount; // The DrumNote Count that is in the current song
 
    [Header("List of notes hit")] 
-   public int perfectHits;
-   public int earlyHits;
-   public int lateHits;
-   public int missedNotes;
+   static int perfectHits;
+   static int earlyHits;
+   static int lateHits;
+   static int missedNotes;
    
-   private int maxScore = 1000000;
+   private int maxScore = 1000000; // the maximum amount of score you can receive in one map 
    private float noteWorth;
    void Awake()
    {
