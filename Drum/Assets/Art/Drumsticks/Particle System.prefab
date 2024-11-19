@@ -995,8 +995,8 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.09466934
-          value: 0.5675678
+          time: 0.086335495
+          value: 0.2702732
           inSlope: -3.0760791
           outSlope: -3.0760791
           tangentMode: 0
@@ -1004,7 +1004,7 @@ ParticleSystem:
           inWeight: 0
           outWeight: 1
         - serializedVersion: 3
-          time: 0.18344116
+          time: 0.13760479
           value: 0
           inSlope: -1.1613429
           outSlope: -1.1613429
@@ -4783,9 +4783,6 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
