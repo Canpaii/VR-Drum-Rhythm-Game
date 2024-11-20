@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DrumSticks Variant
+  m_Name: DrumSonic
   m_Shader: {fileID: -6465566751694194690, guid: ebc57bdac2820a94b9e826aa5cab74bd, type: 3}
   m_Parent: {fileID: -876546973899608171, guid: ebc57bdac2820a94b9e826aa5cab74bd, type: 3}
   m_ModifiedSerializedProperties: 2
@@ -40,9 +40,9 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _EmissionValue: 12
-    - _FreselEffect: 5.43
+    - _EmissionValue: 0.6
+    - _FreselEffect: 4.55
     - _QueueControl: 0
     m_Colors:
-    - _Color: {r: 0.764151, g: 0, b: 0, a: 0}
+    - _Color: {r: 0, g: 2.393089, b: 16.674158, a: 0}
   m_BuildTextureStacks: []

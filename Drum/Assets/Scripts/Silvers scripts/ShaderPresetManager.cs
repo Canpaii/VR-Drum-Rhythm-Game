@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ShaderPresetManager : MonoBehaviour
 {
-    public DrumStickEditor shaderParameterAdjuster;  // Verwijzing naar de shader parameter adjuster
-    public Material targetMaterial;  // Het materiaal dat je wilt aanpassen
+    public DrumStickEditor shaderParameterAdjuster;
+    public Material targetMaterial;  
 
     // Lijst van presets die we kunnen beheren in de Inspector
     public PresetsList[] presets;
@@ -21,6 +21,7 @@ public class ShaderPresetManager : MonoBehaviour
             ApplyPreset(0);
         }
     }
+
 
     void Update()
     {
@@ -74,6 +75,12 @@ public class ShaderPresetManager : MonoBehaviour
             Debug.LogWarning("Preset index is out of bounds.");
         }
     }
+
+    public void SetPresetIndex(int presetIndex)
+    {
+        ApplyPreset(presetIndex);
+    }
+
 
     private void ApplyMaterialChanges(PresetsList preset)
     {
