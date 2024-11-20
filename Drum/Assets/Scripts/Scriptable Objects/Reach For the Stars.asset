@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songName: 'Reach For the Stars '
   songAuthor: SEGA
-  midiFilePath: KIKOE
+  difficulty: 
+  songDuration: 
+  bpm: 203
+  songIcon: {fileID: 0}
+  midiFile: Reach_For_The_Stars.mid
+  SongAudioClip: {fileID: 8300000, guid: cfb3d6e9cbe98024ea63d7a8f904e87c, type: 3}

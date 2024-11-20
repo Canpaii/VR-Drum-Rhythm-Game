@@ -18,5 +18,5 @@ public class SongData : ScriptableObject
     
     [Header("MIDI & Audio")] // Data needed for generating the beatmap
     public String midiFile;
-    public AudioClip songAudio;
+    public AudioClip SongAudioClip;
 }
