@@ -5,37 +5,18 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    [Header("")]
+    private float speed;
     public Transform drumObject;
     private Transform beginTransform;
     private double timeInstantiated;
-    void Start()
-    {
-        beginTransform = transform;
-        if (BeatmapManager.Instance != null)
-        {
-            timeInstantiated = BeatmapManager.GetAudioSourceTime();
-        }
-        else
-        {
-            Debug.LogWarning("Beatmap Manager is null!");
-        }
-        
+    
+    public void Initialize(float noteSpeed)
+    { 
+        speed = noteSpeed;
     }
     
     void Update()
     {
-        double timeSinceInstantiated = BeatmapManager.GetAudioSourceTime() - timeInstantiated;
-        float t = (float)(timeSinceInstantiated / (BeatmapManager.Instance.noteSpeed * 2));
-
-        if (t > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            transform.localPosition = Vector3.Lerp(beginTransform.position, drumObject.position, t);
-        }
-       
+        transform.position += Vector3.forward * speed * Time.deltaTime;
     }
 }

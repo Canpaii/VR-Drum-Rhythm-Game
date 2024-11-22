@@ -13,13 +13,15 @@ using Melanchall.DryWetMidi.Standards;
 public class BeatmapManager : MonoBehaviour
 {
     public static BeatmapManager Instance;
-
+    
     [Header("Note Details")] 
     public float noteSpeed; //the speed the note moves towards the drum
-    public Transform noteSpawnPoint;
-    public List<DrumHits> drumHits;
+    public GameObject notePrefab;
     
-    [SerializeField] private MidiFile midiFile; 
+    [Header("Paths")]
+    public Path[] paths;
+    
+    static MidiFile midiFile; // reference to midi file it needs to read 
     public SongData _song;
     public AudioSource songAudioSource;
 
@@ -34,74 +36,74 @@ public class BeatmapManager : MonoBehaviour
   {
       midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + midiFilePath);
       
-      drumHits = GetDrumHits();
-      
-      if (drumHits != null)
-      { 
-          Debug.Log($"Number of DrumHits in the list: {drumHits.Count}"); 
-      }
-      else
-      {
-          Debug.Log("DrumHits list is null!");
-      }
+      DistributeNotesToPaths();
   }
-  public List<DrumHits> GetDrumHits() // extracts the drum notes from the file 
+  private void DistributeNotesToPaths() // distributes the notes to their designed drum kit 
   {
-      drumHits = new List<DrumHits>();
-      
       TempoMap tempoMap = midiFile.GetTempoMap();
-      
+
       foreach (var note in midiFile.GetNotes())
       {
-          //check if the note is in channel 10 also known for being the drum channel (note.channel starts at 0)
-          if (note.Channel == 9) 
-          { 
-              print($"Note Channel 10: {note.Channel}");
-              Debug.Log($"Note Number: {note.NoteNumber}");
-              
-              // check if the note is playable on the virtual drum kit
-              if (IsDrumNote(note.NoteNumber))
-              { 
-                  // convert ticks into seconds, 
-                  MetricTimeSpan metricTimeSpan = note.TimeAs<MetricTimeSpan>(tempoMap);
-                  double seconds = metricTimeSpan.TotalSeconds;
-                  
-                  // Add to list 
-                  drumHits.Add(new DrumHits { Time = seconds, NoteNumber = note.NoteNumber });
-              }
-              else
+          // Check if the note is in the drum channel 
+          if (note.Channel == 9)
+          {
+              // Convert ticks to seconds
+              MetricTimeSpan metricTimeSpan = note.TimeAs<MetricTimeSpan>(tempoMap);
+              double seconds = metricTimeSpan.TotalSeconds;
+
+              // Create the DrumHits object
+              var drumHit = new DrumHits { Time = seconds, NoteNumber = note.NoteNumber };
+
+              // Add the note to the matching path
+              bool added = false;
+              foreach (var path in paths)
               {
-                  print("note is not a DrumNote!");
+                  if (path.CheckNoteNumber(note.NoteNumber))
+                  {
+                      path.AddNote(drumHit);
+                      added = true;
+                      break;
+                  }
+              }
+
+              if (!added)
+              {
+                  Debug.LogWarning($"Note {note.NoteNumber} does not match any path!");
               }
           }
       }
-      
-      return drumHits; 
   }
   
-  
-  public bool IsDrumNote(int noteNumber) // check what drum part plays this note, each number is a different drum part
+  private void Update()
   {
-      // check if the drum note has one of these note numbers 
-      int[] drumNotes = { 35, 36, 38, 40, 41, 42, 43, 46, 47, 48, 49, 50 };  
-        
-      // 35/36 = Bass/kick, 38/40 = Snare, 41/43 = Floor Tom, 42 = Hi-Hat closed,
-      // 46 = Hi-Hat open, 47/48 = Mid tom, 49 = Crash cymbal, 50 = high tom,  
-      
-      return Array.Exists(drumNotes, n => n == noteNumber);
+      double currentTime = GetAudioSourceTime();
+
+      foreach (var path in paths)
+      {
+          for (int i = 0; i < path.notes.Count; i++)
+          {
+              if (path.notes[i].Time <= currentTime)
+              {
+                  SpawnNoteAtPath(path);
+                  path.notes.RemoveAt(i);
+                  i--; // Adjust index after removal
+              }
+          }
+      }
   }
 
-  // public enum DrumNoteType : byte
-  // {
-  //   bass = 35,
-  //   kick = 36,
-  //   snare = 38,
-  //   floorTom = 40
-  // }
+  private void SpawnNoteAtPath(Path path)
+  {
+      // Use the Path transform to instantiate the note
+      GameObject note = Instantiate(notePrefab, path.transform.position, Quaternion.identity);
+      
+      // set the noteSpeed 
+      note.GetComponent<Note>().Initialize(noteSpeed); 
+  }
   
   #endregion
 
-  public static double GetAudioSourceTime() // get time of audioSource used for spawning notes
+  public static double GetAudioSourceTime() // get time of the song in seconds
   {
       return (double)Instance.songAudioSource.timeSamples / Instance.songAudioSource.clip.frequency;
   }

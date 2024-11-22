@@ -19,4 +19,4 @@ MonoBehaviour:
   bpm: 203
   songIcon: {fileID: 0}
   midiFile: Reach_For_The_Stars.mid
-  SongAudioClip: {fileID: 8300000, guid: cfb3d6e9cbe98024ea63d7a8f904e87c, type: 3}
+  SongAudioClip: {fileID: 8300000, guid: 6f1ea53ce257c6f40b621ef3dce6d067, type: 3}
