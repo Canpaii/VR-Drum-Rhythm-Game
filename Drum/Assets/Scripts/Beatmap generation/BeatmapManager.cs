@@ -30,9 +30,8 @@ public class BeatmapManager : MonoBehaviour
     [Header("Audio references")]
     public SongData _song;
     public AudioSource songAudioSource;
-
-    private bool _started = false;
-    private double _currentTime;
+    
+    private double _globalTime; // used to calculate when to instantiate the notes
     public void Awake()
     {
         Instance = this;
@@ -41,6 +40,7 @@ public class BeatmapManager : MonoBehaviour
     private void Start()
     {
         _leadInTime = distance / noteSpeed;
+        _globalTime = -_leadInTime;
         ReadMidiFile(_song.midiFile);
         //AdjustNoteTimesForLeadIn(_song);
         StartCoroutine(PlaySongWithLeadIn());
@@ -48,25 +48,11 @@ public class BeatmapManager : MonoBehaviour
 
     private IEnumerator PlaySongWithLeadIn()
     {
+        songAudioSource.clip = _song.SongAudioClip;
         yield return new WaitForSeconds(_leadInTime); // Wait for lead-in
         
-        songAudioSource.clip = _song.SongAudioClip;
         songAudioSource.Play(); // Start playing the song
-        _started = true;
     }
-
-    /*private void AdjustNoteTimesForLeadIn(SongData song )
-    {
-        ReadMidiFile(_song.midiFile);
-        
-        foreach (var path in paths)
-        {
-            foreach (var hit in path.notes)
-            {
-                hit.Time += _leadInTime; // Add lead-in time to each note
-            }
-        }
-    }*/
     
   #region Extract Drum notes
 
@@ -90,7 +76,7 @@ public class BeatmapManager : MonoBehaviour
               double seconds = metricTimeSpan.TotalSeconds;
 
               // Create the DrumHits object
-              var drumHit = new DrumHits { Time = seconds, NoteNumber = note.NoteNumber };
+              var drumHit = new DrumHits { time = seconds, noteNumber = note.NoteNumber };
 
               // Add the note to the matching path
               bool added = false;
@@ -114,18 +100,26 @@ public class BeatmapManager : MonoBehaviour
   
   private void Update()
   {
-      if (_started)
+      _globalTime += Time.deltaTime; 
+
+      // Start the audio when the global time reaches 0
+      if (!songAudioSource.isPlaying && _globalTime >= 0)
       {
-          _currentTime = GetAudioSourceTime();
+          songAudioSource.Play();
       }
-      
+
+      SpawnNotesBasedOnGlobalTime();
+  }
+  private void SpawnNotesBasedOnGlobalTime() // Spawns notes prematurely to compensate with the song lead in time
+  {
       foreach (var path in paths)
       {
           for (int i = 0; i < path.notes.Count; i++)
           {
-              double adjustedTime = path.notes[i].Time - _leadInTime; // calculate time difference 
-              
-              if (_currentTime >= adjustedTime) // spawn the note earlier 
+              double adjustedSpawnTime = path.notes[i].time - _leadInTime; // Calculate when the notes should be spawned to be in time with the beat
+
+              // Spawn the note if the global time matches the adjusted spawn time
+              if (_globalTime >= adjustedSpawnTime)
               {
                   SpawnNoteAtPath(path);
                   path.notes.RemoveAt(i);
@@ -134,6 +128,7 @@ public class BeatmapManager : MonoBehaviour
           }
       }
   }
+
 
   private void SpawnNoteAtPath(Path path)
   {
@@ -146,16 +141,16 @@ public class BeatmapManager : MonoBehaviour
   
   #endregion
 
-  public static double GetAudioSourceTime() // get time of the song in seconds
-  {
-      return (double)Instance.songAudioSource.timeSamples / Instance.songAudioSource.clip.frequency;
-  }
+  // public static double GetAudioSourceTime() // get time of the song in seconds
+  // {
+  //     return (double)Instance.songAudioSource.timeSamples / Instance.songAudioSource.clip.frequency;
+  // }
   
 }
 
 [Serializable]
 public class DrumHits
 {
-    public double Time { get; set; } 
-    public int NoteNumber { get; set; }
+    public double time { get; set; } 
+    public int noteNumber { get; set; }
 }

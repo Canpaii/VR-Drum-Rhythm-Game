@@ -266,7 +266,7 @@ MonoBehaviour:
   - {fileID: 1394927150}
   - {fileID: 1810975811}
   - {fileID: 856844549}
-  distance: 50
+  distance: 5
   _song: {fileID: 11400000, guid: d88638a6ba013b14f9e149017cfc3b32, type: 2}
   songAudioSource: {fileID: 1430995304}
 --- !u!1 &500866369
