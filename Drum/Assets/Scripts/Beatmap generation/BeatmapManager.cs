@@ -20,15 +20,53 @@ public class BeatmapManager : MonoBehaviour
     
     [Header("Paths")]
     public Path[] paths;
+
+    [Header("Note Spawn Details")] 
+    public float distance; //distance from spawnpoint
+
+    private float _leadInTime; // time it takes for the first note to hit the drum 
     
     static MidiFile midiFile; // reference to midi file it needs to read 
+    [Header("Audio references")]
     public SongData _song;
     public AudioSource songAudioSource;
 
+    private bool _started = false;
+    private double _currentTime;
     public void Awake()
     {
         Instance = this;
     }
+
+    private void Start()
+    {
+        _leadInTime = distance / noteSpeed;
+        ReadMidiFile(_song.midiFile);
+        //AdjustNoteTimesForLeadIn(_song);
+        StartCoroutine(PlaySongWithLeadIn());
+    }
+
+    private IEnumerator PlaySongWithLeadIn()
+    {
+        yield return new WaitForSeconds(_leadInTime); // Wait for lead-in
+        
+        songAudioSource.clip = _song.SongAudioClip;
+        songAudioSource.Play(); // Start playing the song
+        _started = true;
+    }
+
+    /*private void AdjustNoteTimesForLeadIn(SongData song )
+    {
+        ReadMidiFile(_song.midiFile);
+        
+        foreach (var path in paths)
+        {
+            foreach (var hit in path.notes)
+            {
+                hit.Time += _leadInTime; // Add lead-in time to each note
+            }
+        }
+    }*/
     
   #region Extract Drum notes
 
@@ -76,17 +114,22 @@ public class BeatmapManager : MonoBehaviour
   
   private void Update()
   {
-      double currentTime = GetAudioSourceTime();
-
+      if (_started)
+      {
+          _currentTime = GetAudioSourceTime();
+      }
+      
       foreach (var path in paths)
       {
           for (int i = 0; i < path.notes.Count; i++)
           {
-              if (path.notes[i].Time <= currentTime)
+              double adjustedTime = path.notes[i].Time - _leadInTime; // calculate time difference 
+              
+              if (_currentTime >= adjustedTime) // spawn the note earlier 
               {
                   SpawnNoteAtPath(path);
                   path.notes.RemoveAt(i);
-                  i--; // Adjust index after removal
+                  i--; 
               }
           }
       }
@@ -106,15 +149,6 @@ public class BeatmapManager : MonoBehaviour
   public static double GetAudioSourceTime() // get time of the song in seconds
   {
       return (double)Instance.songAudioSource.timeSamples / Instance.songAudioSource.clip.frequency;
-  }
-
-  public void PlaySong(SongData songData)
-  {
-      songAudioSource.clip = songData.SongAudioClip;
-      
-      songAudioSource.Play();
-      
-      ReadMidiFile(_song.midiFile);
   }
   
 }
