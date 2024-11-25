@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
    static float score; // The players score 
    static int noteCount; // The DrumNote Count that is in the current song
 
-   [Header("List of notes hit")] 
+   [Header("Stats of notes hit")] 
    static int perfectHits;
    static int earlyHits;
    static int lateHits;
@@ -18,6 +18,10 @@ public class ScoreManager : MonoBehaviour
    
    private int maxScore = 1000000; // the maximum amount of score you can receive in one map 
    private float noteWorth;
+   
+   private int comboTracker;
+   private int maxCombo;
+   
    void Awake()
    {
       instance = this;
@@ -32,22 +36,42 @@ public class ScoreManager : MonoBehaviour
    {
       score += (noteWorth + 1);
       perfectHits++;
+      
+      comboTracker++;
+      if (comboTracker > maxCombo) // keep track of the highest combo 
+      {
+         maxCombo = comboTracker;
+      }
    }
 
    public void EarlyHit() // call this when note registration is Early 
    {
       score += (noteWorth * 0.50f);
       earlyHits++;
+      
+      comboTracker++;
+      if (comboTracker > maxCombo) // keep track of the highest combo 
+      {
+         maxCombo = comboTracker;
+      }
    }
    public void LateHit() // call this when note registration is Late
    {
       score += (noteWorth * 0.50f);
       lateHits++;
+      
+      comboTracker++;
+      if (comboTracker > maxCombo) // keep track of the highest combo 
+      {
+         maxCombo = comboTracker;
+      }
    }
 
    public void Miss() // call this when the note registration is miss
    {
       score += 0;
       missedNotes++;
+      
+      comboTracker = 0;
    }  
 }

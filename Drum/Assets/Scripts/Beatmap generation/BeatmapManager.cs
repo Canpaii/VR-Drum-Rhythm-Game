@@ -23,15 +23,15 @@ public class BeatmapManager : MonoBehaviour
 
     [Header("Note Spawn Details")] 
     public float distance; //distance from spawnpoint
-
     private float _leadInTime; // time it takes for the first note to hit the drum 
+    private double _globalTime; // used to calculate when to spawn the notes
     
-    static MidiFile midiFile; // reference to midi file it needs to read 
     [Header("Audio references")]
     public SongData _song;
     public AudioSource songAudioSource;
+    private MidiFile _midiFile; // reference to midi file it needs to read 
     
-    private double _globalTime; // used to calculate when to instantiate the notes
+    
     public void Awake()
     {
         Instance = this;
@@ -58,15 +58,15 @@ public class BeatmapManager : MonoBehaviour
 
   public void ReadMidiFile(string midiFilePath)
   {
-      midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + midiFilePath);
+      _midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + midiFilePath);
       
       DistributeNotesToPaths();
   }
   private void DistributeNotesToPaths() // distributes the notes to their designed drum kit 
   {
-      TempoMap tempoMap = midiFile.GetTempoMap();
+      TempoMap tempoMap = _midiFile.GetTempoMap();
 
-      foreach (var note in midiFile.GetNotes())
+      foreach (var note in _midiFile.GetNotes())
       {
           // Check if the note is in the drum channel 
           if (note.Channel == 9)
@@ -133,7 +133,7 @@ public class BeatmapManager : MonoBehaviour
   private void SpawnNoteAtPath(Path path)
   {
       // Use the Path transform to instantiate the note
-      GameObject note = Instantiate(notePrefab, path.transform.position, Quaternion.identity);
+      GameObject note = Instantiate(notePrefab, path.transform.position, path.transform.rotation);
       
       // set the noteSpeed 
       note.GetComponent<Note>().Initialize(noteSpeed); 

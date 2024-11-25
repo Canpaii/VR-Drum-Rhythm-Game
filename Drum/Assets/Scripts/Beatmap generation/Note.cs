@@ -6,7 +6,7 @@ using UnityEngine;
 public class Note : MonoBehaviour
 {
     private float speed;
-    public Transform drumObject;
+    
     private Transform beginTransform;
     private double timeInstantiated;
     
@@ -17,6 +17,6 @@ public class Note : MonoBehaviour
     
     void Update()
     {
-        transform.position += Vector3.forward * speed * Time.deltaTime;
+        transform.position += transform.forward * speed * Time.deltaTime;
     }
 }
