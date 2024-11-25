@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-339524009165425977
+--- !u!114 &-7002015592081948586
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 9
+  version: 7
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,29 +20,24 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DrumSticks Variant
-  m_Shader: {fileID: -6465566751694194690, guid: ebc57bdac2820a94b9e826aa5cab74bd, type: 3}
-  m_Parent: {fileID: -876546973899608171, guid: ebc57bdac2820a94b9e826aa5cab74bd, type: 3}
+  m_Name: NodePath Variant Variant 1
+  m_Shader: {fileID: -6465566751694194690, guid: e6ebc01214f4fa54caf7d116b8be2bc7, type: 3}
+  m_Parent: {fileID: 2100000, guid: 2edf8e07538d7534e8fe7c284ad654eb, type: 2}
   m_ModifiedSerializedProperties: 2
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _EMISSION
+  m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses:
-  - MOTIONVECTORS
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats:
-    - _EmissionValue: 12
-    - _FreselEffect: 5.43
-    - _QueueControl: 0
+    m_Floats: []
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Glitter_Color: {r: 7.377209, g: 3.425034, b: 0, a: 0}
   m_BuildTextureStacks: []

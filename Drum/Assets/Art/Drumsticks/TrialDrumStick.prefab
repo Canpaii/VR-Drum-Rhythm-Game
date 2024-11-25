@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2542745517609163815}
   - component: {fileID: 8199295314167181278}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: TrialDrumStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
