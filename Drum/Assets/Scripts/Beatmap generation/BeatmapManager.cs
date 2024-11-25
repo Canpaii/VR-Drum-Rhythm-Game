@@ -16,7 +16,6 @@ public class BeatmapManager : MonoBehaviour
     
     [Header("Note Details")] 
     public float noteSpeed; //the speed the note moves towards the drum
-    public GameObject notePrefab;
     
     [Header("Paths")]
     public Path[] paths;
@@ -85,6 +84,8 @@ public class BeatmapManager : MonoBehaviour
                   if (path.CheckNoteNumber(note.NoteNumber))
                   {
                       path.AddNote(drumHit);
+                      ScoreManager.Instance.noteCount++;
+                      
                       added = true;
                       break;
                   }
@@ -133,7 +134,7 @@ public class BeatmapManager : MonoBehaviour
   private void SpawnNoteAtPath(Path path)
   {
       // Use the Path transform to instantiate the note
-      GameObject note = Instantiate(notePrefab, path.transform.position, path.transform.rotation);
+      GameObject note = Instantiate(path.notePrefab, path.transform.position, path.transform.rotation);
       
       // set the noteSpeed 
       note.GetComponent<Note>().Initialize(noteSpeed); 

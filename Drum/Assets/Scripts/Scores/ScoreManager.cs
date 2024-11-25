@@ -5,26 +5,29 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
    
-   static ScoreManager instance; // make script a singleton so it can be called without reference 
- 
-   static float score; // The players score 
-   static int noteCount; // The DrumNote Count that is in the current song
+   public static ScoreManager Instance; // make script a singleton so it can be called without reference 
+   
+   [Header("Core Variables")]
+   public float score; // The players score 
+   public int noteCount; // The DrumNote Count that is in the current song
 
    [Header("Stats of notes hit")] 
-   static int perfectHits;
-   static int earlyHits;
-   static int lateHits;
-   static int missedNotes;
+   public int perfectHits;
+   public int earlyHits;
+   public int lateHits;
+   public int missedNotes;
+   
+   [Header("References")]
+   public ComboTracker comboTracker;
    
    private int maxScore = 1000000; // the maximum amount of score you can receive in one map 
    private float noteWorth;
    
-   private int comboTracker;
    private int maxCombo;
    
    void Awake()
    {
-      instance = this;
+      Instance = this;
    }
    
    public void NoteScoreCalculations() //Calculates how many points each note is worth
@@ -37,11 +40,7 @@ public class ScoreManager : MonoBehaviour
       score += (noteWorth + 1);
       perfectHits++;
       
-      comboTracker++;
-      if (comboTracker > maxCombo) // keep track of the highest combo 
-      {
-         maxCombo = comboTracker;
-      }
+      comboTracker.AddToCombo();
    }
 
    public void EarlyHit() // call this when note registration is Early 
@@ -49,22 +48,14 @@ public class ScoreManager : MonoBehaviour
       score += (noteWorth * 0.50f);
       earlyHits++;
       
-      comboTracker++;
-      if (comboTracker > maxCombo) // keep track of the highest combo 
-      {
-         maxCombo = comboTracker;
-      }
+      comboTracker.AddToCombo();
    }
    public void LateHit() // call this when note registration is Late
    {
       score += (noteWorth * 0.50f);
       lateHits++;
       
-      comboTracker++;
-      if (comboTracker > maxCombo) // keep track of the highest combo 
-      {
-         maxCombo = comboTracker;
-      }
+      comboTracker.AddToCombo();
    }
 
    public void Miss() // call this when the note registration is miss
@@ -72,6 +63,11 @@ public class ScoreManager : MonoBehaviour
       score += 0;
       missedNotes++;
       
-      comboTracker = 0;
-   }  
+      comboTracker.ResetCombo();
+   }
+
+   public void SetHighScore(int score)
+   {
+      PlayerPrefs.SetInt("HighScore", score);
+   }
 }

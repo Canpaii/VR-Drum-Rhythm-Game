@@ -6,7 +6,7 @@ public class Path : MonoBehaviour
 {
     public int[] noteNumbers; // determines what notes can access this lane
     public List<DrumHits> notes = new List<DrumHits>(); // notes for this path
-    
+    public GameObject notePrefab;
     public void AddNote(DrumHits drumHit)
     {
         notes.Add(drumHit);
