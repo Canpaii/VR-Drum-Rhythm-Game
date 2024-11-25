@@ -40,5 +40,5 @@ Material:
     m_Floats:
     - _QueueControl: 0
     m_Colors:
-    - _Glitter_Color: {r: 0.9508551, g: 0, b: 8.337079, a: 0}
+    - _Glitter_Color: {r: 1.0659417, g: 8.337079, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -946,7 +946,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 0007b38c44a9f064c8600426c6044051, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9e849f65a00ba9f43aebc10ad88f1167, type: 2}
+      objectReference: {fileID: 2100000, guid: 94fe42f92c5708c43829b62616092cd1, type: 2}
     - target: {fileID: 919132149155446097, guid: 0007b38c44a9f064c8600426c6044051, type: 3}
       propertyPath: m_Name
       value: ConfettiCanon
