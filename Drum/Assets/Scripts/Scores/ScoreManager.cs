@@ -66,8 +66,8 @@ public class ScoreManager : MonoBehaviour
       comboTracker.ResetCombo();
    }
 
-   public void SetHighScore(int score)
+   public void SetHighScore(int score, string songName) // Set HighScore 
    {
-      PlayerPrefs.SetInt("HighScore", score);
+      PlayerPrefs.SetInt($"{songName}: HighScore", score);
    }
 }

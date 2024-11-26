@@ -19,6 +19,8 @@ public class ComboTracker : MonoBehaviour
             maxCombo = combo;
         }
         ComboMileStones();
+        
+    
     }
     
     public void ResetCombo()
