@@ -31,7 +31,6 @@ public class BeatmapManager : MonoBehaviour
     public AudioSource songAudioSource;
     private MidiFile _midiFile; // reference to midi file it needs to read 
     
-    
     public void Awake()
     {
         Instance = this;
@@ -76,7 +75,7 @@ public class BeatmapManager : MonoBehaviour
               double seconds = metricTimeSpan.TotalSeconds;
 
               // Create the DrumHits object
-              var drumHit = new DrumHits { time = seconds, noteNumber = note.NoteNumber };
+              var drumHit = new DrumHits(seconds, note.NoteNumber);
 
               // Add the note to the matching path
               bool added = false;
@@ -150,9 +149,14 @@ public class BeatmapManager : MonoBehaviour
   
 }
 
-[Serializable]
- public class DrumHits
+[System.Serializable]
+ public struct DrumHits
  {
-     public double time { get; set; } 
-     public int noteNumber { get; set; }
+     public DrumHits(double times, int noteNumbers)
+     {
+         time = times; 
+         noteNumber = noteNumbers;
+     }
+     public double time;
+     public int noteNumber;
  }
