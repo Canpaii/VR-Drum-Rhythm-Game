@@ -24,6 +24,7 @@ public class BeatmapManager : MonoBehaviour
     public float distance; //distance from spawnpoint
     private float _leadInTime; // time it takes for the first note to hit the drum 
     public double globalTime; // used to calculate when to spawn the notes
+    public float missMargin;
     
     [Header("Audio references")]
     public SongData _song;
@@ -137,7 +138,7 @@ public class BeatmapManager : MonoBehaviour
       GameObject note = Instantiate(path.notePrefab, path.transform.position, path.transform.rotation);
       
       // set the noteSpeed 
-      note.GetComponent<Note>().Initialize(noteSpeed, distance); 
+      note.GetComponent<Note>().Initialize(noteSpeed, distance, missMargin); 
   }
   
   #endregion
@@ -150,8 +151,8 @@ public class BeatmapManager : MonoBehaviour
 }
 
 [Serializable]
-public class DrumHits
-{
-    public double time { get; set; } 
-    public int noteNumber { get; set; }
-}
+ public class DrumHits
+ {
+     public double time { get; set; } 
+     public int noteNumber { get; set; }
+ }

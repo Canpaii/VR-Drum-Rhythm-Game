@@ -35,15 +35,18 @@ public class Drum : MonoBehaviour
             if (timeDifference >= -perfectMargin && timeDifference <= perfectMargin)
             {
                 // Perfect hit 
-                ScoreManager.Instance.perfectHits++;
-                currentNoteIndex++;
+                ScoreManager.Instance.PerfectHit();
+                //Destroy(path.notes[currentNoteIndex]);
                 
+                currentNoteIndex++;
                 print("perfect Hit");
             }
             else if (timeDifference > perfectMargin && timeDifference <= errorMargin)
             {
                 // Late hit
-                ScoreManager.Instance.lateHits++;
+                ScoreManager.Instance.LateHit();
+               //Destroy(path.notes[currentNoteIndex]);
+                
                 currentNoteIndex++;
                 
                 print("perfect Hit");
@@ -51,7 +54,9 @@ public class Drum : MonoBehaviour
             else if (timeDifference < -perfectMargin && timeDifference >= -errorMargin)
             {
                 // Early hit
-                ScoreManager.Instance.earlyHits++;
+                ScoreManager.Instance.EarlyHit();
+               // Destroy(path.notes[currentNoteIndex]);
+                
                 currentNoteIndex++;
                 
                 print("perfect Hit");
@@ -59,7 +64,9 @@ public class Drum : MonoBehaviour
             else if (timeDifference > errorMargin && timeDifference <= missMargin)
             {
                 // Miss timing
-                ScoreManager.Instance.missedNotes++;
+                ScoreManager.Instance.Miss();
+               // Destroy(path.notes[currentNoteIndex]);
+                
                 currentNoteIndex++;
             }
             else if (timeDifference > missMargin)
