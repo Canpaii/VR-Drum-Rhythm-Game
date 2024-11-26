@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteNumbers: 2f00000030000000
   notes: []
-  notePrefab: {fileID: 0}
+  notePrefab: {fileID: 3100424134853357451, guid: bc1970661d71ac042ae00fd56ee0a650, type: 3}
 --- !u!1 &1722930425069306777
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteNumbers: 290000002b000000
   notes: []
-  notePrefab: {fileID: 0}
+  notePrefab: {fileID: 7267877540865459277, guid: e63dee30f77796647be7b624d7b5010f, type: 3}
 --- !u!1 &2124134761624250358
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteNumbers: 2300000024000000
   notes: []
-  notePrefab: {fileID: 0}
+  notePrefab: {fileID: 3594901393713905001, guid: 02b3a37c40a624346a667cd159ff7f9e, type: 3}
 --- !u!1 &3069363865528339139
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteNumbers: 32000000
   notes: []
-  notePrefab: {fileID: 0}
+  notePrefab: {fileID: 3100424134853357451, guid: bc1970661d71ac042ae00fd56ee0a650, type: 3}
 --- !u!1 &3689843323807689151
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteNumbers: 31000000
   notes: []
-  notePrefab: {fileID: 0}
+  notePrefab: {fileID: 4849013029500542642, guid: 6df1955adb069b54fada122b69af4f25, type: 3}
 --- !u!1 &5600919865015978661
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteNumbers: 2a0000002e000000
   notes: []
-  notePrefab: {fileID: 0}
+  notePrefab: {fileID: 4849013029500542642, guid: 6df1955adb069b54fada122b69af4f25, type: 3}
 --- !u!1 &5708149762630314539
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteNumbers: 2600000028000000
   notes: []
-  notePrefab: {fileID: 0}
+  notePrefab: {fileID: 1668209763115201496, guid: 7cff42bf28083014bbbbe17a0901a3bf, type: 3}
 --- !u!1001 &101667581362080044
 PrefabInstance:
   m_ObjectHideFlags: 0
