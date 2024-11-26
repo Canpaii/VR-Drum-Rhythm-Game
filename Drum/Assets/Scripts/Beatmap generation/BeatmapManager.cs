@@ -23,7 +23,7 @@ public class BeatmapManager : MonoBehaviour
     [Header("Note Spawn Details")] 
     public float distance; //distance from spawnpoint
     private float _leadInTime; // time it takes for the first note to hit the drum 
-    private double _globalTime; // used to calculate when to spawn the notes
+    public double globalTime; // used to calculate when to spawn the notes
     
     [Header("Audio references")]
     public SongData _song;
@@ -39,7 +39,7 @@ public class BeatmapManager : MonoBehaviour
     private void Start()
     {
         _leadInTime = distance / noteSpeed;
-        _globalTime = -_leadInTime;
+        globalTime = -_leadInTime;
         ReadMidiFile(_song.midiFile);
         //AdjustNoteTimesForLeadIn(_song);
         StartCoroutine(PlaySongWithLeadIn());
@@ -101,10 +101,10 @@ public class BeatmapManager : MonoBehaviour
   
   private void Update()
   {
-      _globalTime += Time.deltaTime; 
+      globalTime += Time.deltaTime; 
 
       // Start the audio when the global time reaches 0
-      if (!songAudioSource.isPlaying && _globalTime >= 0)
+      if (!songAudioSource.isPlaying && globalTime >= 0)
       {
           songAudioSource.Play();
       }
@@ -120,7 +120,7 @@ public class BeatmapManager : MonoBehaviour
               double adjustedSpawnTime = path.notes[i].time - _leadInTime; // Calculate when the notes should be spawned to be in time with the beat
 
               // Spawn the note if the global time matches the adjusted spawn time
-              if (_globalTime >= adjustedSpawnTime)
+              if (globalTime >= adjustedSpawnTime)
               {
                   SpawnNoteAtPath(path);
                   path.notes.RemoveAt(i);
@@ -137,15 +137,15 @@ public class BeatmapManager : MonoBehaviour
       GameObject note = Instantiate(path.notePrefab, path.transform.position, path.transform.rotation);
       
       // set the noteSpeed 
-      note.GetComponent<Note>().Initialize(noteSpeed); 
+      note.GetComponent<Note>().Initialize(noteSpeed, distance); 
   }
   
   #endregion
 
-  // public static double GetAudioSourceTime() // get time of the song in seconds
-  // {
-  //     return (double)Instance.songAudioSource.timeSamples / Instance.songAudioSource.clip.frequency;
-  // }
+  public static double GetAudioSourceTime() // get time of the song in seconds
+  {
+      return (double)Instance.songAudioSource.timeSamples / Instance.songAudioSource.clip.frequency;
+  }
   
 }
 
