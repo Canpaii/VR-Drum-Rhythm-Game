@@ -23,7 +23,8 @@ public class BeatmapManager : MonoBehaviour
     [Header("Note Spawn Details")] 
     public float distance; //distance from spawnpoint
     private float _leadInTime; // time it takes for the first note to hit the drum 
-    public double globalTime; // used to calculate when to spawn the notes
+    public float globalTime; // used to calculate when to spawn the notes
+    public int startDelay;
     public float missMargin;
     
     [Header("Audio references")]
@@ -39,16 +40,16 @@ public class BeatmapManager : MonoBehaviour
     private void Start()
     {
         _leadInTime = distance / noteSpeed;
-        globalTime = -_leadInTime;
+        globalTime = -_leadInTime - startDelay;
         ReadMidiFile(_song.midiFile);
+        songAudioSource.clip = _song.SongAudioClip;
         //AdjustNoteTimesForLeadIn(_song);
         StartCoroutine(PlaySongWithLeadIn());
     }
 
     private IEnumerator PlaySongWithLeadIn()
     {
-        songAudioSource.clip = _song.SongAudioClip;
-        yield return new WaitForSeconds(_leadInTime); // Wait for lead-in
+        yield return new WaitForSeconds(_leadInTime + startDelay); // Wait for lead-in and delay
         
         songAudioSource.Play(); // Start playing the song
     }
@@ -101,16 +102,11 @@ public class BeatmapManager : MonoBehaviour
   
   private void Update()
   {
-      globalTime += Time.deltaTime; 
-
-      // Start the audio when the global time reaches 0
-      if (!songAudioSource.isPlaying && globalTime >= 0)
-      {
-          songAudioSource.Play();
-      }
-
+      globalTime += Time.deltaTime;
+      
       SpawnNotesBasedOnGlobalTime();
   }
+
   private void SpawnNotesBasedOnGlobalTime() // Spawns notes prematurely to compensate with the song lead in time
   {
       foreach (var path in paths)

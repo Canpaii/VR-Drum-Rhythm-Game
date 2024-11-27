@@ -286,7 +286,8 @@ MonoBehaviour:
   - {fileID: 186177900}
   distance: 8
   globalTime: 0
-  missMargin: 0
+  startDelay: 2
+  missMargin: 1
   _song: {fileID: 11400000, guid: d88638a6ba013b14f9e149017cfc3b32, type: 2}
   songAudioSource: {fileID: 1430995304}
 --- !u!1 &500866369
@@ -1237,9 +1238,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 556688395}
     m_Modifications:
+    - target: {fileID: 33556769756762646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8
+      objectReference: {fileID: 0}
     - target: {fileID: 862565224647317133, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_Name
       value: FullDrum
+      objectReference: {fileID: 0}
+    - target: {fileID: 2845244154245005244, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3633005278953723972, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3730589534794230091, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935182429871833067, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 6363231410009865061, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1280,6 +1301,14 @@ PrefabInstance:
     - target: {fileID: 6363231410009865061, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640389383766596550, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686502023339533606, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
