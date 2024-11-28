@@ -74,19 +74,23 @@ public class BeatmapManager : MonoBehaviour
               // Convert ticks to seconds
               MetricTimeSpan metricTimeSpan = note.TimeAs<MetricTimeSpan>(tempoMap);
               double seconds = metricTimeSpan.TotalSeconds;
-
-              // Create the DrumHits object
-              var drumHit = new DrumHits(seconds, note.NoteNumber);
-
+              
+              bool added = false; 
               // Add the note to the matching path
-              bool added = false;
               foreach (var path in paths)
               {
                   if (path.CheckNoteNumber(note.NoteNumber))
                   {
-                      path.AddNote(drumHit);
+                      // Spawn the note object to enable later
+                      GameObject noteObject = Instantiate(path.notePrefab, path.transform.position, path.transform.rotation);
+                      Note noteComponent = noteObject.GetComponent<Note>();
+
+                      // Initialize the note component with relevant data
+                      noteComponent.Initialize(noteSpeed, distance, missMargin, seconds);
+
+                      path.AddNoteObject(noteObject); // Store the reference to the spawned note object
+
                       ScoreManager.Instance.noteCount++;
-                      
                       added = true;
                       break;
                   }
@@ -107,33 +111,24 @@ public class BeatmapManager : MonoBehaviour
       SpawnNotesBasedOnGlobalTime();
   }
 
-  private void SpawnNotesBasedOnGlobalTime() // Spawns notes prematurely to compensate with the song lead in time
+  private void SpawnNotesBasedOnGlobalTime()
   {
       foreach (var path in paths)
       {
           for (int i = 0; i < path.notes.Count; i++)
           {
-              double adjustedSpawnTime = path.notes[i].time - _leadInTime; // Calculate when the notes should be spawned to be in time with the beat
-
-              // Spawn the note if the global time matches the adjusted spawn time
+              double adjustedSpawnTime = path.notes[i].GetComponent<Note>().timeStamp - _leadInTime; // calculate the time it needs to prematurely spawn in 
+                
               if (globalTime >= adjustedSpawnTime)
               {
-                  SpawnNoteAtPath(path);
+                  GameObject note = path.notes[i];
+                  note.SetActive(true); // Activate the note when it's time to spawn
+
                   path.notes.RemoveAt(i);
-                  i--; 
+                  i--;
               }
           }
       }
-  }
-
-
-  private void SpawnNoteAtPath(Path path)
-  {
-      // Use the Path transform to instantiate the note
-      GameObject note = Instantiate(path.notePrefab, path.transform.position, path.transform.rotation);
-      
-      // set the noteSpeed 
-      note.GetComponent<Note>().Initialize(noteSpeed, distance, missMargin); 
   }
   
   #endregion

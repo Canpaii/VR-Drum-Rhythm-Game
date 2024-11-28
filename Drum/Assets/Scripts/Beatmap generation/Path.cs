@@ -5,11 +5,11 @@ using UnityEngine;
 public class Path : MonoBehaviour
 {
     public int[] noteNumbers; // determines what notes can access this lane
-    public List<DrumHits> notes = new List<DrumHits>(); // notes for this path
+    public List<GameObject> notes = new List<GameObject>(); // notes for this path
     public GameObject notePrefab;
-    public void AddNote(DrumHits drumHit)
+    public void AddNoteObject(GameObject note)
     {
-        notes.Add(drumHit);
+        notes.Add(note);
     }
 
     public bool CheckNoteNumber(int noteNumber) // check what drum part plays this note, each number is a different drum part

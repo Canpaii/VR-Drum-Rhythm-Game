@@ -14,17 +14,20 @@ public class Note : MonoBehaviour
     private float _missMargin;
     private float speed;
     private float _distance;
+
+    public double timeStamp;
     
-    public void Initialize(float noteSpeed, float distance, float missMargin)
+    public void Initialize(float noteSpeed, float distance, float missMargin, double hitTimeStamp)
     { 
         speed = noteSpeed;
         _distance = distance;
         _missMargin = missMargin;
+        timeStamp = hitTimeStamp;
     }
 
     public void Start() // few seconds after instantiating destroy the note and count it as a miss if not hit.
     {
-        Destroy(gameObject,(_distance / speed) + _missMargin);
+        
     }
 
     public void OnDestroy()

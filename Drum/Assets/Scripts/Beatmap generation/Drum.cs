@@ -16,11 +16,7 @@ public class Drum : MonoBehaviour
     public AudioSource audio;
     
     private int currentNoteIndex = 0;
-
-    private void Update()
-    {
-        
-    }
+    
     private void OnTriggerEnter(Collider other)
     {
         audio.Play();
@@ -30,7 +26,7 @@ public class Drum : MonoBehaviour
         while (currentNoteIndex < path.notes.Count)
         {
             var note = path.notes[currentNoteIndex];
-            double timeDifference = musicTimer - note.time;
+            double timeDifference = musicTimer - note.GetComponent<Note>().timeStamp;
 
             if (timeDifference >= -perfectMargin && timeDifference <= perfectMargin)
             {
