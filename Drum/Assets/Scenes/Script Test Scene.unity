@@ -169,6 +169,7 @@ MonoBehaviour:
   noteNumbers: 2600000028000000
   notes: []
   notePrefab: {fileID: 0}
+  drum: {fileID: 0}
 --- !u!1 &155506610
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +206,7 @@ MonoBehaviour:
   lateHits: 0
   missedNotes: 0
   comboTracker: {fileID: 0}
+  highScoreText: {fileID: 0}
 --- !u!4 &155506612
 Transform:
   m_ObjectHideFlags: 0
@@ -276,6 +278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteSpeed: 5
+  normalHitMargin: 0.1
+  noteDespawn: 0.3
   paths:
   - {fileID: 826827348}
   - {fileID: 1287033315}
@@ -287,7 +291,7 @@ MonoBehaviour:
   distance: 8
   globalTime: 0
   startDelay: 2
-  missMargin: 1
+  inputDelayInMilliseconds: 0
   _song: {fileID: 11400000, guid: d88638a6ba013b14f9e149017cfc3b32, type: 2}
   songAudioSource: {fileID: 1430995304}
 --- !u!1 &500866369
@@ -409,6 +413,7 @@ MonoBehaviour:
   noteNumbers: 31000000
   notes: []
   notePrefab: {fileID: 0}
+  drum: {fileID: 0}
 --- !u!1 &786807847
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +562,7 @@ MonoBehaviour:
   noteNumbers: 2f00000030000000
   notes: []
   notePrefab: {fileID: 0}
+  drum: {fileID: 0}
 --- !u!114 &878704616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,11 +575,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0
-  errorMargin: 0
-  missMargin: 0
+  perfectMargin: 0.06
+  normalHitMargin: 0.1
   path: {fileID: 0}
   audio: {fileID: 0}
+  particle: []
+  currentNoteIndex: 0
 --- !u!1 &881960362
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,6 +628,7 @@ MonoBehaviour:
   noteNumbers: 2300000024000000
   notes: []
   notePrefab: {fileID: 0}
+  drum: {fileID: 0}
 --- !u!114 &902367566 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7719187356722509386, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
@@ -644,11 +652,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0
-  errorMargin: 0
-  missMargin: 0
+  perfectMargin: 0.06
+  normalHitMargin: 0.1
   path: {fileID: 0}
   audio: {fileID: 0}
+  particle: []
+  currentNoteIndex: 0
 --- !u!1 &1033629769
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +738,7 @@ MonoBehaviour:
   noteNumbers: 2a0000002e000000
   notes: []
   notePrefab: {fileID: 0}
+  drum: {fileID: 0}
 --- !u!1 &1087604347
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,6 +844,7 @@ MonoBehaviour:
   lateHits: 0
   missedNotes: 0
   comboTracker: {fileID: 1993944018}
+  highScoreText: {fileID: 0}
 --- !u!1 &1394927148
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +892,7 @@ MonoBehaviour:
   noteNumbers: 290000002b000000
   notes: []
   notePrefab: {fileID: 0}
+  drum: {fileID: 0}
 --- !u!1 &1413569076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,10 +1292,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: FullDrum
       objectReference: {fileID: 0}
+    - target: {fileID: 2580176027282787397, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: drum
+      value: 
+      objectReference: {fileID: 878704616}
     - target: {fileID: 2845244154245005244, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_LocalPosition.z
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3524812564425942428, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: drum
+      value: 
+      objectReference: {fileID: 1757682588}
     - target: {fileID: 3633005278953723972, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_LocalPosition.z
       value: -8
@@ -1292,10 +1312,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4439174533960709650, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: drum
+      value: 
+      objectReference: {fileID: 1757682586}
     - target: {fileID: 4935182429871833067, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_LocalPosition.z
       value: -8
       objectReference: {fileID: 0}
+    - target: {fileID: 5162778796869810256, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: drum
+      value: 
+      objectReference: {fileID: 1757682587}
+    - target: {fileID: 5457556242983757900, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: drum
+      value: 
+      objectReference: {fileID: 1757682585}
     - target: {fileID: 6363231410009865061, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1340,10 +1372,46 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7487263295427260464, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: drum
+      value: 
+      objectReference: {fileID: 927902963}
     - target: {fileID: 7686502023339533606, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7686502023339533606, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686502023339533606, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686502023339533606, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686502023339533606, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686502023339533606, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686502023339533606, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686502023339533606, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719187356722509386, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: drum
+      value: 
+      objectReference: {fileID: 1757682584}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1422,11 +1490,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0
-  errorMargin: 0
-  missMargin: 0
+  perfectMargin: 0.06
+  normalHitMargin: 0.1
   path: {fileID: 0}
   audio: {fileID: 0}
+  particle: []
+  currentNoteIndex: 0
 --- !u!114 &1757682585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,11 +1508,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0
-  errorMargin: 0
-  missMargin: 0
+  perfectMargin: 0.06
+  normalHitMargin: 0.1
   path: {fileID: 0}
   audio: {fileID: 0}
+  particle: []
+  currentNoteIndex: 0
 --- !u!114 &1757682586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1456,11 +1526,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0
-  errorMargin: 0
-  missMargin: 0
+  perfectMargin: 0.06
+  normalHitMargin: 0.1
   path: {fileID: 0}
   audio: {fileID: 0}
+  particle: []
+  currentNoteIndex: 0
 --- !u!114 &1757682587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,11 +1544,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0
-  errorMargin: 0
-  missMargin: 0
+  perfectMargin: 0.06
+  normalHitMargin: 0.1
   path: {fileID: 0}
   audio: {fileID: 0}
+  particle: []
+  currentNoteIndex: 0
 --- !u!114 &1757682588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,11 +1562,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0
-  errorMargin: 0
-  missMargin: 0
+  perfectMargin: 0.06
+  normalHitMargin: 0.1
   path: {fileID: 0}
   audio: {fileID: 0}
+  particle: []
+  currentNoteIndex: 0
 --- !u!1 &1810975809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,6 +1615,7 @@ MonoBehaviour:
   noteNumbers: 32000000
   notes: []
   notePrefab: {fileID: 0}
+  drum: {fileID: 0}
 --- !u!1 &1993944016
 GameObject:
   m_ObjectHideFlags: 0

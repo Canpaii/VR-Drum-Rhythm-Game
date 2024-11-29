@@ -16,16 +16,21 @@ public class BeatmapManager : MonoBehaviour
     
     [Header("Note Details")] 
     public float noteSpeed; //the speed the note moves towards the drum
+    public float normalHitMargin;
+    public float noteDespawn;
     
     [Header("Paths")]
     public Path[] paths;
 
     [Header("Note Spawn Details")] 
     public float distance; //distance from spawnpoint
-    private float _leadInTime; // time it takes for the first note to hit the drum 
     public float globalTime; // used to calculate when to spawn the notes
     public int startDelay;
-    public float missMargin;
+    
+    private float _leadInTime; // time it takes for the note to hit the drum 
+    
+    [Header("Song Details")]
+    public int inputDelayInMilliseconds;
     
     [Header("Audio references")]
     public SongData _song;
@@ -86,7 +91,7 @@ public class BeatmapManager : MonoBehaviour
                       Note noteComponent = noteObject.GetComponent<Note>();
 
                       // Initialize the note component with relevant data
-                      noteComponent.Initialize(noteSpeed, distance, missMargin, seconds);
+                      noteComponent.Initialize(path.drum, noteSpeed, distance, normalHitMargin, seconds, noteDespawn);
 
                       path.AddNoteObject(noteObject); // Store the reference to the spawned note object
 

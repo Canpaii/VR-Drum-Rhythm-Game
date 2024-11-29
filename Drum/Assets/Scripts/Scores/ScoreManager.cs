@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using Unity.VisualScripting;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -20,7 +22,10 @@ public class ScoreManager : MonoBehaviour
    [Header("References")]
    public ComboTracker comboTracker;
    
-   private int maxScore = 1000000; // the maximum amount of score you can receive in one map 
+   [Header("UI References")]
+   public TMP_Text highScoreText;
+   
+   private int maxScore = 1000000; // the maximum amount of score you can receive in one map (1 million)
    private float noteWorth;
    
    private int maxCombo;
@@ -66,8 +71,15 @@ public class ScoreManager : MonoBehaviour
       comboTracker.ResetCombo();
    }
 
-   public void SetHighScore(int score, string songName) // Set HighScore 
+   public void SetHighScore(float score, string songName) // Set HighScore 
    {
-      PlayerPrefs.SetInt($"{songName}: HighScore", score);
+      int scoreInt = (int)score;
+      PlayerPrefs.SetInt($"{songName}: HighScore", scoreInt);
+   }
+
+   public void GetHighScore(string songName)
+   {
+      int highScore = PlayerPrefs.GetInt($"{songName}: HighScore");
+      highScoreText.text = highScore.ToString();
    }
 }
