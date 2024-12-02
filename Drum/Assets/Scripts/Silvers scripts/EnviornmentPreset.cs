@@ -32,15 +32,6 @@ public class EnviornmentPreset : MonoBehaviour
             ApplyPreset(newPresetIndex);
         }
 
-        // Optionele toetsen om de preset te wijzigen
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            IncrementPresetIndex(1);
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            IncrementPresetIndex(-1);
-        }
     }
 
     public void SetPresetIndex(int presetIndex)

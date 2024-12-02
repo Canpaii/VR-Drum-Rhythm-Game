@@ -25,15 +25,6 @@ public class PresetManager : MonoBehaviour
             ApplyPreset(newPresetIndex);
         }
 
-        // Optionele toetsen voor interactie
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            IncrementPresetIndex(1);
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            IncrementPresetIndex(-1);
-        }
     }
 
     public void ApplyPreset(int presetIndex)

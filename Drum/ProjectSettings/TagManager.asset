@@ -7,6 +7,7 @@ TagManager:
   - Anchor
   - Environment
   - Environment2
+  - Drumstick
   layers:
   - Default
   - TransparentFX
