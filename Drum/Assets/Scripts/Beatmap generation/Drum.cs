@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -16,7 +17,12 @@ public class Drum : MonoBehaviour
     public ParticleSystem[] particle;
     
     public int currentNoteIndex = 0; // this needs to be called by the "Note" component/script 
-    
+
+    private void Start()
+    {
+        // audio.clip = 
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         audio.Play();
