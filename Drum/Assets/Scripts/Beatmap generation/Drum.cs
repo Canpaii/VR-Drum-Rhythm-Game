@@ -7,13 +7,12 @@ public class Drum : MonoBehaviour
     [Header("Error Margins")] 
     public float perfectMargin; 
     public float normalHitMargin;
+    public float missMargin;
     
     [Header("References")]
     public Path path;
     public AudioSource audio;
     public ParticleSystem[] particleEffects;
-    
-    public int currentNoteIndex = 0; // Tracks the current note to be hit
 
     private void OnTriggerEnter(Collider other)
     {
@@ -61,10 +60,10 @@ public class Drum : MonoBehaviour
     private void CheckForHits()
     {
         // Ensure there are notes left to process
-        if (currentNoteIndex >= path.notes.Count) return;
+        if (0 >= path.notes.Count) return;
 
         // Get the current note
-        GameObject noteObject = path.notes[currentNoteIndex];
+        GameObject noteObject = path.notes[0];
         if (noteObject == null) return;
 
         Note note = noteObject.GetComponent<Note>();
@@ -84,7 +83,7 @@ public class Drum : MonoBehaviour
         {
             EarlyHit(noteObject);
         }
-        else
+        else if(Math.Abs(timeDifference) <= normalHitMargin)
         {
             Miss(noteObject);
         }
@@ -126,6 +125,6 @@ public class Drum : MonoBehaviour
 
         // Destroy the note and update the path
         Destroy(note);
-        path.notes.RemoveAt(currentNoteIndex);
+        path.notes.RemoveAt(0);
     }
 }

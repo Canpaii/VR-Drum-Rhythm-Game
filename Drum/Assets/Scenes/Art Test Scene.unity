@@ -19948,6 +19948,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: FullDrum
       objectReference: {fileID: 0}
+    - target: {fileID: 3735307310660399586, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6363231410009865061, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.273
@@ -19987,6 +20007,14 @@ PrefabInstance:
     - target: {fileID: 6363231410009865061, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
