@@ -135,8 +135,6 @@ public class BeatmapManager : MonoBehaviour
               if (globalTime >= adjustedSpawnTime)
               {
                   note.SetActive(true);
-                  path.notes.RemoveAt(i);
-                  i--;
               }
           }
       }

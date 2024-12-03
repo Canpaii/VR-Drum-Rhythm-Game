@@ -59,6 +59,13 @@ public class Drum : MonoBehaviour
 
     private void CheckForHits()
     {
+        // Play audio and visual effects
+        audio.Play();
+        foreach (var particle in particleEffects)
+        {
+            particle.Play();
+        }
+
         // Ensure there are notes left to process
         if (0 >= path.notes.Count) return;
 
@@ -116,14 +123,8 @@ public class Drum : MonoBehaviour
     {
         Debug.Log(hitType);
 
-        // Play audio and visual effects
-        audio.Play();
-        foreach (var particle in particleEffects)
-        {
-            particle.Play();
-        }
-
         // Destroy the note and update the path
+        note.GetComponent<Note>().hit = true;
         Destroy(note);
         path.notes.RemoveAt(0);
     }
