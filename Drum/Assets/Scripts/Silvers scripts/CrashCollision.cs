@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class CrashRotation : MonoBehaviour
+public class CrashCollision : MonoBehaviour
 {
     private Quaternion originalRotation; // De originele rotatie
     private Vector3 originalPosition;    // De originele positie
