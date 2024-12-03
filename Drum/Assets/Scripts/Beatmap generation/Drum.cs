@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class Drum : MonoBehaviour
 {
@@ -14,90 +11,121 @@ public class Drum : MonoBehaviour
     [Header("References")]
     public Path path;
     public AudioSource audio;
-    public ParticleSystem[] particle;
+    public ParticleSystem[] particleEffects;
     
-    public int currentNoteIndex = 0; // this needs to be called by the "Note" component/script 
-
-    private void Start()
-    {
-        // audio.clip = 
-    }
+    public int currentNoteIndex = 0; // Tracks the current note to be hit
 
     private void OnTriggerEnter(Collider other)
     {
+        
+        CheckForHits();
+        /*// Play audio and particle effects
         audio.Play();
-        for (int i = 0; i < particle.Length; i++)
+        foreach (var particle in particleEffects)
         {
-            particle[i].Play();
+            particle.Play();
         }
 
-        double musicTimer = BeatmapManager.GetAudioSourceTime() - BeatmapManager.Instance.inputDelayInMilliseconds/1000;
+        // Calculate the current music time, adjusted for input delay
+        double musicTimer = BeatmapManager.GetAudioSourceTime() - BeatmapManager.Instance.inputDelayInMilliseconds / 1000.0;
 
-        while (currentNoteIndex < path.notes.Count)
+        // Check if there are notes remaining
+        if (currentNoteIndex >= path.notes.Count) return;
+
+        // Get the current note
+        var note = path.notes[currentNoteIndex];
+        if (note == null) return;
+
+        // Calculate the time difference between the note and the music timer
+        double timeDifference = musicTimer - note.GetComponent<Note>().timeStamp;
+
+        // Check if the note is within hit margins
+        if (Math.Abs(timeDifference) <= perfectMargin)
         {
-            var note = path.notes[currentNoteIndex];
-            double timeDifference = musicTimer - note.GetComponent<Note>().timeStamp;
-
-            if (timeDifference >= -perfectMargin && timeDifference <= perfectMargin) // check if timing is withing perfect hit margin
-            {
-                // Perfect hit
-                PerfectHit();
-            }
-            else if (timeDifference >= perfectMargin && timeDifference <= normalHitMargin) // moet dit nog ff goed uitleggen
-            {
-                // Late hit
-               LateHit();
-            }
-            else if (timeDifference <= -perfectMargin && timeDifference >= -normalHitMargin) 
-            {
-                // Early hit
-                EarlyHit();
-            }
-            else if (timeDifference >= normalHitMargin || timeDifference <= -normalHitMargin) // timing outside the hit margin
-            {
-                // Miss timing
-                Miss();
-            }
+            PerfectHit();
         }
+        else if (timeDifference > perfectMargin && timeDifference <= normalHitMargin)
+        {
+            LateHit();
+        }
+        else if (timeDifference < -perfectMargin && timeDifference >= -normalHitMargin)
+        {
+            EarlyHit();
+        }
+        else
+        {
+            Miss();
+        }*/
     }
 
-    private void PerfectHit()
+    private void CheckForHits()
     {
-        // Perfect hit 
+        // Ensure there are notes left to process
+        if (currentNoteIndex >= path.notes.Count) return;
+
+        // Get the current note
+        GameObject noteObject = path.notes[currentNoteIndex];
+        if (noteObject == null) return;
+
+        Note note = noteObject.GetComponent<Note>();
+        double musicTimer = BeatmapManager.GetAudioSourceTime() - BeatmapManager.Instance.inputDelayInMilliseconds / 1000.0;
+        double timeDifference = musicTimer - note.timeStamp;
+
+        // Check hit timing
+        if (Math.Abs(timeDifference) <= perfectMargin)
+        {
+            PerfectHit(noteObject);
+        }
+        else if (timeDifference > perfectMargin && timeDifference <= normalHitMargin)
+        {
+            LateHit(noteObject);
+        }
+        else if (timeDifference < -perfectMargin && timeDifference >= -normalHitMargin)
+        {
+            EarlyHit(noteObject);
+        }
+        else
+        {
+            Miss(noteObject);
+        }
+    }
+    private void PerfectHit(GameObject note)
+    {
         ScoreManager.Instance.PerfectHit();
-        Destroy(path.notes[currentNoteIndex]);
-                
-        currentNoteIndex++;
-        print("perfect Hit");
+        RegisterHit(note,"Perfect Hit");
     }
 
-    private void LateHit()
+    private void LateHit(GameObject note)
     {
         ScoreManager.Instance.LateHit();
-        Destroy(path.notes[currentNoteIndex]);
-                
-        currentNoteIndex++;
-                
-        print("Late Hit");
+        RegisterHit(note, "Late Hit");
     }
 
-    private void EarlyHit()
+    private void EarlyHit(GameObject note)
     {
         ScoreManager.Instance.EarlyHit();
-        Destroy(path.notes[currentNoteIndex]);
-                
-        currentNoteIndex++;
-                
-        print("Early Hit");
+        RegisterHit(note, "Early Hit");
     }
 
-    private void Miss() 
+    private void Miss(GameObject note)
     {
         ScoreManager.Instance.Miss();
-        Destroy(path.notes[currentNoteIndex]);
-                
-        currentNoteIndex++;
+        RegisterHit(note, "Miss");
         
-        print ("Miss");
+    }
+    private void RegisterHit(GameObject note, string hitType)
+    {
+        Debug.Log(hitType);
+
+        // Play audio and visual effects
+        audio.Play();
+        foreach (var particle in particleEffects)
+        {
+            particle.Play();
+        }
+
+        // Destroy the note and update the path
+        Destroy(note);
+        path.notes.RemoveAt(currentNoteIndex);
     }
 }

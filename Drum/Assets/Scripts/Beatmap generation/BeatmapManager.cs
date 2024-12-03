@@ -91,7 +91,7 @@ public class BeatmapManager : MonoBehaviour
                       Note noteComponent = noteObject.GetComponent<Note>();
 
                       // Initialize the note component with relevant data
-                      noteComponent.Initialize(path.drum, noteSpeed, distance, normalHitMargin, seconds, noteDespawn);
+                      noteComponent.Initialize(noteSpeed, distance, normalHitMargin, seconds, noteDespawn);
 
                       path.AddNoteObject(noteObject); // Store the reference to the spawned note object
 
@@ -122,13 +122,19 @@ public class BeatmapManager : MonoBehaviour
       {
           for (int i = 0; i < path.notes.Count; i++)
           {
-              double adjustedSpawnTime = path.notes[i].GetComponent<Note>().timeStamp - _leadInTime; // calculate the time it needs to prematurely spawn in 
-                
+              GameObject note = path.notes[i];
+
+              if (note == null) 
+              {
+                  path.notes.RemoveAt(i); // Remove destroyed notes
+                  i--;
+                  continue;
+              }
+
+              double adjustedSpawnTime = note.GetComponent<Note>().timeStamp - _leadInTime;
               if (globalTime >= adjustedSpawnTime)
               {
-                  GameObject note = path.notes[i];
-                  note.SetActive(true); // Activate the note when it's time to spawn
-
+                  note.SetActive(true);
                   path.notes.RemoveAt(i);
                   i--;
               }

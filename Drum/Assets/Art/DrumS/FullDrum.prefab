@@ -736,11 +736,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.06
-  normalHitMargin: 0.1
-  path: {fileID: 0}
+  perfectMargin: 0.1
+  normalHitMargin: 0.15
+  path: {fileID: 3524812564425942428}
   audio: {fileID: 1016518199942432291}
-  particle: []
+  particleEffects: []
   currentNoteIndex: 0
 --- !u!82 &1016518199942432291
 AudioSource:
@@ -1197,11 +1197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.06
-  normalHitMargin: 0.1
-  path: {fileID: 0}
+  perfectMargin: 0.1
+  normalHitMargin: 0.15
+  path: {fileID: 5457556242983757900}
   audio: {fileID: 824399359615845836}
-  particle: []
+  particleEffects: []
   currentNoteIndex: 0
 --- !u!82 &824399359615845836
 AudioSource:
@@ -2250,11 +2250,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.06
-  normalHitMargin: 0.1
-  path: {fileID: 0}
+  perfectMargin: 0.1
+  normalHitMargin: 0.15
+  path: {fileID: 5162778796869810256}
   audio: {fileID: 7355351579968726510}
-  particle: []
+  particleEffects: []
   currentNoteIndex: 0
 --- !u!82 &7355351579968726510
 AudioSource:
@@ -2569,11 +2569,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.06
-  normalHitMargin: 0.1
-  path: {fileID: 0}
+  perfectMargin: 0.1
+  normalHitMargin: 0.15
+  path: {fileID: 7487263295427260464}
   audio: {fileID: 3163184048235986105}
-  particle: []
+  particleEffects: []
   currentNoteIndex: 0
 --- !u!82 &3163184048235986105
 AudioSource:
@@ -2959,12 +2959,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.06
-  normalHitMargin: 0.1
-  path: {fileID: 0}
+  perfectMargin: 0.1
+  normalHitMargin: 0.15
+  path: {fileID: 4439174533960709650}
   audio: {fileID: 9171001703014877280}
-  particle: []
-  currentNoteIndex: 0
+  particleEffects: []
+  currentNoteIndex: 19
 --- !u!82 &9171001703014877280
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3350,11 +3350,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.06
-  normalHitMargin: 0.1
-  path: {fileID: 0}
+  perfectMargin: 0.1
+  normalHitMargin: 0.15
+  path: {fileID: 2580176027282787397}
   audio: {fileID: 1144146685548310348}
-  particle: []
+  particleEffects: []
   currentNoteIndex: 0
 --- !u!82 &1144146685548310348
 AudioSource:
@@ -3863,10 +3863,16 @@ PrefabInstance:
       addedObject: {fileID: 6499547182990565347}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2243012924042314996}
+      addedObject: {fileID: 1651632617295197732}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1651632617295197732}
+      addedObject: {fileID: 1396012414902063648}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5742493810936534599}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4899505810487936030}
   m_SourcePrefab: {fileID: 100100000, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
 --- !u!1 &8514630982323408249 stripped
 GameObject:
@@ -3885,11 +3891,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.06
-  normalHitMargin: 0.1
-  path: {fileID: 0}
+  perfectMargin: 0.1
+  normalHitMargin: 0.15
+  path: {fileID: 7719187356722509386}
   audio: {fileID: 6262468855596808139}
-  particle: []
+  particleEffects: []
   currentNoteIndex: 0
 --- !u!82 &6262468855596808139
 AudioSource:
@@ -4105,7 +4111,44 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2212009239438826721, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
---- !u!54 &2243012924042314996
+--- !u!114 &1651632617295197732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514630982323408249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454379263a36bcd4dac1413d12051d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAngle: 30
+  returnSpeed: 9
+  returnDelay: 0.1
+--- !u!64 &1396012414902063648
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514630982323408249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2212009239438826721, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
+--- !u!54 &5742493810936534599
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4132,7 +4175,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!114 &1651632617295197732
+--- !u!114 &4899505810487936030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4145,8 +4188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationAngle: 30
-  returnSpeed: 9
-  returnDelay: 0.1
+  returnSpeed: 5
+  returnDelay: 0
 --- !u!4 &9034743569559869379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}

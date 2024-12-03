@@ -8,7 +8,6 @@ using UnityEngine.SubsystemsImplementation;
 public class Note : MonoBehaviour
 {
     [Header("Bool")]
-    public bool hit;
     public bool drumRollable;
     
     [Header("Core Variables")]
@@ -20,12 +19,9 @@ public class Note : MonoBehaviour
     public double timeStamp; // the time this note needs to be hit, used for other calculations 
 
     [Header("References")] 
-    private Drum _drum; // will need this reference to change the index  
-    
-    public void Initialize(Drum drumPath, float noteSpeed, float distance, float missMargin, double hitTimeStamp, float despawnTime)
-    { 
-        _drum = drumPath;
-        
+    public Path path;
+    public void Initialize(float noteSpeed, float distance, float missMargin, double hitTimeStamp, float despawnTime)
+    {
         _speed = noteSpeed;
         _distance = distance;
         
@@ -37,19 +33,14 @@ public class Note : MonoBehaviour
 
     public void Start() // few seconds after instantiating destroy the note. this way the note doesnt vanish in players view 
     {
-       StartCoroutine(AbleToGetHit()); 
-       
        Destroy(gameObject, (_distance/_speed) + _despawnTime);
     }
 
-    IEnumerator AbleToGetHit() // after a certain time note won't be able to b hit anymore, but this way it doesnt randomly dissapear from your screen.
+    public void OnDestroy()
     {
-        yield return new WaitForSeconds(_distance / _speed + _missMargin);
-        
-        ScoreManager.Instance.Miss();
-        _drum.currentNoteIndex++; // increase note index so the note after this one will be the one called 
+        path.notes.Remove(this.gameObject);
     }
-
+    
     void Update()
     {
         transform.position += transform.forward * _speed * Time.deltaTime;

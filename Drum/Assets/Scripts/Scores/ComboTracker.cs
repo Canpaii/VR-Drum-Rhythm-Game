@@ -6,7 +6,7 @@ public class ComboTracker : MonoBehaviour
 {
     private int combo;
     private int maxCombo;
-    private int comboMilestone;
+    public int comboMilestone;
 
     public ParticleSystem[] particles;
     

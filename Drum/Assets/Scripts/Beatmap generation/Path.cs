@@ -12,6 +12,7 @@ public class Path : MonoBehaviour
     public void AddNoteObject(GameObject note)
     {
         notes.Add(note);
+        note.GetComponent<Note>().path = this;
     }
 
     public bool CheckNoteNumber(int noteNumber) // check what drum part plays this note, each number is a different drum part
