@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 93df4bbd1c9cb3e4dada2dcf8c206989, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b354f28358ccf0e4aadd0f9bfa8643a2, type: 2}
+      objectReference: {fileID: 2100000, guid: 9a03adf3660e49b44954eda3269611ac, type: 2}
     - target: {fileID: 919132149155446097, guid: 93df4bbd1c9cb3e4dada2dcf8c206989, type: 3}
       propertyPath: m_Name
       value: DrumStick1
@@ -124,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2c5ac9df16703cc478551a588e6a1bb0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drumRollable: 0
+  hit: 0
   timeStamp: 0
   path: {fileID: 0}
 --- !u!4 &8041001974308740855 stripped

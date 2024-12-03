@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HitNode 2
+  m_Name: YellowTrial
   m_Shader: {fileID: -6465566751694194690, guid: c9d41311cf2ee574785cbc2a401d9aad, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -43,7 +43,7 @@ Material:
     - _Speed: 5
     - _VornelController: 5
     m_Colors:
-    - _Color: {r: 5.216476, g: 5.216476, b: 5.216476, a: 0}
+    - _Color: {r: 5.005665, g: 6.0007772, b: 0.25134158, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6237029768228924172
 MonoBehaviour:

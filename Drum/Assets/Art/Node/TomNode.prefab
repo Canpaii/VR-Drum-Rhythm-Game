@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drumRollable: 0
+  hit: 0
   timeStamp: 0
   path: {fileID: 0}
 --- !u!1001 &8980514381421542875
@@ -118,7 +119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93df4bbd1c9cb3e4dada2dcf8c206989, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.1714
+      value: -0.189
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93df4bbd1c9cb3e4dada2dcf8c206989, type: 3}
       propertyPath: m_LocalRotation.w
@@ -151,7 +152,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 93df4bbd1c9cb3e4dada2dcf8c206989, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0a5460afb6eb1ac4a9c0ecca1d0b052c, type: 2}
+      objectReference: {fileID: 2100000, guid: 94fd0d7c3d3d9ef46af8f1eda6c65079, type: 2}
     - target: {fileID: 919132149155446097, guid: 93df4bbd1c9cb3e4dada2dcf8c206989, type: 3}
       propertyPath: m_Name
       value: DrumStick1

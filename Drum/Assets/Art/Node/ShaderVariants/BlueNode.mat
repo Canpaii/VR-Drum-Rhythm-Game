@@ -39,6 +39,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _QueueControl: 0
+    - _Slider: -0.7
     m_Colors:
-    - _NodeColor: {r: 0.46939108, g: 1.215279, b: 3.201918, a: 0}
+    - _NodeColor: {r: 0.6430112, g: 0.32219332, b: 2.9304254, a: 0}
   m_BuildTextureStacks: []
