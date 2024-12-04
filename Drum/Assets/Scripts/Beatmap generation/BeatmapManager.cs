@@ -8,7 +8,6 @@ using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using Melanchall.DryWetMidi.Multimedia;
 using Melanchall.DryWetMidi.Standards;
-using UnityEngine.SocialPlatforms.Impl;
 
 
 public class BeatmapManager : MonoBehaviour
@@ -108,7 +107,6 @@ public class BeatmapManager : MonoBehaviour
               }
           }
       }
-      ScoreManager.Instance.NoteScoreCalculations();
   }
   
   private void Update()

@@ -24,10 +24,9 @@ public class ScoreManager : MonoBehaviour
    
    [Header("UI References")]
    public TMP_Text highScoreText;
-   public TMP_Text scoreText;
    
    private int maxScore = 1000000; // the maximum amount of score you can receive in one map (1 million)
-   public float noteWorth;
+   private float noteWorth;
    
    private int maxCombo;
    
@@ -45,8 +44,7 @@ public class ScoreManager : MonoBehaviour
    {
       score += (noteWorth + 1);
       perfectHits++;
-
-      UpdateScore();
+      
       comboTracker.AddToCombo();
    }
 
@@ -54,16 +52,14 @@ public class ScoreManager : MonoBehaviour
    {
       score += (noteWorth * 0.50f);
       earlyHits++;
-
-      UpdateScore();
+      
       comboTracker.AddToCombo();
    }
    public void LateHit() // call this when note registration is Late
    {
       score += (noteWorth * 0.50f);
       lateHits++;
-
-      UpdateScore();
+      
       comboTracker.AddToCombo();
    }
 
@@ -72,13 +68,7 @@ public class ScoreManager : MonoBehaviour
       score += 0;
       missedNotes++;
       
-      UpdateScore();
       comboTracker.ResetCombo();
-   }
-
-   public void UpdateScore()
-   {
-      scoreText.text = score.ToString();
    }
 
    public void SetHighScore(float score, string songName) // Set HighScore 
