@@ -107,6 +107,7 @@ public class BeatmapManager : MonoBehaviour
               }
           }
       }
+      ScoreManager.Instance.NoteScoreCalculations();
   }
   
   private void Update()
