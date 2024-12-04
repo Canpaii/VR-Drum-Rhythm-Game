@@ -2036,7 +2036,7 @@ MonoBehaviour:
   missedNotes: 0
   comboTracker: {fileID: 125853060}
   highScoreText: {fileID: 0}
-  currentScore: {fileID: 0}
+  currentScore: {fileID: 1959227624}
 --- !u!4 &502026680
 Transform:
   m_ObjectHideFlags: 0

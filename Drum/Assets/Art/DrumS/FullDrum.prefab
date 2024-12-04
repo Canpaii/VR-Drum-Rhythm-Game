@@ -606,6 +606,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6402269805835227393}
     m_Modifications:
+    - target: {fileID: 1559521369559185530, guid: d1063e4733700854898f27dae6708c81, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3120631021708989540, guid: d1063e4733700854898f27dae6708c81, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075015151713953210, guid: d1063e4733700854898f27dae6708c81, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 7209453957913627787, guid: d1063e4733700854898f27dae6708c81, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -649,6 +661,10 @@ PrefabInstance:
     - target: {fileID: 8323919456101790016, guid: d1063e4733700854898f27dae6708c81, type: 3}
       propertyPath: m_Name
       value: SnareHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082292462150716918, guid: d1063e4733700854898f27dae6708c81, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
