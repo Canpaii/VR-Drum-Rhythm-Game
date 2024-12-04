@@ -2036,7 +2036,7 @@ MonoBehaviour:
   missedNotes: 0
   comboTracker: {fileID: 125853060}
   highScoreText: {fileID: 0}
-  scoreText: {fileID: 1959227624}
+  currentScore: {fileID: 0}
 --- !u!4 &502026680
 Transform:
   m_ObjectHideFlags: 0
@@ -21511,6 +21511,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 824399359615845836, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 862565224647317133, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_Name
       value: FullDrum
