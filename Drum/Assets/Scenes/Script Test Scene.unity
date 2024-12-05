@@ -303,6 +303,7 @@ MonoBehaviour:
   missedNotes: 0
   comboTracker: {fileID: 1993944018}
   highScoreText: {fileID: 0}
+  currentScore: {fileID: 0}
 --- !u!4 &155506612
 Transform:
   m_ObjectHideFlags: 0
@@ -2116,6 +2117,50 @@ MonoBehaviour:
   notes: []
   notePrefab: {fileID: 0}
   drum: {fileID: 0}
+--- !u!1 &1838829119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1838829121}
+  - component: {fileID: 1838829120}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1838829120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838829119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619d1358aa0ca134fb1bea11d58e89e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1838829121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838829119}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0771589, y: 1.708714, z: -0.4733607}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1993944016
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,6 +2205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92880bfdc5e389f4bbbe8bfae5df7040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comboMilestone: 0
   particles: []
 --- !u!114 &2098820123 stripped
 MonoBehaviour:
@@ -2183,3 +2229,4 @@ SceneRoots:
   - {fileID: 556688395}
   - {fileID: 786807850}
   - {fileID: 1033629770}
+  - {fileID: 1838829121}
