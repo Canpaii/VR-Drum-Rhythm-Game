@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HighHat
+  m_Name: HighHat 1
   m_Shader: {fileID: -6465566751694194690, guid: ebc57bdac2820a94b9e826aa5cab74bd, type: 3}
   m_Parent: {fileID: -876546973899608171, guid: ebc57bdac2820a94b9e826aa5cab74bd, type: 3}
   m_ModifiedSerializedProperties: 2
@@ -41,7 +41,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _EmissionValue: 1.16
-    - _FreselEffect: 2.4
+    - _FreselEffect: 5.11
     - _QueueControl: 0
     m_Colors:
     - _Color: {r: 3.4258614, g: 2.9189763, b: 0, a: 1}
