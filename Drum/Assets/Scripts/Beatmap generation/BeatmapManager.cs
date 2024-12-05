@@ -87,7 +87,7 @@ public class BeatmapManager : MonoBehaviour
                   if (path.CheckNoteNumber(note.NoteNumber))
                   {
                       // Spawn the note object to enable later
-                      GameObject noteObject = Instantiate(path.notePrefab, path.transform.position, path.transform.rotation);
+                      GameObject noteObject = Instantiate(path.notePrefab, path.transform);
                       Note noteComponent = noteObject.GetComponent<Note>();
 
                       // Initialize the note component with relevant data

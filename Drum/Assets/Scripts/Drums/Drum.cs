@@ -16,48 +16,10 @@ public class Drum : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
         CheckForHits();
-        /*// Play audio and particle effects
-        audio.Play();
-        foreach (var particle in particleEffects)
-        {
-            particle.Play();
-        }
-
-        // Calculate the current music time, adjusted for input delay
-        double musicTimer = BeatmapManager.GetAudioSourceTime() - BeatmapManager.Instance.inputDelayInMilliseconds / 1000.0;
-
-        // Check if there are notes remaining
-        if (currentNoteIndex >= path.notes.Count) return;
-
-        // Get the current note
-        var note = path.notes[currentNoteIndex];
-        if (note == null) return;
-
-        // Calculate the time difference between the note and the music timer
-        double timeDifference = musicTimer - note.GetComponent<Note>().timeStamp;
-
-        // Check if the note is within hit margins
-        if (Math.Abs(timeDifference) <= perfectMargin)
-        {
-            PerfectHit();
-        }
-        else if (timeDifference > perfectMargin && timeDifference <= normalHitMargin)
-        {
-            LateHit();
-        }
-        else if (timeDifference < -perfectMargin && timeDifference >= -normalHitMargin)
-        {
-            EarlyHit();
-        }
-        else
-        {
-            Miss();
-        }*/
     }
 
-    private void CheckForHits()
+    public void CheckForHits()
     {
         // Play audio and visual effects
         audio.Play();
@@ -71,6 +33,10 @@ public class Drum : MonoBehaviour
 
         // Get the current note
         GameObject noteObject = path.notes[0];
+        if (noteObject == null)
+        {
+            print("No note found");
+        }
         if (noteObject == null) return;
 
         Note note = noteObject.GetComponent<Note>();

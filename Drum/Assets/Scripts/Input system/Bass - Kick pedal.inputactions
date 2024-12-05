@@ -2,11 +2,11 @@
     "name": "Bass - Kick pedal",
     "maps": [
         {
-            "name": "New action map",
+            "name": "Pedal Inputs",
             "id": "fde84f0d-ea92-4b4b-b3fd-c47162a6a48d",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Pedal press",
                     "type": "Button",
                     "id": "bd6d1abd-2e0f-47e9-a606-0d2d1a3b0139",
                     "expectedControlType": "",
@@ -19,11 +19,11 @@
                 {
                     "name": "",
                     "id": "b4b2055b-8537-40df-a929-933038370a60",
-                    "path": "",
-                    "interactions": "",
+                    "path": "<Keyboard>/b",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Pedal press",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

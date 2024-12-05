@@ -8,7 +8,6 @@ public class Path : MonoBehaviour
     public List<GameObject> notes = new List<GameObject>(); // notes for this path
     public GameObject notePrefab;
     
-    public Drum drum; // The drum this path is connected to, reference used in "Note" script
     public void AddNoteObject(GameObject note)
     {
         notes.Add(note);
