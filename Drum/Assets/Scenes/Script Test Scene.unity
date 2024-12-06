@@ -1055,10 +1055,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02574230fd94764babf8fae8db0f11a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pedalActionAsset: {fileID: -944628639613478452, guid: 09005b192eadac04da2e170ab7813b74, type: 3}
+  pedalActionReference: {fileID: -7284381777614494807, guid: 09005b192eadac04da2e170ab7813b74, type: 3}
   kick: {fileID: 2036306350}
-  actionMapName: Pedal Inputs
-  actionName: Pedal press
 --- !u!1 &1695546650
 GameObject:
   m_ObjectHideFlags: 0

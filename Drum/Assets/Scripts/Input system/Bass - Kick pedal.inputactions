@@ -19,7 +19,7 @@
                 {
                     "name": "",
                     "id": "b4b2055b-8537-40df-a929-933038370a60",
-                    "path": "<Keyboard>/b",
+                    "path": "<Keyboard>/anyKey",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",

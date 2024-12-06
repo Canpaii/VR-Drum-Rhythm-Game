@@ -6,15 +6,17 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
-    [SerializeField] private InputActionAsset pedalActionAsset;
+   // [SerializeField] private InputActionAsset pedalActionAsset;
+    [SerializeField] private InputActionReference pedalActionReference;
     private InputAction _pedalAction;
     [SerializeField] private Drum kick;
 
-    [SerializeField] private string actionMapName;
-    [SerializeField] private string actionName;
+    //[SerializeField] private string actionMapName;
+    //[SerializeField] private string actionName;
     private void Awake()
     {
-        _pedalAction = pedalActionAsset.FindActionMap(actionMapName).FindAction(actionName);
+       //_pedalAction = pedalActionAsset.FindActionMap(actionMapName).FindAction(actionName);
+       _pedalAction = pedalActionReference;
     }
 
     private void OnEnable()
@@ -36,8 +38,17 @@ public class InputHandler : MonoBehaviour
         if (kick != null)
         {
             kick.CheckForHits();
-        } 
-       
-       
+        }
+        else
+        {
+            Debug.Log("Kick not assigned");
+        }
+    }
+
+    public void StartRebinding()
+    {
+        _pedalAction.Disable();
+        // _pedalAction.PerformInteractiveRebinding().OnComplete(operation =>
+            
     }
 }
