@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class EffectTrigger
+public struct EffectTrigger
 {
     public float triggerScore; // De score waarop het effect moet worden geactiveerd
     public AudioClip soundEffect;
