@@ -38,15 +38,15 @@ public class Note : MonoBehaviour
 
     public void OnDestroy()
     {
-        path.notes.Remove(this.gameObject);
+        path.notes.Remove(gameObject);
 
-        if (!hit)
+        if (!hit) // If it didnt get hit count it as an instant miss
         {
             ScoreManager.Instance.Miss();
         }
     }
     
-    void Update()
+    void Update() // moves the note toward player
     {
         transform.position += transform.forward * _speed * Time.deltaTime;
     }

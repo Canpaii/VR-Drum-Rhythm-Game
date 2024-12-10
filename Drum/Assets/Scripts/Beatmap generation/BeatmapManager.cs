@@ -44,12 +44,13 @@ public class BeatmapManager : MonoBehaviour
 
     private void Start()
     {
-        _leadInTime = distance / noteSpeed;
-        globalTime = -_leadInTime - startDelay;
-        ReadMidiFile(_song.midiFile);
-        songAudioSource.clip = _song.SongAudioClip;
-        //AdjustNoteTimesForLeadIn(_song);
-        StartCoroutine(PlaySongWithLeadIn());
+        _leadInTime = distance / noteSpeed; // calculates how long it takes for the notes to reach the destination
+        globalTime = -_leadInTime - startDelay; // Calculates any delays necessary  
+        
+        ReadMidiFile(_song.midiFile); // need to change this for the level selector later 
+        songAudioSource.clip = _song.SongAudioClip; // change audioclip to apropriate song
+       
+        StartCoroutine(PlaySongWithLeadIn()); // Starts the song after a delay so the notes can catch up 
     }
 
     private IEnumerator PlaySongWithLeadIn()
@@ -110,9 +111,9 @@ public class BeatmapManager : MonoBehaviour
       ScoreManager.Instance.NoteScoreCalculations();
   }
   
-  private void Update()
+  private void Update() // starts the global time and looks for notes that should be spawned
   {
-      globalTime += Time.deltaTime;
+      globalTime += Time.deltaTime; 
       
       SpawnNotesBasedOnGlobalTime();
   }
@@ -132,8 +133,8 @@ public class BeatmapManager : MonoBehaviour
                   continue;
               }
 
-              double adjustedSpawnTime = note.GetComponent<Note>().timeStamp - _leadInTime;
-              if (globalTime >= adjustedSpawnTime)
+              double adjustedSpawnTime = note.GetComponent<Note>().timeStamp - _leadInTime; // Calculate when note should be spawned
+              if (globalTime >= adjustedSpawnTime) // spawn at that 
               {
                   note.SetActive(true);
               }
@@ -150,14 +151,14 @@ public class BeatmapManager : MonoBehaviour
   
 }
 
-[System.Serializable]
- public struct DrumHits
- {
-     public DrumHits(double times, int noteNumbers)
-     {
-         time = times; 
-         noteNumber = noteNumbers;
-     }
-     public double time;
-     public int noteNumber;
- }
+// [System.Serializable]
+//  public struct DrumHits
+//  {
+//      public DrumHits(double times, int noteNumbers)
+//      {
+//          time = times; 
+//          noteNumber = noteNumbers;
+//      }
+//      public double time;
+//      public int noteNumber;
+//  }

@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
    public float score; // The players score 
    public int noteCount; // The DrumNote Count that is in the current song
 
-   [Header("Stats of notes hit")] 
+   [Header("Stats of notes hit")] // stats that you can see after the game has finished
    public int perfectHits;
    public int earlyHits;
    public int lateHits;
@@ -75,7 +75,7 @@ public class ScoreManager : MonoBehaviour
       comboTracker.ResetCombo();
    }
 
-   public void UpdateScore()
+   public void UpdateScore() // updates the score that is visible to the player ingame
    {
       currentScore.text = score.ToString();
    }
@@ -85,7 +85,7 @@ public class ScoreManager : MonoBehaviour
       PlayerPrefs.SetInt($"{songName}: HighScore", scoreInt);
    }
 
-   public void GetHighScore(string songName)
+   public void GetHighScore(string songName) // get highscore for specific song 
    {
       int highScore = PlayerPrefs.GetInt($"{songName}: HighScore");
       highScoreText.text = highScore.ToString();

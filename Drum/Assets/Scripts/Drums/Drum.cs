@@ -41,7 +41,7 @@ public class Drum : MonoBehaviour
 
         Note note = noteObject.GetComponent<Note>();
         double musicTimer = BeatmapManager.GetAudioSourceTime() - BeatmapManager.Instance.inputDelayInMilliseconds / 1000.0;
-        double timeDifference = musicTimer - note.timeStamp;
+        double timeDifference = musicTimer - note.timeStamp; // get the time difference when it got hit and when it should've been hit 
 
         // Check hit timing
         if (Math.Abs(timeDifference) <= perfectMargin)
