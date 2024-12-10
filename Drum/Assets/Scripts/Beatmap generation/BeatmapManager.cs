@@ -37,6 +37,9 @@ public class BeatmapManager : MonoBehaviour
     public AudioSource songAudioSource;
     private MidiFile _midiFile; // reference to midi file it needs to read 
     
+    [Header("Drum Roll Settings")]
+    public float drumRollThreshhold;
+    
     public void Awake()
     {
         Instance = this;
@@ -71,7 +74,9 @@ public class BeatmapManager : MonoBehaviour
   private void DistributeNotesToPaths() // distributes the notes to their designed drum kit 
   {
       TempoMap tempoMap = _midiFile.GetTempoMap();
-
+      
+      Dictionary<int, double> lastNoteTimes = new Dictionary<int, double>(); // dictionary to keep a reference to the last notes timer. 
+      
       foreach (var note in _midiFile.GetNotes())
       {
           // Check if the note is in the drum channel 
@@ -90,6 +95,18 @@ public class BeatmapManager : MonoBehaviour
                       // Spawn the note object to enable later
                       GameObject noteObject = Instantiate(path.notePrefab, path.transform);
                       Note noteComponent = noteObject.GetComponent<Note>();
+
+                      if (lastNoteTimes.TryGetValue(note.NoteNumber, out double lastTime)) 
+                      {
+                          // Check the timestamp of the previous note in that path
+                          if (seconds - lastTime <= drumRollThreshhold)
+                          {
+                              // Checks if the time between notes is within a certain threshold 
+                              noteComponent.drumRollable = true;
+                          }
+                      }
+                      
+                      lastNoteTimes[note.NoteNumber] = seconds; // sets the new timer for 
 
                       // Initialize the note component with relevant data
                       noteComponent.Initialize(noteSpeed, distance, normalHitMargin, seconds, noteDespawn);
@@ -150,15 +167,3 @@ public class BeatmapManager : MonoBehaviour
   }
   
 }
-
-// [System.Serializable]
-//  public struct DrumHits
-//  {
-//      public DrumHits(double times, int noteNumbers)
-//      {
-//          time = times; 
-//          noteNumber = noteNumbers;
-//      }
-//      public double time;
-//      public int noteNumber;
-//  }

@@ -247,6 +247,7 @@ MonoBehaviour:
   inputDelayInMilliseconds: 0
   _song: {fileID: 11400000, guid: d88638a6ba013b14f9e149017cfc3b32, type: 2}
   songAudioSource: {fileID: 1430995304}
+  drumRollThreshhold: 0.1
 --- !u!1 &317929983
 GameObject:
   m_ObjectHideFlags: 0
