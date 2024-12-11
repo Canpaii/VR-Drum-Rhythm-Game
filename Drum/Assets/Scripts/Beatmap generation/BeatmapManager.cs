@@ -33,25 +33,28 @@ public class BeatmapManager : MonoBehaviour
     public int inputDelayInMilliseconds;
     
     [Header("Audio references")]
-    public SongData _song;
+    public SongData song;
     public AudioSource songAudioSource;
     private MidiFile _midiFile; // reference to midi file it needs to read 
     
     [Header("Drum Roll Settings")]
     public float drumRollThreshhold;
+    public DrumSticks drumSticks;
     
     public void Awake()
     {
         Instance = this;
     }
 
-    private void Start()
+    private void Start() // should make this into a function you can call through UI instead of just a start 
     {
         _leadInTime = distance / noteSpeed; // calculates how long it takes for the notes to reach the destination
         globalTime = -_leadInTime - startDelay; // Calculates any delays necessary  
         
-        ReadMidiFile(_song.midiFile); // need to change this for the level selector later 
-        songAudioSource.clip = _song.SongAudioClip; // change audioclip to apropriate song
+        ReadMidiFile(song.midiFile); // need to change this for the level selector later 
+        songAudioSource.clip = song.SongAudioClip; // change audioclip to apropriate song
+        
+        drumSticks.CalculateDrumRollFrequency(song.bpm); // calculates frequency for the drum roll
        
         StartCoroutine(PlaySongWithLeadIn()); // Starts the song after a delay so the notes can catch up 
     }
@@ -79,50 +82,47 @@ public class BeatmapManager : MonoBehaviour
       
       foreach (var note in _midiFile.GetNotes())
       {
-          // Check if the note is in the drum channel 
-          if (note.Channel == 9)
-          {
-              // Convert ticks to seconds
-              MetricTimeSpan metricTimeSpan = note.TimeAs<MetricTimeSpan>(tempoMap);
-              double seconds = metricTimeSpan.TotalSeconds;
+          if (note.Channel != 9) continue; // Check if the note is in the drum channel 
+          
+          // Convert ticks to seconds
+          MetricTimeSpan metricTimeSpan = note.TimeAs<MetricTimeSpan>(tempoMap);
+          double seconds = metricTimeSpan.TotalSeconds;
               
-              bool added = false; 
-              // Add the note to the matching path
-              foreach (var path in paths)
+          bool added = false; 
+          // Add the note to the matching path
+          foreach (var path in paths)
+          {
+              if (!path.CheckNoteNumber(note.NoteNumber)) continue;
+              
+              // Spawn the note object to enable later
+              GameObject noteObject = Instantiate(path.notePrefab, path.transform);
+              Note noteComponent = noteObject.GetComponent<Note>();
+
+              if (lastNoteTimes.TryGetValue(note.NoteNumber, out double lastTime)) 
               {
-                  if (path.CheckNoteNumber(note.NoteNumber))
+                  // Check the timestamp of the previous note in that path
+                  if (seconds - lastTime <= drumRollThreshhold)
                   {
-                      // Spawn the note object to enable later
-                      GameObject noteObject = Instantiate(path.notePrefab, path.transform);
-                      Note noteComponent = noteObject.GetComponent<Note>();
-
-                      if (lastNoteTimes.TryGetValue(note.NoteNumber, out double lastTime)) 
-                      {
-                          // Check the timestamp of the previous note in that path
-                          if (seconds - lastTime <= drumRollThreshhold)
-                          {
-                              // Checks if the time between notes is within a certain threshold 
-                              noteComponent.drumRollable = true;
-                          }
-                      }
-                      
-                      lastNoteTimes[note.NoteNumber] = seconds; // sets the new timer for 
-
-                      // Initialize the note component with relevant data
-                      noteComponent.Initialize(noteSpeed, distance, normalHitMargin, seconds, noteDespawn);
-
-                      path.AddNoteObject(noteObject); // Store the reference to the spawned note object
-
-                      ScoreManager.Instance.noteCount++;
-                      added = true;
-                      break;
+                      // Checks if the time between notes is within a certain threshold 
+                      noteComponent.drumRollable = true;
                   }
               }
+                      
+              lastNoteTimes[note.NoteNumber] = seconds; // sets the new timer for 
 
-              if (!added)
-              {
-                  Debug.LogWarning($"Note {note.NoteNumber} does not match any path!");
-              }
+              // Initialize the note component with relevant data
+              noteComponent.Initialize(noteSpeed, distance, normalHitMargin, seconds, noteDespawn);
+
+              path.AddNoteObject(noteObject); // Store the reference to the spawned note object
+
+              ScoreManager.Instance.noteCount++;
+              added = true;
+              break;
+          }
+
+          if (!added)
+          {
+              Debug.LogWarning($"Note {note.NoteNumber} does not match any path!");
           }
       }
       ScoreManager.Instance.NoteScoreCalculations();
