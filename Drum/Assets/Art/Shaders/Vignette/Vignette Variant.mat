@@ -41,7 +41,7 @@ Material:
     - _QueueControl: 0
     - _SparkelsSpeed: 0.27
     - _SparkleActivate: 0.61
-    - _VignetteActivation: -0.157
+    - _VignetteActivation: -0.14
     m_Colors:
     - _OnFire: {r: 13.652302, g: 3.5971103, b: 0.35739, a: 0}
   m_BuildTextureStacks: []

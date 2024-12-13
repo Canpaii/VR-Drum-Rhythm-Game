@@ -39,7 +39,7 @@ public class BeatmapManager : MonoBehaviour
     
     [Header("Drum Roll Settings")]
     public float drumRollThreshhold;
-    public DrumSticks drumSticks;
+    public DrumSticks[] drumSticks;
     
     public void Awake()
     {
@@ -54,8 +54,11 @@ public class BeatmapManager : MonoBehaviour
         ReadMidiFile(song.midiFile); // need to change this for the level selector later 
         songAudioSource.clip = song.SongAudioClip; // change audioclip to apropriate song
         
-        drumSticks.CalculateDrumRollFrequency(song.bpm); // calculates frequency for the drum roll
-       
+        foreach (var drumStick in drumSticks)
+        {
+            drumStick.CalculateDrumRollFrequency(song.bpm); // calculates frequency for the drum roll
+        }
+
         StartCoroutine(PlaySongWithLeadIn()); // Starts the song after a delay so the notes can catch up 
     }
 

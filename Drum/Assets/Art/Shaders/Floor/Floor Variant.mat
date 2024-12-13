@@ -40,7 +40,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: -50
-    - _Radisu: -0.06
+    - _Radisu: -0.16
     m_Colors:
     - _Color: {r: 0.66307753, g: 2.8688252, b: 1.7572725, a: 0}
     - _Color_1: {r: 0.43298328, g: 0.6603774, b: 0.64481413, a: 0}
