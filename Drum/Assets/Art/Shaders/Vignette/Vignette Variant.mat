@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1647731475580406811
+--- !u!114 &-4965365596462729423
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,16 +20,16 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Floor Variant
-  m_Shader: {fileID: -6465566751694194690, guid: 9ae2d4258b7ba2842a8e367f26f65b20, type: 3}
-  m_Parent: {fileID: -876546973899608171, guid: 9ae2d4258b7ba2842a8e367f26f65b20, type: 3}
-  m_ModifiedSerializedProperties: 18
+  m_Name: Vignette Variant
+  m_Shader: {fileID: -6465566751694194690, guid: a680e11d2f081a64583fbf7e730f4fe5, type: 3}
+  m_Parent: {fileID: -876546973899608171, guid: a680e11d2f081a64583fbf7e730f4fe5, type: 3}
+  m_ModifiedSerializedProperties: 2
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2950
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -39,9 +39,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _QueueControl: 0
-    - _QueueOffset: -50
-    - _Radisu: -0.06
+    - _SparkelsSpeed: 0.27
+    - _SparkleActivate: 0.61
+    - _VignetteActivation: -0.157
     m_Colors:
-    - _Color: {r: 0.66307753, g: 2.8688252, b: 1.7572725, a: 0}
-    - _Color_1: {r: 0.43298328, g: 0.6603774, b: 0.64481413, a: 0}
+    - _OnFire: {r: 13.652302, g: 3.5971103, b: 0.35739, a: 0}
   m_BuildTextureStacks: []
