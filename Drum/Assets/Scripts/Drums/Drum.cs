@@ -5,14 +5,15 @@ using UnityEngine;
 public class Drum : MonoBehaviour
 {
     [Header("Error Margins")] 
-    public float perfectMargin; 
-    public float normalHitMargin;
-    public float missMargin;
+    [SerializeField] private float perfectMargin; 
+    [SerializeField] private float normalHitMargin;
+    [SerializeField] private float missMargin;
     
     [Header("References")]
-    public Path path;
-    public AudioSource audio;
-    public ParticleSystem[] particleEffects;
+    [SerializeField] private Path path;
+    [SerializeField] private AudioSource audio;
+    [SerializeField] private  GameObject particle;
+    [SerializeField] private Transform particlePOS;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,11 +24,8 @@ public class Drum : MonoBehaviour
     {
         // Play audio and visual effects
         audio.Play();
-        foreach (var particle in particleEffects)
-        {
-            particle.Play();
-        }
-
+        GameObject particleObject = Instantiate(particle, transform.position, Quaternion.identity);
+        Destroy(particleObject, 1);
         // Ensure there are notes left to process
         if (0 >= path.notes.Count) return;
 

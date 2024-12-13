@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1262572361200973723, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1262572361200973723, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: VelocityModule.enabled
@@ -126,7 +126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4305876752093749207, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4305876752093749207, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: VelocityModule.enabled
@@ -182,7 +182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5796076251197090395, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5796076251197090395, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: VelocityModule.enabled
@@ -246,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7964037224689681989, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7964037224689681989, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: VelocityModule.enabled

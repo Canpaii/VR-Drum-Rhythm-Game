@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songName: 'Reach For the Stars '
   songAuthor: SEGA
-  difficulty: 
+  difficulty: '7* '
   songDuration: 
   bpm: 203
   songIcon: {fileID: 0}

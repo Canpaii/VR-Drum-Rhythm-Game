@@ -85,9 +85,14 @@ public class ScoreManager : MonoBehaviour
       PlayerPrefs.SetInt($"{songName}: HighScore", scoreInt);
    }
 
-   public void GetHighScore(string songName) // get highscore for specific song 
+   public int GetHighScore(string songName) // get highscore for specific song 
    {
-      int highScore = PlayerPrefs.GetInt($"{songName}: HighScore");
-      highScoreText.text = highScore.ToString();
+      if (PlayerPrefs.HasKey($"{songName}: HighScore"))
+      {
+         int highScore = PlayerPrefs.GetInt($"{songName}: HighScore");
+         return highScore;
+      }
+     
+      return 0;
    }
 }

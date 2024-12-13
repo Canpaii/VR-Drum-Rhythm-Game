@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 773145347217597536, guid: c56f1519dbe248d4995fe77901c29873, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 773145347217597536, guid: c56f1519dbe248d4995fe77901c29873, type: 3}
       propertyPath: ShapeModule.radius.value
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2377550206919216172, guid: c56f1519dbe248d4995fe77901c29873, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2377550206919216172, guid: c56f1519dbe248d4995fe77901c29873, type: 3}
       propertyPath: ShapeModule.radius.value
@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5426980364743915936, guid: c56f1519dbe248d4995fe77901c29873, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5426980364743915936, guid: c56f1519dbe248d4995fe77901c29873, type: 3}
       propertyPath: ShapeModule.radius.value
@@ -118,7 +118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8483300579763246526, guid: c56f1519dbe248d4995fe77901c29873, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8483300579763246526, guid: c56f1519dbe248d4995fe77901c29873, type: 3}
       propertyPath: ShapeModule.radius.value
