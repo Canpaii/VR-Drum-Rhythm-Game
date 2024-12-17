@@ -40,7 +40,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _EmissionValue: 5.58
+    - _EmissionValue: 4
     - _FreselEffect: 3.7
     - _QueueControl: 0
     m_Colors:

@@ -23,13 +23,13 @@ Material:
   m_Name: NodePath Variant Variant 1
   m_Shader: {fileID: -6465566751694194690, guid: e6ebc01214f4fa54caf7d116b8be2bc7, type: 3}
   m_Parent: {fileID: 2100000, guid: 2edf8e07538d7534e8fe7c284ad654eb, type: 2}
-  m_ModifiedSerializedProperties: 18
+  m_ModifiedSerializedProperties: 22
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3050
+  m_CustomRenderQueue: 2500
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -37,7 +37,9 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _QueueControl: 0
+    - _QueueOffset: 50
     m_Colors:
     - _Glitter_Color: {r: 7.377209, g: 3.425034, b: 0, a: 0}
   m_BuildTextureStacks: []
