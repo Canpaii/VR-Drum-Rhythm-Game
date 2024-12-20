@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SkyboxBlue
+  m_Name: Skybox 1
   m_Shader: {fileID: 4800000, guid: 7f03ebe1c47a61a4299e9ff55e66690e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -97,8 +97,8 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _Exponent1: 0.07
-    - _Exponent2: 0.07
+    - _Exponent1: 0.57
+    - _Exponent2: 0.02
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -119,9 +119,9 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.6666667, g: 0.9151179, b: 1, a: 0}
-    - _Color2: {r: 0, g: 0, b: 0, a: 0}
-    - _Color3: {r: 0.5613208, g: 1, b: 0.9123709, a: 0}
+    - _Color1: {r: 0.31505874, g: 0.36984417, b: 0.3773585, a: 0}
+    - _Color2: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 0}
+    - _Color3: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicDrivenRotationWithPrefabsAndDelay : MonoBehaviour
+public class SpiralCube : MonoBehaviour
 {
     [Header("Music Rotation Settings")]
     public float rotationMultiplier = 10f; // Hoe sterk de muziek de rotatie beïnvloedt.

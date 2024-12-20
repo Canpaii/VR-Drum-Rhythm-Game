@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CircularAudioVisualizer : MonoBehaviour
+public class CircleVisualizer : MonoBehaviour
 {
     [Header("Visualizer Settings")]
     public GameObject cubePrefab; // Prefab voor de cubes
