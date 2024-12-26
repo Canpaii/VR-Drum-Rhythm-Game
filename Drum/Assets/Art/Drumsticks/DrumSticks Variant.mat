@@ -40,9 +40,9 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _EmissionValue: 12
+    - _EmissionValue: 15
     - _FreselEffect: 5.43
     - _QueueControl: 0
     m_Colors:
-    - _Color: {r: 0.7529412, g: 0.09422081, b: 0.019607859, a: 0}
+    - _Color: {r: 1, g: 0.2117647, b: 0.7385804, a: 0}
   m_BuildTextureStacks: []

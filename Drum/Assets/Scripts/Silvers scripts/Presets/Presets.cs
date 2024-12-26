@@ -1,7 +1,6 @@
 using UnityEngine;
 
-[System.Serializable]
-public class PresetsList
+public class PresetsList2
 {
     public string presetName;  // Naam van de preset
     public Color baseColor;    // Basiskleur
