@@ -7,6 +7,7 @@ using UnityEngine.SubsystemsImplementation;
 
 public class Note : MonoBehaviour
 {
+    public string name;
     [Header("Bool")]
     public bool drumRollable;
     public bool hit;

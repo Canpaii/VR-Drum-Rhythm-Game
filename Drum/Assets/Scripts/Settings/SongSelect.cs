@@ -9,7 +9,7 @@ public class SongSelect : MonoBehaviour
 
    public void SelectSong()
    {
-      BeatmapManager.Instance.song = songs[currentSong];
+      BeatmapManager.Instance.songData = songs[currentSong];
    }
 
    public void NextSong()

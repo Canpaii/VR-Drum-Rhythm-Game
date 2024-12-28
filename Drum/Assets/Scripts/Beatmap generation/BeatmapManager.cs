@@ -8,6 +8,7 @@ using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using Melanchall.DryWetMidi.Multimedia;
 using Melanchall.DryWetMidi.Standards;
+using UnityEngine.Serialization;
 
 
 public class BeatmapManager : MonoBehaviour
@@ -25,41 +26,44 @@ public class BeatmapManager : MonoBehaviour
     [Header("Note Spawn Details")] 
     public float distance; //distance from spawnpoint
     public float globalTime; // used to calculate when to spawn the notes
-    public int startDelay;
-    
     private float _leadInTime; // time it takes for the note to hit the drum 
     
     [Header("Song Details")]
     public int inputDelayInMilliseconds;
+    public bool songPlaying;
+    public int startDelay;
+    public int endDelay;
     
     [Header("Audio references")]
-    public SongData song;
-    public AudioSource songAudioSource;
+    public SongData songData;
+    [SerializeField] private AudioSource songAudioSource;
     private MidiFile _midiFile; // reference to midi file it needs to read 
     
     [Header("Drum Roll Settings")]
-    public float drumRollThreshhold;
-    public DrumSticks[] drumSticks;
+    [SerializeField] private float drumRollThreshhold;
+    [SerializeField] private DrumSticks[] drumSticks;
     
     public void Awake()
     {
         Instance = this;
     }
 
-    private void Start() // should make this into a function you can call through UI instead of just a start 
+    public void StartSong() // should make this into a function you can call through UI instead of just a start 
     {
+        songPlaying = true;
         _leadInTime = distance / noteSpeed; // calculates how long it takes for the notes to reach the destination
         globalTime = -_leadInTime - startDelay; // Calculates any delays necessary  
         
-        ReadMidiFile(song.midiFile); // need to change this for the level selector later 
-        songAudioSource.clip = song.SongAudioClip; // change audioclip to apropriate song
+        ReadMidiFile(songData.midiFile); // need to change this for the level selector later 
+        songAudioSource.clip = songData.SongAudioClip; // change audioclip to apropriate song
         
         foreach (var drumStick in drumSticks)
         {
-            drumStick.CalculateDrumRollFrequency(song.bpm); // calculates frequency for the drum roll
+            drumStick.CalculateDrumRollFrequency(songData.bpm); // calculates frequency for the drum roll
         }
 
         StartCoroutine(PlaySongWithLeadIn()); // Starts the song after a delay so the notes can catch up 
+        StartCoroutine(EndSong()); // Starts coroutine to stop song
     }
 
     private IEnumerator PlaySongWithLeadIn()
@@ -67,6 +71,16 @@ public class BeatmapManager : MonoBehaviour
         yield return new WaitForSeconds(_leadInTime + startDelay); // Wait for lead-in and delay
         
         songAudioSource.Play(); // Start playing the song
+    }
+
+    private IEnumerator EndSong()
+    {
+        yield return new WaitForSeconds(songAudioSource.clip.length + endDelay);
+        songPlaying = false; // ends the song 
+        
+        // Need to do some funky stuff with the end screen slider
+        
+        StateManager.Instance.SetState(DrumState.EndOfSong);
     }
     
   #region Extract Drum notes

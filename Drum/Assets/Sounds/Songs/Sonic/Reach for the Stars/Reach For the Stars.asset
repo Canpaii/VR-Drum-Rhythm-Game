@@ -17,6 +17,6 @@ MonoBehaviour:
   difficulty: '7* '
   songDuration: 
   bpm: 203
-  songIcon: {fileID: 0}
+  songIcon: {fileID: 21300000, guid: 58fc008d6b8d17b438ee1024909a1b11, type: 3}
   midiFile: Reach_For_The_Stars.mid
   SongAudioClip: {fileID: 8300000, guid: 206cea6daeb74774abb46f949dde48b5, type: 3}

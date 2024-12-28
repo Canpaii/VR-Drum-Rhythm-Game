@@ -6,24 +6,20 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
-   // [SerializeField] private InputActionAsset pedalActionAsset;
-    [SerializeField] private InputActionReference pedalActionReference;
-    private InputAction _pedalAction;
-    [SerializeField] private Drum kick;
-
-    //[SerializeField] private string actionMapName;
-    //[SerializeField] private string actionName;
-    private void Awake()
+    [SerializeField] private InputActionReference pedalActionReference; // Reference to the pedal action, action is set in the inspector
+    private InputAction _pedalAction; // Variable that stores the action and can "perform" the action
+    [SerializeField] private Drum kick; // Reference to the drum component on the kick
+    
+    private void Awake() 
     {
-       //_pedalAction = pedalActionAsset.FindActionMap(actionMapName).FindAction(actionName);
-       _pedalAction = pedalActionReference;
+       _pedalAction = pedalActionReference; // assigns the reference to the InputAction variable, so action can be performed
     }
 
     private void OnEnable()
     {
         _pedalAction.Enable();   
         
-        _pedalAction.performed += OnPedalPressed; // Subscribe OnPedalPressed to pedal Input so when the pedal is pressed call OnPedalPressed
+        _pedalAction.performed += OnPedalPressed; // Subscribe OnPedalPressed to pedal Input so when the foot pedal is pressed call OnPedalPressed
     }
 
     private void OnDisable()
@@ -43,12 +39,5 @@ public class InputHandler : MonoBehaviour
         {
             Debug.Log("Kick not assigned");
         }
-    }
-
-    public void StartRebinding()
-    {
-        _pedalAction.Disable();
-        // _pedalAction.PerformInteractiveRebinding().OnComplete(operation =>
-            
     }
 }

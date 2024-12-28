@@ -1,31 +1,116 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Drum : MonoBehaviour
 {
+    [Header("Events")]
+    [SerializeField] private UnityEvent levelSelectFunction; // Function of this drum when selecting a level
+    [SerializeField] private UnityEvent optionsFunction; // Function of this drum when changing options
+    [SerializeField] private UnityEvent endScreenFunction; // Function of this drum when song ended;
+    
     [Header("Error Margins")] 
     [SerializeField] private float perfectMargin; 
     [SerializeField] private float normalHitMargin;
     [SerializeField] private float missMargin;
     
     [Header("References")]
-    [SerializeField] private Path path;
+    [SerializeField] private Path path; // The path component of the path attached to this drum
     [SerializeField] private AudioSource audio;
-    [SerializeField] private  GameObject particle;
-    [SerializeField] private Transform particlePOS;
+    [SerializeField] private  GameObject particle; // Hit particle of this drum
+    [SerializeField] private Transform particlePOS; // Position of the particle
+    
+    
+    #region OnTriggerEnter
 
     private void OnTriggerEnter(Collider other)
-    {
-        CheckForHits();
-    }
-
-    public void CheckForHits()
     {
         // Play audio and visual effects
         audio.Play();
         GameObject particleObject = Instantiate(particle, transform.position, Quaternion.identity);
         Destroy(particleObject, 1);
+        
+        switch (StateManager.Instance.currentDrumState)
+        {
+            case DrumState.MainMenu:
+                MainMenuDrumBehviour();
+                break;
+            case DrumState.Options:
+                OptionsDrumBehviour();
+                break;
+            case DrumState.LevelSelect:
+                LevelSelectDrumBehviour();
+                break;
+            case DrumState.InGame:
+                InGameDrumBehviour();
+                break;
+            case DrumState.EndOfSong:
+                EndOfSongDrumBehviour();
+                break;
+        }
+    }
+
+    #endregion
+    
+    #region StateBehaviors
+    
+    
+    #region MainMenuDrumBehviour
+    
+    private void MainMenuDrumBehviour()
+    {
+        StateManager.Instance.SetState(DrumState.LevelSelect);
+    }
+    
+    #endregion
+    
+    
+    #region OptionsDrumBehviour
+    private void OptionsDrumBehviour()
+    {
+        optionsFunction?.Invoke();
+    }
+    #endregion
+    
+    
+    #region LevelSelectDrumBehviour
+    private void LevelSelectDrumBehviour()
+    {
+        if (levelSelectFunction != null)
+        {
+            levelSelectFunction?.Invoke();
+        }
+    }
+    #endregion
+    
+    
+    #region InGameDrumBehviour
+    
+    private void InGameDrumBehviour()
+    {
+        if (BeatmapManager.Instance.songPlaying)
+        {
+            CheckForHits();
+        }
+    }
+    
+    #endregion
+    
+    
+    #region EndOfSongDrumBehviour
+    private void EndOfSongDrumBehviour()
+    {
+        endScreenFunction?.Invoke();
+    }
+    #endregion
+    
+
+    #endregion
+    
+    #region Drum Behaviour
+    public void CheckForHits()
+    {
         // Ensure there are notes left to process
         if (0 >= path.notes.Count) return;
 
@@ -42,7 +127,7 @@ public class Drum : MonoBehaviour
         double timeDifference = musicTimer - note.timeStamp; // get the time difference when it got hit and when it should've been hit 
 
         // Check hit timing
-        if (Math.Abs(timeDifference) <= perfectMargin)
+        if (timeDifference >= -perfectMargin && timeDifference <= perfectMargin)
         {
             PerfectHit(noteObject);
         }
@@ -54,7 +139,7 @@ public class Drum : MonoBehaviour
         {
             EarlyHit(noteObject);
         }
-        else if(Math.Abs(timeDifference) <= normalHitMargin)
+        else
         {
             Miss(noteObject);
         }
@@ -86,10 +171,13 @@ public class Drum : MonoBehaviour
     private void RegisterHit(GameObject note, string hitType)
     {
         Debug.Log(hitType);
+        Debug.Log($"Hit registered: {hitType}, Note: {note.name}");
 
         // Destroy the note and update the path
         note.GetComponent<Note>().hit = true;
         Destroy(note);
         path.notes.RemoveAt(0);
     }
+    #endregion
+   
 }
