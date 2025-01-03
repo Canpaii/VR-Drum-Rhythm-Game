@@ -79,10 +79,15 @@ public class ScoreManager : MonoBehaviour
    {
       currentScore.text = score.ToString();
    }
-   public void SetHighScore(float score, string songName) // Set HighScore 
+   public void SetHighScore(string songName) // Set HighScore 
    {
-      int scoreInt = (int)score;
-      PlayerPrefs.SetInt($"{songName}: HighScore", scoreInt);
+      int scoreToSet = (int)score;
+
+      if (scoreToSet > GetHighScore(songName))
+      {
+         PlayerPrefs.SetInt($"{songName}: HighScore", scoreToSet);
+      }
+      
    }
 
    public int GetHighScore(string songName) // get highscore for specific song 

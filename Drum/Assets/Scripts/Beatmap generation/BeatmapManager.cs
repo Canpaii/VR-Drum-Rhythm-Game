@@ -9,6 +9,7 @@ using Melanchall.DryWetMidi.Interaction;
 using Melanchall.DryWetMidi.Multimedia;
 using Melanchall.DryWetMidi.Standards;
 using UnityEngine.Serialization;
+using UnityEngine.SocialPlatforms.Impl;
 
 
 public class BeatmapManager : MonoBehaviour
@@ -30,9 +31,8 @@ public class BeatmapManager : MonoBehaviour
     
     [Header("Song Details")]
     public int inputDelayInMilliseconds;
-    public bool songPlaying;
-    public int startDelay;
-    public int endDelay;
+    [SerializeField] private int startDelay;
+    [SerializeField] private int endDelay;
     
     [Header("Audio references")]
     public SongData songData;
@@ -50,7 +50,7 @@ public class BeatmapManager : MonoBehaviour
 
     public void StartSong() // should make this into a function you can call through UI instead of just a start 
     {
-        songPlaying = true;
+        
         _leadInTime = distance / noteSpeed; // calculates how long it takes for the notes to reach the destination
         globalTime = -_leadInTime - startDelay; // Calculates any delays necessary  
         
@@ -76,8 +76,7 @@ public class BeatmapManager : MonoBehaviour
     private IEnumerator EndSong()
     {
         yield return new WaitForSeconds(songAudioSource.clip.length + endDelay);
-        songPlaying = false; // ends the song 
-        
+        ScoreManager.Instance.SetHighScore(songData.songName);
         // Need to do some funky stuff with the end screen slider
         
         StateManager.Instance.SetState(DrumState.EndOfSong);

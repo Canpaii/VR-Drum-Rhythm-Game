@@ -33,8 +33,8 @@ public class LevelSelector : MonoBehaviour
     {
         currentLevelIndex++;
         
-        // It "loops" to the begining if u reach the last song and press next
-        if (currentLevelIndex >= songData.Length - 1)
+        // It "loops" to the beginning if u reach the last song and press next
+        if (currentLevelIndex >= songData.Length )
         {
             currentLevelIndex = 0;
         }
@@ -65,7 +65,7 @@ public class LevelSelector : MonoBehaviour
 
     public void OpenSettings()
     {
-        
+        StateManager.Instance.SetState(DrumState.Options);
     }
 
     public void HelpIcon()

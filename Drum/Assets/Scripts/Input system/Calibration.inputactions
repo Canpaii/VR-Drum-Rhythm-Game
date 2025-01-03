@@ -1,0 +1,45 @@
+{
+    "name": "Calibration",
+    "maps": [
+        {
+            "name": "Calibration map",
+            "id": "10a5a0f7-c218-41ee-bcf6-a20f526bbdc3",
+            "actions": [
+                {
+                    "name": "VR Trigger press",
+                    "type": "Button",
+                    "id": "749e884d-441f-42c9-8bd1-cfde8e8392f3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "91f0f22d-dd24-4630-8790-3adde87e8667",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VR Trigger press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a43a8df6-85de-4bcf-ba9f-af081183a74a",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VR Trigger press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

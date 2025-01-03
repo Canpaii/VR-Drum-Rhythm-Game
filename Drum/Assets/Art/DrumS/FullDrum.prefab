@@ -4935,6 +4935,7 @@ Transform:
   - {fileID: 6986914326889776046}
   - {fileID: 3326656087775646596}
   - {fileID: 6829943748187642192}
+  - {fileID: 8242448983856295679}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1521282677695636824
@@ -9967,6 +9968,139 @@ MonoBehaviour:
   noteNumbers: 2300000024000000
   notes: []
   notePrefab: {fileID: 3594901393713905001, guid: 02b3a37c40a624346a667cd159ff7f9e, type: 3}
+--- !u!1 &3046794494518758453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8242448983856295679}
+  - component: {fileID: 6607343838032213713}
+  - component: {fileID: 5526695028366963687}
+  - component: {fileID: 8089281964057671665}
+  - component: {fileID: 4131793578523295064}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Drumstick
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8242448983856295679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3046794494518758453}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.985, y: 0.6171, z: -0.4544}
+  m_LocalScale: {x: 0.0959446, y: 0.0959446, z: 0.0959446}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6363231410009865061}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &6607343838032213713
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3046794494518758453}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &5526695028366963687
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3046794494518758453}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8089281964057671665
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3046794494518758453}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &4131793578523295064
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3046794494518758453}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &3069363865528339139
 GameObject:
   m_ObjectHideFlags: 0
@@ -29711,6 +29845,37 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &7669453265798028738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8126728443188432025}
+  m_Layer: 0
+  m_Name: ResetTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8126728443188432025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7669453265798028738}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.011, y: 1.477, z: 0.098}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4938425400843714747}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7713293197804032914
 GameObject:
   m_ObjectHideFlags: 0
@@ -30004,17 +30169,21 @@ PrefabInstance:
       propertyPath: near clip plane
       value: 0.13
       objectReference: {fileID: 0}
+    - target: {fileID: 7277802327471902856, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.33
+      objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.018000007
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.129
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30022,15 +30191,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30051,6 +30220,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1297457794136033959, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
     - {fileID: 5518899284880179293, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+    - {fileID: 3639148551234328385, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -30250,7 +30420,7 @@ AudioSource:
   m_GameObject: {fileID: 272539768828104723}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: be0683126eb6ac0468b5d0d19656f6c8, type: 2}
+  OutputAudioMixerGroup: {fileID: 6318954687846400992, guid: be0683126eb6ac0468b5d0d19656f6c8, type: 2}
   m_audioClip: {fileID: 8300000, guid: df9bace2c1edf6b41b262cc22f1566ea, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
@@ -30349,9 +30519,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.2
-  normalHitMargin: 0.4
-  missMargin: 0.5
+  levelSelectFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  optionsFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  endScreenFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  perfectMargin: 0.1
+  normalHitMargin: 0.2
+  missMargin: 0.23
   path: {fileID: 3524812564425942428}
   audio: {fileID: 1016518199942432291}
   particle: {fileID: 8902115772772260614}
@@ -30597,9 +30776,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.2
-  normalHitMargin: 0.4
-  missMargin: 0.5
+  levelSelectFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+        m_MethodName: OpenSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  optionsFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: ChangeValue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  endScreenFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: EndScreen, Assembly-CSharp
+        m_MethodName: RestartSong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  perfectMargin: 0.1
+  normalHitMargin: 0.2
+  missMargin: 0.23
   path: {fileID: 5457556242983757900}
   audio: {fileID: 824399359615845836}
   particle: {fileID: 2301270767749338681, guid: fe1498c77e682074fb18e0503a6bd054, type: 3}
@@ -30613,10 +30837,10 @@ AudioSource:
   m_GameObject: {fileID: 2274692460035840750}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: be0683126eb6ac0468b5d0d19656f6c8, type: 2}
+  OutputAudioMixerGroup: {fileID: 6318954687846400992, guid: be0683126eb6ac0468b5d0d19656f6c8, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6c79d1628c2f39f4cb238f07a9a96bbc, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.482
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -31412,6 +31636,9 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0afe933b5354ee1438e1095e736aeca5, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 8126728443188432025}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0afe933b5354ee1438e1095e736aeca5, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 8924188987555681062}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0afe933b5354ee1438e1095e736aeca5, type: 3}
@@ -31590,9 +31817,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.2
-  normalHitMargin: 0.4
-  missMargin: 0.5
+  levelSelectFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+        m_MethodName: HelpIcon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  optionsFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: NextSetting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  endScreenFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: EndScreen, Assembly-CSharp
+        m_MethodName: RestartSong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  perfectMargin: 0.1
+  normalHitMargin: 0.2
+  missMargin: 0.23
   path: {fileID: 5162778796869810256}
   audio: {fileID: 7355351579968726510}
   particle: {fileID: 3274267749027213466, guid: c56f1519dbe248d4995fe77901c29873, type: 3}
@@ -31606,7 +31878,7 @@ AudioSource:
   m_GameObject: {fileID: 6389941558596091859}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: be0683126eb6ac0468b5d0d19656f6c8, type: 2}
+  OutputAudioMixerGroup: {fileID: 6318954687846400992, guid: be0683126eb6ac0468b5d0d19656f6c8, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5a9e31e46b94c1f45a37d7adbf0e507c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -31814,9 +32086,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.2
-  normalHitMargin: 0.4
-  missMargin: 0.5
+  levelSelectFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+        m_MethodName: NextSong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  optionsFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: ChangeValue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  endScreenFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  perfectMargin: 0.1
+  normalHitMargin: 0.2
+  missMargin: 0.23
   path: {fileID: 7487263295427260464}
   audio: {fileID: 3163184048235986105}
   particle: {fileID: 1242639317969467524, guid: dde5880310b6b6e49adbbbbd976e54f0, type: 3}
@@ -31830,7 +32135,7 @@ AudioSource:
   m_GameObject: {fileID: 6161774262529000426}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: be0683126eb6ac0468b5d0d19656f6c8, type: 2}
+  OutputAudioMixerGroup: {fileID: 6318954687846400992, guid: be0683126eb6ac0468b5d0d19656f6c8, type: 2}
   m_audioClip: {fileID: 8300000, guid: cd22035923c018c4583449fc54ccd5c4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -32112,9 +32417,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.2
-  normalHitMargin: 0.4
-  missMargin: 0.5
+  levelSelectFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+        m_MethodName: ExitSongSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  optionsFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: ExitSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  endScreenFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: EndScreen, Assembly-CSharp
+        m_MethodName: GoToLevelSelector
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  perfectMargin: 0.1
+  normalHitMargin: 0.2
+  missMargin: 0.23
   path: {fileID: 4439174533960709650}
   audio: {fileID: 9171001703014877280}
   particle: {fileID: 8323919456101790016, guid: d1063e4733700854898f27dae6708c81, type: 3}
@@ -32128,7 +32478,7 @@ AudioSource:
   m_GameObject: {fileID: 6022085500221049787}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: be0683126eb6ac0468b5d0d19656f6c8, type: 2}
+  OutputAudioMixerGroup: {fileID: 6318954687846400992, guid: be0683126eb6ac0468b5d0d19656f6c8, type: 2}
   m_audioClip: {fileID: 8300000, guid: 342db1c0407204b4f936eccc07ae5113, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -32408,9 +32758,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.2
-  normalHitMargin: 0.4
-  missMargin: 0.5
+  levelSelectFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+        m_MethodName: PreviousSong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  optionsFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: ChangeValue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  endScreenFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  perfectMargin: 0.1
+  normalHitMargin: 0.2
+  missMargin: 0.23
   path: {fileID: 2580176027282787397}
   audio: {fileID: 1144146685548310348}
   particle: {fileID: 3913562572840919905, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
@@ -32424,7 +32807,7 @@ AudioSource:
   m_GameObject: {fileID: 7763450545450916116}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: be0683126eb6ac0468b5d0d19656f6c8, type: 2}
+  OutputAudioMixerGroup: {fileID: 6318954687846400992, guid: be0683126eb6ac0468b5d0d19656f6c8, type: 2}
   m_audioClip: {fileID: 8300000, guid: af224001ff3a2254ea3c65c546cd58f2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -32878,12 +33261,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87960f99ce1c024ca5e65ff6f2085bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectMargin: 0.2
-  normalHitMargin: 0.4
-  missMargin: 0.5
+  levelSelectFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+        m_MethodName: StartSong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  optionsFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: ChangeValue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  endScreenFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: EndScreen, Assembly-CSharp
+        m_MethodName: GoToLevelSelector
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  perfectMargin: 0.1
+  normalHitMargin: 0.2
+  missMargin: 0.23
   path: {fileID: 7719187356722509386}
   audio: {fileID: 6262468855596808139}
-  particle: {fileID: 0}
+  particle: {fileID: 2301270767749338681, guid: fe1498c77e682074fb18e0503a6bd054, type: 3}
   particlePOS: {fileID: 1830567321322153994, guid: e5d0b5b8c9165f747a0dcebdc1dbfa66, type: 3}
 --- !u!82 &6262468855596808139
 AudioSource:
@@ -32894,10 +33322,10 @@ AudioSource:
   m_GameObject: {fileID: 8514630982323408249}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 6318954687846400992, guid: be0683126eb6ac0468b5d0d19656f6c8, type: 2}
   m_audioClip: {fileID: 8300000, guid: 56ab64aef1725284b829e94b63113581, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0

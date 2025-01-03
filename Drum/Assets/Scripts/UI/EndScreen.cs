@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class EndScreen : MonoBehaviour
 {
-
+    [SerializeField] private TMP_Text currentScoreText;
+    [SerializeField] private TMP_Text highScoreText;
+    public void ChangeUI()
+    {
+        highScoreText.text = "HighScore: " + ScoreManager.Instance.GetHighScore(BeatmapManager.Instance.songData.songName);
+        currentScoreText.text = "Score: " + ScoreManager.Instance.currentScore.ToString();
+    }
     public void RestartSong()
     {
-       
         BeatmapManager.Instance.StartSong();
         StateManager.Instance.SetState(DrumState.InGame);
     }

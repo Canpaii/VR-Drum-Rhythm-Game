@@ -89,10 +89,7 @@ public class Drum : MonoBehaviour
     
     private void InGameDrumBehviour()
     {
-        if (BeatmapManager.Instance.songPlaying)
-        {
-            CheckForHits();
-        }
+        CheckForHits();
     }
     
     #endregion
