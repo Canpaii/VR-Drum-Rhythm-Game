@@ -4395,22 +4395,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - inputActionReference: {fileID: 5874319525468048433, guid: 2368a7520b85456459eab5f84b368990, type: 3}
-    onActionPerformed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: PlayerCalibration, Assembly-CSharp
-          m_MethodName: CalibratePositionAndRotation
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!4 &358462186
 Transform:
   m_ObjectHideFlags: 0
