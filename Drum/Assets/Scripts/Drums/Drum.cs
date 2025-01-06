@@ -7,7 +7,7 @@ public class Drum : MonoBehaviour
 {
     [Header("Kick")] 
     [SerializeField] private bool kick = false;
-    
+    [SerializeField] private BasHit basHit;
     [Header("Events")]
     [SerializeField] private UnityEvent levelSelectFunction; // Function of this drum when selecting a level
     [SerializeField] private UnityEvent optionsFunction; // Function of this drum when changing options
@@ -115,6 +115,8 @@ public class Drum : MonoBehaviour
         {
             audio.Play();
             GameObject particleObject = Instantiate(particle, transform.position, Quaternion.identity);
+
+            basHit.shouldAnimate = true;
             Destroy(particleObject, 1);
         }
         // Ensure there are notes left to process

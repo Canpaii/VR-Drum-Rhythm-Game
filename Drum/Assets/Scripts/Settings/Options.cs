@@ -77,7 +77,7 @@ public class Options : MonoBehaviour
         
         print("setting master: " + value);
         _masterVolume += value;
-        _masterVolume = Mathf.Clamp(_masterVolume, -80, 20);
+        _masterVolume = Mathf.Clamp(_masterVolume, -80, 0);
   
         masterVolumeText.text = $"Master: {_masterVolume} dB";
         audioMixer.SetFloat("MasterVolume", _masterVolume);
@@ -87,7 +87,7 @@ public class Options : MonoBehaviour
     {
         print("setting music: " + value);
         _musicVolume += value;
-        _musicVolume = Mathf.Clamp(_musicVolume, -80, 20);
+        _musicVolume = Mathf.Clamp(_musicVolume, -80, 0);
   
         musicVolumeText.text = $"Music: {_musicVolume} dB";
         audioMixer.SetFloat("MusicVolume", _musicVolume);
@@ -97,7 +97,7 @@ public class Options : MonoBehaviour
     {
         print("setting sfx: " + value);
         _sfxVolume += value;
-        _sfxVolume = Mathf.Clamp(_sfxVolume, -80, 20);
+        _sfxVolume = Mathf.Clamp(_sfxVolume, -80, 0);
   
         sfxVolumeText.text = $"SFX: {_sfxVolume} dB";
         audioMixer.SetFloat("SFXVolume", _sfxVolume);

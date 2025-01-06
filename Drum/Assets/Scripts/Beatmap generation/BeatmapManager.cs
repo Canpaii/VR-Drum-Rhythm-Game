@@ -50,7 +50,7 @@ public class BeatmapManager : MonoBehaviour
 
     public void StartSong() // should make this into a function you can call through UI instead of just a start 
     {
-        
+        globalTime = 0;
         _leadInTime = distance / noteSpeed; // calculates how long it takes for the notes to reach the destination
         globalTime = -_leadInTime - startDelay; // Calculates any delays necessary  
         

@@ -26,7 +26,7 @@ public class InputManager : MonoBehaviour
                 continue;
             }
 
-            InputAction action = mapping.inputActionReference;
+            InputAction action = mapping.inputActionReference.action;
             if (action == null)
             {
                 Debug.LogWarning("Input Action is null for one of the mappings.");
@@ -43,7 +43,6 @@ public class InputManager : MonoBehaviour
         foreach (var action in enabledActions)
         {
             action.Enable();
-            
         }
     }
 

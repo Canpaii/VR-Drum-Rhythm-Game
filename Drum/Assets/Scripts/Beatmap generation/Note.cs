@@ -18,6 +18,8 @@ public class Note : MonoBehaviour
     private float _despawnTime; // amount of time the note stays visible
     
     public double timeStamp; // the time this note needs to be hit, used for other calculations 
+    
+    private Renderer _renderer;
 
     [Header("References")] 
     public Path path;
@@ -34,6 +36,7 @@ public class Note : MonoBehaviour
 
     public void Start() // few seconds after instantiating destroy the note. this way the note doesnt vanish in players view 
     {
+        _renderer = GetComponent<Renderer>();
        Destroy(gameObject, (_distance/_speed) + _despawnTime);
     }
 
@@ -50,5 +53,8 @@ public class Note : MonoBehaviour
     void Update() // moves the note toward player
     {
         transform.position += transform.forward * _speed * Time.deltaTime;
+        
+        float shaderValue = Mathf.Lerp(-0.7f, -0.119f, (_distance/_speed));
+        _renderer.material.SetFloat("_Slider", shaderValue);
     }
 }

@@ -17,16 +17,20 @@ public class EndScreen : MonoBehaviour
     public void ChangeUI()
     {
         highScoreText.text = "HighScore: " + ScoreManager.Instance.GetHighScore(BeatmapManager.Instance.songData.songName);
-        currentScoreText.text = "Score: " + ScoreManager.Instance.currentScore.ToString();
+        
+        int scoreInt = (int)ScoreManager.Instance.score ; // Make the score an int so you can display it on screen.
+        currentScoreText.text = "Score: " + scoreInt.ToString();
     }
     public void RestartSong()
     {
         BeatmapManager.Instance.StartSong();
         StateManager.Instance.SetState(DrumState.InGame);
+        ScoreManager.Instance.ResetScore();
     }
 
     public void GoToLevelSelector()
     {
        StateManager.Instance.SetState(DrumState.LevelSelect);
+       ScoreManager.Instance.ResetScore();
     }
 }
