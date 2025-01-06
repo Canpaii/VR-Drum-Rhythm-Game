@@ -30,7 +30,7 @@ public class Options : MonoBehaviour
     private void Start()
     {
         UpdateVolumeTexts();
-        ResetPlayerTransform();
+        Invoke("ResetPlayerTransform", 3); // Resets player after a few second when starting the game. This way your starting position will be more consisten.
     }
 
     #region setting select
@@ -42,7 +42,7 @@ public class Options : MonoBehaviour
         print("next setting");
         _currentSettingIndex = (_currentSettingIndex + 1) % 4; 
         // Should add UI indicator for which option ur changing
-        index.text = _currentSettingIndex.ToString();
+        index.text = _currentSettingIndex.ToString(); // testing purposes 
     }
 
     public void ChangeValue(int value)

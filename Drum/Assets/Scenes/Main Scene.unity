@@ -4395,6 +4395,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  enabledActions: []
 --- !u!4 &358462186
 Transform:
   m_ObjectHideFlags: 0
@@ -33665,6 +33666,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5599b35debdcc14abe2efa6bde96e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1488316667 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1684793457529547357, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+  m_PrefabInstance: {fileID: 627210565124918432}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1503682155
 GameObject:
   m_ObjectHideFlags: 0
@@ -39861,6 +39867,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5599b35debdcc14abe2efa6bde96e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1684709151 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 839563151423414222, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+  m_PrefabInstance: {fileID: 627210565124918432}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1684913367
 GameObject:
   m_ObjectHideFlags: 0
@@ -44754,9 +44765,21 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1216456662}
+    - target: {fileID: 134721935771707787, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: drumstickTip
+      value: 
+      objectReference: {fileID: 1684709151}
     - target: {fileID: 862565224647317133, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_Name
       value: FullDrum
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: normalHitMargin
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: optionsFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -44770,6 +44793,14 @@ PrefabInstance:
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728531}
+    - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: normalHitMargin
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: optionsFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -44786,6 +44817,18 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1216456662}
+    - target: {fileID: 4420793707884075382, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: drumstickTip
+      value: 
+      objectReference: {fileID: 1488316667}
+    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: normalHitMargin
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: optionsFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -44798,6 +44841,26 @@ PrefabInstance:
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728531}
+    - target: {fileID: 5602772436975881646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: kick
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602772436975881646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602772436975881646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: normalHitMargin
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: normalHitMargin
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: optionsFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -44847,6 +44910,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: normalHitMargin
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: optionsFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728532}
@@ -44854,6 +44925,14 @@ PrefabInstance:
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728531}
+    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: missMargin
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: normalHitMargin
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: optionsFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -18,15 +18,16 @@ public class LevelSelector : MonoBehaviour
     private void Start()
     {
         BeatmapManager.Instance.songData = songData[0];
+        ChangeUI();
     }
 
     public void ChangeUI() // Changes the UI elements 
     {
         albumCover.sprite = songData[currentLevelIndex].songIcon;
         songName.text = songData[currentLevelIndex].songName;
-        difficultyName.text = songData[currentLevelIndex].difficulty;
+        difficultyName.text = "Difficulty: " + songData[currentLevelIndex].difficulty;
 
-        highScoreText.text = ScoreManager.Instance.GetHighScore(songData[currentLevelIndex].songName).ToString();
+        highScoreText.text = "HighScore: " + ScoreManager.Instance.GetHighScore(songData[currentLevelIndex].songName).ToString();
     }
 
     public void NextSong() // select the next song in the array

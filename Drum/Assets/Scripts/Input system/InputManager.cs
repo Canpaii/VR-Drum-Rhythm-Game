@@ -14,7 +14,7 @@ public struct InputActionMapping
 public class InputManager : MonoBehaviour
 {
     [SerializeField] private List<InputActionMapping> inputActionMappings = new List<InputActionMapping>();
-    private List<InputAction> enabledActions = new List<InputAction>();
+    public List<InputAction> enabledActions = new List<InputAction>(); // Public for debugging purposes
 
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class InputManager : MonoBehaviour
                 continue;
             }
 
-            InputAction action = mapping.inputActionReference.action;
+            InputAction action = mapping.inputActionReference;
             if (action == null)
             {
                 Debug.LogWarning("Input Action is null for one of the mappings.");
@@ -43,6 +43,7 @@ public class InputManager : MonoBehaviour
         foreach (var action in enabledActions)
         {
             action.Enable();
+            
         }
     }
 

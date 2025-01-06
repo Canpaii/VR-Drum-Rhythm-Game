@@ -21,7 +21,24 @@ public class DrumSticks : MonoBehaviour
   private bool drumRolling;
   float _rollFrequency;
   float _time;
-  
+
+  public void Update()
+  {
+    if (drumRolling)
+    {
+       PlayDrumRoll();
+    }
+  }
+
+  public void StartDrumRoll()
+  {
+    drumRolling = true;
+  }
+
+  public void StopDrumRoll()
+  {
+    drumRolling = false;
+  }
   public void CalculateDrumRollFrequency(int bpm)
   {
     _rollFrequency = bpm / 60; // beats per second 

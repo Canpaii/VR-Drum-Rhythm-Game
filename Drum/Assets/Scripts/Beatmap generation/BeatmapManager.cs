@@ -78,7 +78,7 @@ public class BeatmapManager : MonoBehaviour
         yield return new WaitForSeconds(songAudioSource.clip.length + endDelay);
         ScoreManager.Instance.SetHighScore(songData.songName);
         // Need to do some funky stuff with the end screen slider
-        
+        EndScreen.Instance.ChangeUI();
         StateManager.Instance.SetState(DrumState.EndOfSong);
     }
     

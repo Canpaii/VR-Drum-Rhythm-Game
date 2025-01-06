@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class Drum : MonoBehaviour
 {
+    [Header("Kick")] 
+    [SerializeField] private bool kick = false;
+    
     [Header("Events")]
     [SerializeField] private UnityEvent levelSelectFunction; // Function of this drum when selecting a level
     [SerializeField] private UnityEvent optionsFunction; // Function of this drum when changing options
@@ -108,6 +111,12 @@ public class Drum : MonoBehaviour
     #region Drum Behaviour
     public void CheckForHits()
     {
+        if (kick) // Since the kick doesn't have a trigger, it won't play a sound or particle when this is called through an action. So I added a bool
+        {
+            audio.Play();
+            GameObject particleObject = Instantiate(particle, transform.position, Quaternion.identity);
+            Destroy(particleObject, 1);
+        }
         // Ensure there are notes left to process
         if (0 >= path.notes.Count) return;
 
@@ -136,10 +145,10 @@ public class Drum : MonoBehaviour
         {
             EarlyHit(noteObject);
         }
-        else
+       /* else
         {
             Miss(noteObject);
-        }
+        } */
     }
     private void PerfectHit(GameObject note)
     {
