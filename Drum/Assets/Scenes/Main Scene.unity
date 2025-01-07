@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!114 &2061958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4655,8 +4655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!114 &241029429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5619,8 +5619,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!212 &267282394
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6761,8 +6761,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!114 &317432067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7628,7 +7628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8913,8 +8913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!114 &398509802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9062,8 +9062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!114 &399853486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10782,77 +10782,77 @@ MonoBehaviour:
     - name: Text
       lifeTime: 10
       particlePrefab: {fileID: 8963774558573173773, guid: edaee7750321e3f4d8b06b3e692f47fd, type: 3}
-      activationTime: -7
+      activationTime: 1.5
       position: {x: 0.674, y: 1.543, z: 4.86}
       rotation: {x: 0, y: 0, z: 0}
       audioClip: {fileID: 0}
     - name: SEKAIDEEEE(hearts)
       lifeTime: 10
       particlePrefab: {fileID: 8967190333369922144, guid: ff1f87ce92fd3194099ab74fe3a96a8c, type: 3}
-      activationTime: 58
+      activationTime: 66.5
       position: {x: 10.5, y: -6, z: 122}
       rotation: {x: -30.693, y: 0, z: 0}
       audioClip: {fileID: 0}
     - name: SEKAIDEEEE(hearts)
       lifeTime: 10
       particlePrefab: {fileID: 6235459498073132661, guid: 88b7aa22579eb9442a58036dd8d6d3ff, type: 3}
-      activationTime: 58
+      activationTime: 66.5
       position: {x: -10.5, y: -6, z: 122}
       rotation: {x: -30.693, y: 0, z: 0}
       audioClip: {fileID: 0}
     - name: WHAAAAAAAA
       lifeTime: 3
       particlePrefab: {fileID: 388194469738528289, guid: fe31e3e27446d5744aeb76f3f33104a2, type: 3}
-      activationTime: 93
+      activationTime: 101.5
       position: {x: 0, y: 1.124, z: 4.179}
       rotation: {x: 0, y: 0, z: 0}
       audioClip: {fileID: 0}
     - name: Text
       lifeTime: 10
       particlePrefab: {fileID: 8963774558573173773, guid: edaee7750321e3f4d8b06b3e692f47fd, type: 3}
-      activationTime: 59
+      activationTime: 67.5
       position: {x: 0.674, y: 1.543, z: 4.86}
       rotation: {x: 0, y: 0, z: 0}
       audioClip: {fileID: 0}
     - name: SEKAIDEEEE(hearts)
       lifeTime: 10
       particlePrefab: {fileID: 8967190333369922144, guid: ff1f87ce92fd3194099ab74fe3a96a8c, type: 3}
-      activationTime: 131
+      activationTime: 139.5
       position: {x: 10.5, y: -6, z: 122}
       rotation: {x: -30.693, y: 0, z: 0}
       audioClip: {fileID: 0}
     - name: SEKAIDEEEE(hearts)
       lifeTime: 10
       particlePrefab: {fileID: 6235459498073132661, guid: 88b7aa22579eb9442a58036dd8d6d3ff, type: 3}
-      activationTime: 131
+      activationTime: 139.5
       position: {x: -10.5, y: -6, z: 122}
       rotation: {x: -30.693, y: 0, z: 0}
       audioClip: {fileID: 0}
     - name: Text
       lifeTime: 5
       particlePrefab: {fileID: 8963774558573173773, guid: edaee7750321e3f4d8b06b3e692f47fd, type: 3}
-      activationTime: 132
+      activationTime: 140.5
       position: {x: 0.674, y: 1.543, z: 4.86}
       rotation: {x: 0, y: 0, z: 0}
       audioClip: {fileID: 0}
     - name: SEKAIDEEEE(hearts)
       lifeTime: 10
       particlePrefab: {fileID: 8967190333369922144, guid: ff1f87ce92fd3194099ab74fe3a96a8c, type: 3}
-      activationTime: 194
+      activationTime: 202.5
       position: {x: 10.5, y: -6, z: 122}
       rotation: {x: -30.693, y: 0, z: 0}
       audioClip: {fileID: 0}
     - name: SEKAIDEEEE(hearts)
       lifeTime: 10
       particlePrefab: {fileID: 6235459498073132661, guid: 88b7aa22579eb9442a58036dd8d6d3ff, type: 3}
-      activationTime: 194
+      activationTime: 202.5
       position: {x: -10.5, y: -6, z: 122}
       rotation: {x: -30.693, y: 0, z: 0}
       audioClip: {fileID: 0}
     - name: Text
       lifeTime: 5
       particlePrefab: {fileID: 8963774558573173773, guid: edaee7750321e3f4d8b06b3e692f47fd, type: 3}
-      activationTime: 195
+      activationTime: 203.5
       position: {x: 0.674, y: 1.543, z: 4.86}
       rotation: {x: 0, y: 0, z: 0}
       audioClip: {fileID: 0}
@@ -16351,7 +16351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1c550f51daf77439a9ddc5b0ea1ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMaterial2: {fileID: 0}
   presets2:
   - name2: Main menu
     baseColor2: {r: 1, g: 1, b: 1, a: 0}
@@ -18498,8 +18497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!114 &864560976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19707,8 +19706,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!212 &904778712
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34030,8 +34029,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!212 &1422290567
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -47677,8 +47676,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!114 &1835091048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47933,8 +47932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!114 &1840336074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49529,8 +49528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!114 &1886414767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50065,8 +50064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!212 &1898229996
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -51003,8 +51002,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!114 &1927231025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51254,8 +51253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!114 &1942540787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53200,8 +53199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!212 &2051119052
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -54464,8 +54463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8ac58fbe783c4db51ddd9a9b65763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  maxMovement: 0
+  speed: 5
+  maxMovement: 0.02
 --- !u!114 &2112062504
 MonoBehaviour:
   m_ObjectHideFlags: 0

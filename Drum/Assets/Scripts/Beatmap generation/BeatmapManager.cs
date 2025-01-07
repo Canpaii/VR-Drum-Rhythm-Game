@@ -51,16 +51,21 @@ public class BeatmapManager : MonoBehaviour
     public void StartSong() // should make this into a function you can call through UI instead of just a start 
     {
         globalTime = 0;
-        _leadInTime = distance / noteSpeed; // calculates how long it takes for the notes to reach the destination
+        _leadInTime = distance / noteSpeed; // Calculates how long it takes for the notes to reach the destination
         globalTime = -_leadInTime - startDelay; // Calculates any delays necessary  
-        
-        ReadMidiFile(songData.midiFile); // need to change this for the level selector later 
-        songAudioSource.clip = songData.SongAudioClip; // change audioclip to apropriate song
-        
+
+        ReadMidiFile(songData.midiFile); // Need to change this for the level selector later 
+        songAudioSource.clip = songData.SongAudioClip; // Change audio clip to the appropriate song
+
         foreach (var drumStick in drumSticks)
         {
-            drumStick.CalculateDrumRollFrequency(songData.bpm); // calculates frequency for the drum roll
+            drumStick.CalculateDrumRollFrequency(songData.bpm); // Calculates frequency for the drum roll
         }
+
+        // Update the presetSelector in ParticleManage
+        var particleManager = FindObjectOfType<ParticleManage>();
+            particleManager.presetSelector = songData.environmentPreset; // deze dingetje veranderd de enviorment + particle preset :3 hoi can ik heb je script aangeraakt
+        particleManager.isPresetActive = true;
 
         StartCoroutine(PlaySongWithLeadIn()); // Starts the song after a delay so the notes can catch up 
         StartCoroutine(EndSong()); // Starts coroutine to stop song

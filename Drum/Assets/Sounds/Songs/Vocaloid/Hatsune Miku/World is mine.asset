@@ -16,6 +16,7 @@ MonoBehaviour:
   songAuthor: Ryo (Supercell)
   difficulty: 9
   songDuration: 4:08
+  environmentPreset: 2
   bpm: 165
   songIcon: {fileID: 21300000, guid: 3a7df7750779c1d48a8389b8a7e2b3dc, type: 3}
   midiFile: World_Is_Mine.mid

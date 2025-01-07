@@ -18,7 +18,7 @@ public class PresetsList
 public class SongArtManager : MonoBehaviour
 {
     [Header("Shader Parameters")]
-    public Material targetMaterial2;
+    private Material targetMaterial2;
 
     public PresetsList[] presets2;
 

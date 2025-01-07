@@ -12,6 +12,7 @@ public class SongData : ScriptableObject
     public string songAuthor;
     public string difficulty;
     public string songDuration;
+    public float environmentPreset;
     
     public int bpm;
     public Sprite songIcon;
