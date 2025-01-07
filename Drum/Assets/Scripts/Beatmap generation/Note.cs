@@ -52,9 +52,23 @@ public class Note : MonoBehaviour
     
     void Update() // moves the note toward player
     {
-        transform.position += transform.forward * _speed * Time.deltaTime;
-        
-        float shaderValue = Mathf.Lerp(-0.7f, -0.119f, (_distance/_speed));
-        _renderer.material.SetFloat("_Slider", shaderValue);
+         // Move the note forward
+         transform.position += transform.forward * _speed * Time.deltaTime;
+ 
+         float totalLifetime = (_distance / _speed);
+         float timeSinceSpawn = totalLifetime - ((_distance - Vector3.Distance(transform.position, Vector3.zero)) / _speed);
+         
+         // Clamp timeSinceSpawn to ensure it stays between 0 and totalLifetime
+         timeSinceSpawn = Mathf.Clamp(timeSinceSpawn, 0f, totalLifetime);
+         
+         // Normalize timeSinceSpawn to get the progress from 0 to 1
+         float progress = timeSinceSpawn / totalLifetime;
+         
+         // Reverse the progress to flip the interpolation so it goes out instead of in
+         float reversedProgress = 1 - progress;
+         
+         // Interpolate shader value from -0.7 to -0.119 based on reversed progress
+         float shaderValue = Mathf.Lerp(-0.7f, 0f, reversedProgress);
+         _renderer.material.SetFloat("_Slider", shaderValue);
     }
 }
