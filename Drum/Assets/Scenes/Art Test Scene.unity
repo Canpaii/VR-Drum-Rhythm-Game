@@ -26240,7 +26240,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1414707355}
-  - component: {fileID: 1414707356}
   m_Layer: 0
   m_Name: -------Managers-------
   m_TagString: Untagged
@@ -26265,18 +26264,6 @@ Transform:
   - {fileID: 2031394481}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1414707356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414707354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d80af69ed045742a75f5fc45e5ddc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1415566504 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 389e6eac9dc499b47837dc0c110f3f93, type: 3}
@@ -38819,9 +38806,10 @@ MonoBehaviour:
   - {fileID: 627210565124918433}
   distance: 8
   globalTime: 0
-  startDelay: 6
   inputDelayInMilliseconds: 0
-  song: {fileID: 11400000, guid: d88638a6ba013b14f9e149017cfc3b32, type: 2}
+  startDelay: 6
+  endDelay: 0
+  songData: {fileID: 0}
   songAudioSource: {fileID: 0}
   drumRollThreshhold: 0
   drumSticks:
