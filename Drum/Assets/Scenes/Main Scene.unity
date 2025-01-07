@@ -30693,6 +30693,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 569f69df43766ca439fc8ee3d60e8fbd, type: 2}
   - {fileID: 11400000, guid: 955856480eba9f545b89ae994f041fe6, type: 2}
   - {fileID: 11400000, guid: c92751281eb0da043bd68157db6f0460, type: 2}
+  - {fileID: 11400000, guid: d2bbfc97951c65a43a88823c202b88b3, type: 2}
+  - {fileID: 11400000, guid: 1291f212e2e73f9469361ac62ca773f4, type: 2}
+  - {fileID: 11400000, guid: 574db86e7c9db7644bd7c655d7616faa, type: 2}
+  - {fileID: 11400000, guid: 13d1e8fbdf1d14a4d9380f21963473cc, type: 2}
+  - {fileID: 11400000, guid: 4577a2795f9a22b449e6fe8514082f37, type: 2}
+  - {fileID: 11400000, guid: 4d972544b3f3573449b98132b5f27ac3, type: 2}
   albumCover: {fileID: 452613469}
   highScoreText: {fileID: 251164228}
   songName: {fileID: 2138743152}
