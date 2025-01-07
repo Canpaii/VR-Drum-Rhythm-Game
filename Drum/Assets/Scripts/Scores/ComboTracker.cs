@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ComboTracker : MonoBehaviour
 {
-    private int combo;
+    public int combo;
     private int maxCombo;
     public int comboMilestone;
 

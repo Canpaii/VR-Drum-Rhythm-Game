@@ -40,7 +40,7 @@ public class LevelSelector : MonoBehaviour
             currentLevelIndex = 0;
         }
         
-        BeatmapManager.Instance.songData = songData[currentLevelIndex];
+       //  BeatmapManager.Instance.songData = ;
         ChangeUI();
     }
 
@@ -60,7 +60,7 @@ public class LevelSelector : MonoBehaviour
     
     public void StartSong()
     {
-        BeatmapManager.Instance.StartSong();
+        BeatmapManager.Instance.StartSong(songData[currentLevelIndex]);
         StateManager.Instance.SetState(DrumState.InGame);
     }
 

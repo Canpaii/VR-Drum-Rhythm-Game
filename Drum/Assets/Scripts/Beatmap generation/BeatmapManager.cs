@@ -48,11 +48,13 @@ public class BeatmapManager : MonoBehaviour
         Instance = this;
     }
 
-    public void StartSong() // should make this into a function you can call through UI instead of just a start 
+    public void StartSong(SongData currentSong) // should make this into a function you can call through UI instead of just a start 
     {
         globalTime = 0;
         _leadInTime = distance / noteSpeed; // Calculates how long it takes for the notes to reach the destination
         globalTime = -_leadInTime - startDelay; // Calculates any delays necessary  
+        songData = currentSong;
+
 
         ReadMidiFile(songData.midiFile); // Need to change this for the level selector later 
         songAudioSource.clip = songData.SongAudioClip; // Change audio clip to the appropriate song

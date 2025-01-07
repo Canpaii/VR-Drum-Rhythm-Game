@@ -23,7 +23,7 @@ public class EndScreen : MonoBehaviour
     }
     public void RestartSong()
     {
-        BeatmapManager.Instance.StartSong();
+        //BeatmapManager.Instance.StartSong();
         StateManager.Instance.SetState(DrumState.InGame);
         ScoreManager.Instance.ResetScore();
     }

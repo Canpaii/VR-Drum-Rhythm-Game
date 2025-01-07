@@ -34,7 +34,6 @@ public class HitFeedbackManager : MonoBehaviour
 
     private void Update()
     {
-        // Controleer op veranderingen
         if (scoreManager.perfectHits > previousPerfectHits)
         {
             ShowFeedback(perfectHitObject);
@@ -59,7 +58,6 @@ public class HitFeedbackManager : MonoBehaviour
 
     private void ShowFeedback(GameObject feedbackObject)
     {
-        // Als hetzelfde object al actief is, doe niets
         if (currentFeedbackObject == feedbackObject)
         {
             return;
