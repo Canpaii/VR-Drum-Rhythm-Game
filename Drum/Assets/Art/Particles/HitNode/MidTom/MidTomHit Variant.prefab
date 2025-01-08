@@ -36,6 +36,14 @@ PrefabInstance:
       propertyPath: ShapeModule.radius.value
       value: 0.20159164
       objectReference: {fileID: 0}
+    - target: {fileID: 1262572361200973723, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
+      propertyPath: VelocityModule.orbitalX.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262572361200973723, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
+      propertyPath: VelocityModule.orbitalY.scalar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1435196843452271599, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.10899997
@@ -148,6 +156,14 @@ PrefabInstance:
       propertyPath: ShapeModule.radius.value
       value: 0.20316154
       objectReference: {fileID: 0}
+    - target: {fileID: 4305876752093749207, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
+      propertyPath: VelocityModule.orbitalX.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305876752093749207, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
+      propertyPath: VelocityModule.orbitalY.scalar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4628040049211259439, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.109
@@ -203,6 +219,14 @@ PrefabInstance:
     - target: {fileID: 5796076251197090395, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.19936043
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796076251197090395, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
+      propertyPath: VelocityModule.orbitalX.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796076251197090395, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
+      propertyPath: VelocityModule.orbitalY.scalar
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6093154777317544602, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -267,6 +291,14 @@ PrefabInstance:
     - target: {fileID: 7964037224689681989, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.20171414
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964037224689681989, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
+      propertyPath: VelocityModule.orbitalX.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964037224689681989, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
+      propertyPath: VelocityModule.orbitalY.scalar
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8677604111312656146, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
       propertyPath: m_Materials.Array.data[0]

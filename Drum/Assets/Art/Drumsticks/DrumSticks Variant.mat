@@ -44,5 +44,5 @@ Material:
     - _FreselEffect: 5.43
     - _QueueControl: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 0.26431033, g: 0.21226418, b: 1, a: 0}
   m_BuildTextureStacks: []
