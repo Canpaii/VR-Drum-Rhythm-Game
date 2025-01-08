@@ -23,7 +23,6 @@ public class ScoreManager : MonoBehaviour
    public ComboTracker comboTracker;
    
    [Header("UI References")]
-   public TMP_Text highScoreText;
    public TMP_Text currentScore;
    
    private int maxScore = 1000000; // the maximum amount of score you can receive in one map (1 million)

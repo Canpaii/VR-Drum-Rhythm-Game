@@ -16,6 +16,7 @@ MonoBehaviour:
   songAuthor: Ryo (Supercell)
   difficulty: 9
   songDuration: 4:08
+  durationInSeconds: 253
   environmentPreset: 2
   bpm: 165
   songIcon: {fileID: 21300000, guid: 7fddb487db7220f4e81e22a08954bb15, type: 3}

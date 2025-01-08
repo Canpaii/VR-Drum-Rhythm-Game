@@ -1,13 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using Random = System.Random;
 
 public class StateManager : MonoBehaviour
 {
     public static StateManager Instance; // Make singleton 
-    public DrumState currentDrumState {get; private set;} // Variable that holds the state 
+    public DrumState currentDrumState; // {get; private set;} // Variable that holds the state 
     [SerializeField] private GameObject[] drumPortraits;
     [SerializeField] private GameObject[] uiPanels;
+    
     private void Awake() // Sets Instance
     {
         if (Instance == null)

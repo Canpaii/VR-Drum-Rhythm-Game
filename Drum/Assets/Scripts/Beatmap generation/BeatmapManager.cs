@@ -48,27 +48,27 @@ public class BeatmapManager : MonoBehaviour
         Instance = this;
     }
 
-    public void StartSong(SongData currentSong) // should make this into a function you can call through UI instead of just a start 
+    public void StartSong() // should make this into a function you can call through UI instead of just a start 
     {
+        StateManager.Instance.SetState(DrumState.InGame); // Set GameState to ingame
+        
         globalTime = 0;
         _leadInTime = distance / noteSpeed; // Calculates how long it takes for the notes to reach the destination
         globalTime = -_leadInTime - startDelay; // Calculates any delays necessary  
-        songData = currentSong;
-
 
         ReadMidiFile(songData.midiFile); // Need to change this for the level selector later 
         songAudioSource.clip = songData.SongAudioClip; // Change audio clip to the appropriate song
-
-        foreach (var drumStick in drumSticks)
-        {
-            drumStick.CalculateDrumRollFrequency(songData.bpm); // Calculates frequency for the drum roll
-        }
-
+        
         // Update the presetSelector in ParticleManage
         var particleManager = FindObjectOfType<ParticleManage>();
             particleManager.presetSelector = songData.environmentPreset; // deze dingetje veranderd de enviorment + particle preset :3 hoi can ik heb je script aangeraakt
         particleManager.isPresetActive = true;
-
+        
+        foreach (var drumStick in drumSticks) // Most things drum roll related is still in the project but they dont do anything since I couldnt make it work
+        {
+            drumStick.CalculateDrumRollFrequency(songData.bpm); // Calculates frequency for the drum roll
+        }
+        
         StartCoroutine(PlaySongWithLeadIn()); // Starts the song after a delay so the notes can catch up 
         StartCoroutine(EndSong()); // Starts coroutine to stop song
     }
@@ -82,7 +82,7 @@ public class BeatmapManager : MonoBehaviour
 
     private IEnumerator EndSong()
     {
-        yield return new WaitForSeconds(songAudioSource.clip.length + endDelay);
+        yield return new WaitForSeconds(songAudioSource.clip.length + endDelay + startDelay + _leadInTime);
         ScoreManager.Instance.SetHighScore(songData.songName);
         // Need to do some funky stuff with the end screen slider
         EndScreen.Instance.ChangeUI();

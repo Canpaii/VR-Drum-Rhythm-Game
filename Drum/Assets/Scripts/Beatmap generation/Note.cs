@@ -11,6 +11,7 @@ public class Note : MonoBehaviour
     [Header("Bool")]
     public bool drumRollable;
     public bool hit;
+    
     [Header("Core Variables")]
     private float _missMargin; // the time the player has to hit this note. after this time note cant be hit.
     private float _speed;

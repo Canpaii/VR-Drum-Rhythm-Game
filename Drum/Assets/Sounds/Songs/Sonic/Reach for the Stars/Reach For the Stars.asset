@@ -16,6 +16,7 @@ MonoBehaviour:
   songAuthor: SEGA
   difficulty: 7
   songDuration: 
+  durationInSeconds: 245
   environmentPreset: 1
   bpm: 203
   songIcon: {fileID: 21300000, guid: 58fc008d6b8d17b438ee1024909a1b11, type: 3}

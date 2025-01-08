@@ -21,7 +21,7 @@ public class Drum : MonoBehaviour
     [Header("References")]
     [SerializeField] private Path path; // The path component of the path attached to this drum
     [SerializeField] private AudioSource audio;
-    [SerializeField] private  GameObject particle; // Hit particle of this drum
+    [SerializeField] private GameObject particle; // Hit particle of this drum
     [SerializeField] private Transform particlePOS; // Position of the particle
     
     
@@ -129,7 +129,10 @@ public class Drum : MonoBehaviour
             print("No note found");
         }
         if (noteObject == null) return;
-
+        if (noteObject)
+        {
+            print(noteObject.name);
+        }
         Note note = noteObject.GetComponent<Note>();
         double musicTimer = BeatmapManager.GetAudioSourceTime() - BeatmapManager.Instance.inputDelayInMilliseconds / 1000.0;
         double timeDifference = musicTimer - note.timeStamp; // get the time difference when it got hit and when it should've been hit 

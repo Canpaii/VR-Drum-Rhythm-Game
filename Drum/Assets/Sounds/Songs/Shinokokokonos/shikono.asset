@@ -15,7 +15,8 @@ MonoBehaviour:
   songName: My Deer Friend Nokotan
   songAuthor: Shikairo Days
   difficulty: 9
-  songDuration: 90
+  songDuration: 1:30
+  durationInSeconds: 90
   environmentPreset: 3
   bpm: 0
   songIcon: {fileID: 21300000, guid: 76ebc60b32d261349be60df6c9a037ff, type: 3}
