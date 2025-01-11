@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songName: Peace sign
   songAuthor: Kenshi Yonezu
-  difficulty: 3
+  difficulty: 6
   songDuration: 242
+  durationInSeconds: 0
   environmentPreset: 3
   bpm: 0
-  songIcon: {fileID: 21300000, guid: 76ebc60b32d261349be60df6c9a037ff, type: 3}
+  songIcon: {fileID: 21300000, guid: 029bd28232867b542a76199f22638f26, type: 3}
   midiFile: MHA.mid
   SongAudioClip: {fileID: 8300000, guid: 94b106e5e8db1594e9f506aa30220d35, type: 3}

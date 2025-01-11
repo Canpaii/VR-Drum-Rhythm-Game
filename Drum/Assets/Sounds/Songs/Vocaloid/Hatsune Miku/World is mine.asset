@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songName: World is mine
   songAuthor: Ryo (Supercell)
-  difficulty: 9
+  difficulty: 8
   songDuration: 4:08
   durationInSeconds: 253
   environmentPreset: 2

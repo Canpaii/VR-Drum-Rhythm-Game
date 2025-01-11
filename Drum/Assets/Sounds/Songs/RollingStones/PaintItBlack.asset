@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songName: Paint it black
   songAuthor: Rolling stones
-  difficulty: 5
+  difficulty: 6
   songDuration: 225
+  durationInSeconds: 0
   environmentPreset: 3
   bpm: 0
   songIcon: {fileID: 21300000, guid: 6797bbb5a001c104f92403dd147d6702, type: 3}

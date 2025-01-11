@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songName: 'Reach For the Stars '
   songAuthor: SEGA
-  difficulty: 7
+  difficulty: 6
   songDuration: 
   durationInSeconds: 245
   environmentPreset: 1
