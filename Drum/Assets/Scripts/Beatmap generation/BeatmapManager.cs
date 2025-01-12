@@ -18,7 +18,6 @@ public class BeatmapManager : MonoBehaviour
     
     [Header("Note Details")] 
     public float noteSpeed; //the speed the note moves towards the drum
-    public float normalHitMargin;
     public float noteDespawn;
     
     [Header("Paths")]
@@ -134,7 +133,7 @@ public class BeatmapManager : MonoBehaviour
               lastNoteTimes[note.NoteNumber] = seconds; // sets the new timer for 
 
               // Initialize the note component with relevant data
-              noteComponent.Initialize(noteSpeed, distance, normalHitMargin, seconds, noteDespawn);
+              noteComponent.Initialize(noteSpeed, distance, seconds, noteDespawn);
 
               path.AddNoteObject(noteObject); // Store the reference to the spawned note object
 
@@ -174,7 +173,7 @@ public class BeatmapManager : MonoBehaviour
               }
 
               double adjustedSpawnTime = note.GetComponent<Note>().timeStamp - _leadInTime; // Calculate when note should be spawned
-              if (globalTime >= adjustedSpawnTime) // spawn at that 
+              if (globalTime >= adjustedSpawnTime) // spawn at adjusted time
               {
                   note.SetActive(true);
               }

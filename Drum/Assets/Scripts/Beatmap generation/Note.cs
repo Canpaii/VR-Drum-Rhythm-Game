@@ -13,7 +13,6 @@ public class Note : MonoBehaviour
     public bool hit;
     
     [Header("Core Variables")]
-    private float _missMargin; // the time the player has to hit this note. after this time note cant be hit.
     private float _speed;
     private float _distance;
     private float _despawnTime; // amount of time the note stays visible
@@ -24,12 +23,11 @@ public class Note : MonoBehaviour
 
     [Header("References")] 
     public Path path;
-    public void Initialize(float noteSpeed, float distance, float missMargin, double hitTimeStamp, float despawnTime)
+    public void Initialize(float noteSpeed, float distance, double hitTimeStamp, float despawnTime)
     {
         _speed = noteSpeed;
         _distance = distance;
         
-        _missMargin = missMargin;
         timeStamp = hitTimeStamp;
         
         _despawnTime = despawnTime;

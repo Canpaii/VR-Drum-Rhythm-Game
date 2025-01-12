@@ -8,7 +8,9 @@ public class Drum : MonoBehaviour
     [Header("Kick")] 
     [SerializeField] private bool kick = false;
     [SerializeField] private BasHit basHit;
+    
     [Header("Events")]
+    [SerializeField] private UnityEvent mainMenuFunction; // Function of the drum when in the main menu
     [SerializeField] private UnityEvent levelSelectFunction; // Function of this drum when selecting a level
     [SerializeField] private UnityEvent optionsFunction; // Function of this drum when changing options
     [SerializeField] private UnityEvent endScreenFunction; // Function of this drum when song ended;
@@ -31,7 +33,7 @@ public class Drum : MonoBehaviour
     {
         // Play audio and visual effects
         audio.Play();
-        GameObject particleObject = Instantiate(particle, transform.position, Quaternion.identity);
+        GameObject particleObject = Instantiate(particle, particlePOS.transform);
         Destroy(particleObject, 1);
         
         switch (StateManager.Instance.currentDrumState)
@@ -63,7 +65,7 @@ public class Drum : MonoBehaviour
     
     private void MainMenuDrumBehviour()
     {
-        StateManager.Instance.SetState(DrumState.LevelSelect);
+        mainMenuFunction.Invoke();
     }
     
     #endregion
@@ -114,7 +116,7 @@ public class Drum : MonoBehaviour
         if (kick) // Since the kick doesn't have a trigger, it won't play a sound or particle when this is called through an action. So I added a bool
         {
             audio.Play();
-            GameObject particleObject = Instantiate(particle, transform.position, Quaternion.identity);
+            GameObject particleObject = Instantiate(particle, particlePOS.transform);
 
             basHit.shouldAnimate = true;
             Destroy(particleObject, 1);
