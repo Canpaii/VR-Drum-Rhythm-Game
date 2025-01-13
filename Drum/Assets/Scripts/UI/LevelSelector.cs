@@ -6,8 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class LevelSelector : MonoBehaviour
 {
-    [SerializeField] private SongData[] songData;
-    private int currentLevelIndex;
+    [SerializeField] public SongData[] songData;
+    public int currentLevelIndex;
     
     [Header("UI Elements")]
     [SerializeField] private Image albumCover;

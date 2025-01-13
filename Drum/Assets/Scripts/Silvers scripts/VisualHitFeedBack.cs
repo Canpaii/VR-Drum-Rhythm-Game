@@ -14,6 +14,10 @@ public class HitFeedbackManager : MonoBehaviour
     // Referentie naar de ScoreManager
     public ScoreManager scoreManager;
 
+    // Particle-system prefab voor perfect hit feedback
+    public ParticleSystem perfectHitParticle1;
+    public ParticleSystem perfectHitParticle2;
+
     // Huidige waarden om veranderingen te detecteren
     private int previousPerfectHits;
     private int previousEarlyHits;
@@ -37,6 +41,7 @@ public class HitFeedbackManager : MonoBehaviour
         if (scoreManager.perfectHits > previousPerfectHits)
         {
             ShowFeedback(perfectHitObject);
+            SpawnPerfectHitParticles(); // Spawn particles bij een perfecte hit
             previousPerfectHits = scoreManager.perfectHits;
         }
         else if (scoreManager.earlyHits > previousEarlyHits)
@@ -75,5 +80,26 @@ public class HitFeedbackManager : MonoBehaviour
 
         // Stel het huidige feedbackobject in
         currentFeedbackObject = feedbackObject;
+    }
+
+    private void SpawnPerfectHitParticles()
+    {
+        // Eerste particle komt iets naar links van de feedback positie
+        Vector3 particle1Position = feedbackPosition.position + new Vector3(-0.5f, 0, 0);
+        if (perfectHitParticle1 != null)
+        {
+            // Instantiate de particle binnen dezelfde parent als feedbackPosition
+            ParticleSystem particle1 = Instantiate(perfectHitParticle1, particle1Position, Quaternion.identity, feedbackPosition.parent);
+            Destroy(particle1.gameObject, particle1.main.duration + particle1.main.startLifetime.constantMax);
+        }
+
+        // Tweede particle komt iets naar rechts van de feedback positie
+        Vector3 particle2Position = feedbackPosition.position + new Vector3(0.5f, 0, 0);
+        if (perfectHitParticle2 != null)
+        {
+            // Instantiate de particle binnen dezelfde parent als feedbackPosition
+            ParticleSystem particle2 = Instantiate(perfectHitParticle2, particle2Position, Quaternion.identity, feedbackPosition.parent);
+            Destroy(particle2.gameObject, particle2.main.duration + particle2.main.startLifetime.constantMax);
+        }
     }
 }
