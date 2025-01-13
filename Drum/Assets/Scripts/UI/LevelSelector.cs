@@ -33,7 +33,7 @@ public class LevelSelector : MonoBehaviour
     public void NextSong() // select the next song in the array
     {
         currentLevelIndex++;
-        mapSelector.SwipeRight(); // Random chat gpt function I need to call ~ Thanks silver I love chat gpt 
+        mapSelector.SwipeLeft(); // Random chat gpt function I need to call ~ Thanks silver I love chat gpt 
         // It "loops" to the beginning if u reach the last song and press next
         if (currentLevelIndex >= songData.Length )
         {
@@ -47,7 +47,7 @@ public class LevelSelector : MonoBehaviour
     public void PreviousSong() // select the previous song in the array
     {
         currentLevelIndex--;
-        mapSelector.SwipeLeft();// Random chat gpt function I need to call ~ Thanks silver I love chat gpt 
+        mapSelector.SwipeRight();// Random chat gpt function I need to call ~ Thanks silver I love chat gpt 
         // It "loops" to the end if u reach the last song and press next
         if (currentLevelIndex < 0)
         {

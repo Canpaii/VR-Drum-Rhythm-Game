@@ -58,9 +58,9 @@ public class StateManager : MonoBehaviour
             case DrumState.LevelSelect:
                 LevelSelect();
                 break;
-            case DrumState.InGame: 
-                // Deactivate all portraits and panels                
-                break;
+            case DrumState.InGame:
+                InGame();
+                break;        
             case DrumState.EndOfSong:
                 EndOfSong();    
                 break;
@@ -78,16 +78,20 @@ public class StateManager : MonoBehaviour
         drumPortraits?[1].SetActive(true);
         uiPanels?[1].SetActive(true);
     }
+    private void InGame()
+    {
+        uiPanels?[2].SetActive(true);
+    }
 
     private void LevelSelect()
     {
         drumPortraits?[2].SetActive(true);
-        uiPanels?[2].SetActive(true);
+        uiPanels?[3].SetActive(true);
     }
 
     private void EndOfSong()
     {
         drumPortraits?[3].SetActive(true);
-        uiPanels?[3].SetActive(true);
+        uiPanels?[4].SetActive(true);
     }
 }
