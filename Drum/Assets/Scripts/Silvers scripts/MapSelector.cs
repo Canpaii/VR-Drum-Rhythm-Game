@@ -34,8 +34,6 @@ public class MapSelector : MonoBehaviour
     public int currentIndex = 0;
     private float targetAngle = 0f;
     private float currentAngle = 0f;
-    private float hoverTimer = 0f;       // Timer to track how long the player is hovering over a song.
-    private bool audioPlaying = false;   // Flag to check if audio is playing.
 
     void Start()
     {
@@ -80,70 +78,10 @@ public class MapSelector : MonoBehaviour
             SwipeRight();
             swipeRight = false;
         }
-
-        // Handle hover behavior (keeping the mouse over the song panel for 4 seconds)
-        HandleSongHover();
-    }
-
-    private void HandleSongHover()
-    {
-        // Check if the mouse is hovering over the selected panel.
-        if (IsHoveringOverSong()) // You will need to implement or hook up the hover detection logic.
-        {
-            hoverTimer += Time.deltaTime;
-
-            if (hoverTimer >= 4f && !audioPlaying)
-            {
-                // Start playing the audio sample after 4 seconds if not already playing
-                PlaySongSample();
-            }
-        }
-        else
-        {
-            hoverTimer = 0f; // Reset the timer if not hovering.
-
-            // If the hover stops, stop the audio immediately
-            if (audioPlaying)
-            {
-                StopAudio();
-            }
-        }
-    }
-
-    private bool IsHoveringOverSong()
-    {
-        // Implement hover detection here
-        return true; // Placeholder for actual implementation.
-    }
-
-    private void PlaySongSample()
-    {
-        if (audioSource != null && songDataArray[currentIndex].songSample != null)
-        {
-            audioSource.clip = songDataArray[currentIndex].songSample;
-            audioSource.time = 0f; // Start from the beginning of the clip
-            audioSource.Play();
-            audioPlaying = true;
-        }
-    }
-
-    private void StopAudio()
-    {
-        if (audioSource.isPlaying)
-        {
-            audioSource.Stop();
-            audioPlaying = false;
-        }
     }
 
     private void CopySongDataFromLevelSelector()
     {
-        if (levelSelector == null)
-        {
-            Debug.LogError("LevelSelector is not assigned in MapSelector!");
-            return;
-        }
-
         foreach (var song in levelSelector.songData)
         {
             songDataArray.Add(new SongData
@@ -159,14 +97,12 @@ public class MapSelector : MonoBehaviour
 
     private void CreateMapPanels()
     {
-        // Clear existing panels.
         foreach (Transform child in panelParent)
         {
             Destroy(child.gameObject);
         }
         panels.Clear();
 
-        // Create new panels dynamically.
         foreach (var songData in songDataArray)
         {
             GameObject panel = Instantiate(mapPanelPrefab, panelParent);
@@ -222,14 +158,12 @@ public class MapSelector : MonoBehaviour
 
     public void SwipeLeft()
     {
-        StopAudio(); // Stop audio immediately on swipe.
         currentIndex = (currentIndex - 1 + panels.Count) % panels.Count;
         targetAngle += 360f / panels.Count;
     }
 
     public void SwipeRight()
     {
-        StopAudio(); // Stop audio immediately on swipe.
         currentIndex = (currentIndex + 1) % panels.Count;
         targetAngle -= 360f / panels.Count;
     }
