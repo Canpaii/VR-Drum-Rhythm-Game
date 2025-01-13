@@ -48,6 +48,9 @@ MonoBehaviour:
   name: Crash Cymbal
   drumRollable: 0
   hit: 0
+  speed: 0
+  distance: 0
+  despawnTime: 0
   timeStamp: 0
   path: {fileID: 0}
 --- !u!1001 &7103134880750198389
@@ -106,11 +109,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6821953841667404055, guid: 26f97d1fbb13cf148a494487fa4201e4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4849013029500542642, guid: 26f97d1fbb13cf148a494487fa4201e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6356885846216207775}
   m_SourcePrefab: {fileID: 100100000, guid: 26f97d1fbb13cf148a494487fa4201e4, type: 3}
+--- !u!1 &2438769715147145415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4849013029500542642, guid: 26f97d1fbb13cf148a494487fa4201e4, type: 3}
+  m_PrefabInstance: {fileID: 7103134880750198389}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6356885846216207775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2438769715147145415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ee84c2e63fc1447867be9879d4d9b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: {fileID: 2440193360597324749}
 --- !u!4 &3067954711180335741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5188418367889769480, guid: 26f97d1fbb13cf148a494487fa4201e4, type: 3}

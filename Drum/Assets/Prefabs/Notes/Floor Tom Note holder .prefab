@@ -48,6 +48,9 @@ MonoBehaviour:
   name: Floor tom
   drumRollable: 0
   hit: 0
+  speed: 0
+  distance: 0
+  despawnTime: 0
   timeStamp: 0
   path: {fileID: 0}
 --- !u!1001 &6831327000746682978
@@ -106,13 +109,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4166413597322407504, guid: e63dee30f77796647be7b624d7b5010f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7267877540865459277, guid: e63dee30f77796647be7b624d7b5010f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8436661670194197923}
   m_SourcePrefab: {fileID: 100100000, guid: e63dee30f77796647be7b624d7b5010f, type: 3}
 --- !u!4 &3556400080492262549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8041001974308740855, guid: e63dee30f77796647be7b624d7b5010f, type: 3}
   m_PrefabInstance: {fileID: 6831327000746682978}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4184142757232193071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7267877540865459277, guid: e63dee30f77796647be7b624d7b5010f, type: 3}
+  m_PrefabInstance: {fileID: 6831327000746682978}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8436661670194197923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4184142757232193071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ee84c2e63fc1447867be9879d4d9b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: {fileID: 9059192922664910563}
