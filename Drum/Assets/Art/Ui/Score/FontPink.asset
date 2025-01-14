@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Font3De
+  m_Name: FontPink
   m_EditorClassIdentifier: 
-  hashCode: -101344639
+  hashCode: 424887750
   material: {fileID: 542235417246181445}
-  materialHashCode: 1942468737
+  materialHashCode: -638947290
   m_Version: 1.1.0
   m_SourceFontFileGUID: ea3160a18a3596743b145c47b3ec258b
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: ea3160a18a3596743b145c47b3ec258b, type: 3}
@@ -2739,7 +2739,7 @@ Material:
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
-    - _FaceColor: {r: 1.6089203, g: 5.509434, b: 0.548059, a: 1}
+    - _FaceColor: {r: 5.509435, g: 0.57690406, b: 3.8591137, a: 1}
     - _GlowColor: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 0.5}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
