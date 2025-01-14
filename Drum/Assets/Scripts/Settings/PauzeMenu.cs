@@ -25,7 +25,8 @@ public class PauzeMenu : MonoBehaviour
 
     public void ResetSong()
     {
-        
+        Time.timeScale = 1;
+        BeatmapManager.Instance.StartSong();
     }
 
     public void ReturnToLevelSelection()

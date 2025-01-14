@@ -26987,6 +26987,7 @@ GameObject:
   - component: {fileID: 1366728532}
   - component: {fileID: 1366728534}
   - component: {fileID: 1366728535}
+  - component: {fileID: 1366728536}
   m_Layer: 0
   m_Name: UI navigation manager
   m_TagString: Untagged
@@ -27111,6 +27112,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12da53d8a89dffe43a968efefa5239cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1366728536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366728529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c1578c45c6060418c3296aec75ebf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetImage: {fileID: 1434566318}
+  fillDuration: 1.5
+  slowDownPercentage: 0.35
+  audioSource: {fileID: 73459299}
+  chargeSoundEffect: {fileID: 8300000, guid: 1e7f8882b63487d4a97441c9b31fdb11, type: 3}
+  startFillTest: 0
 --- !u!1 &1367356006
 GameObject:
   m_ObjectHideFlags: 0
@@ -27963,7 +27982,6 @@ GameObject:
   - component: {fileID: 1434566318}
   - component: {fileID: 1434566320}
   - component: {fileID: 1434566319}
-  - component: {fileID: 1434566321}
   m_Layer: 5
   m_Name: FillScore
   m_TagString: Untagged
@@ -28028,24 +28046,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434566317}
   m_CullTransparentMesh: 1
---- !u!114 &1434566321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434566317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c1578c45c6060418c3296aec75ebf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetImage: {fileID: 1434566318}
-  fillDuration: 1.5
-  slowDownPercentage: 0.35
-  audioSource: {fileID: 73459299}
-  chargeSoundEffect: {fileID: 8300000, guid: 1e7f8882b63487d4a97441c9b31fdb11, type: 3}
-  startFillTest: 0
 --- !u!1001 &1435176235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38529,12 +38529,14 @@ MonoBehaviour:
   drumPortraits:
   - {fileID: 440055990}
   - {fileID: 2086263}
+  - {fileID: 2078857234}
   - {fileID: 575620106}
   - {fileID: 1425066152}
   uiPanels:
   - {fileID: 440055990}
   - {fileID: 1776552033}
   - {fileID: 817080543}
+  - {fileID: 1704094927}
   - {fileID: 1408670205}
   - {fileID: 1698940506}
 --- !u!1001 &1822706379
@@ -45914,6 +45916,10 @@ PrefabInstance:
       value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: pauseFunction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: mainMenuFunction.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -45921,6 +45927,10 @@ PrefabInstance:
       propertyPath: endScreenFunction.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: pauseFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1366728529}
     - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: mainMenuFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -45933,6 +45943,10 @@ PrefabInstance:
       propertyPath: mainMenuFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728534}
+    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: pauseFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: endScreenFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
