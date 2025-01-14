@@ -134,6 +134,12 @@ public class MapSelector : MonoBehaviour
             {
                 imageComponent.sprite = songData.songImage;
             }
+            
+            var highScoreText = panel.transform.Find("Highscore")?.GetComponent<TMP_Text>();
+            if (highScoreText != null)
+            {
+                highScoreText.text = "Highscore: " + ScoreManager.Instance.GetHighScore(songData.songName);
+            }
 
             panels.Add(panel);
         }

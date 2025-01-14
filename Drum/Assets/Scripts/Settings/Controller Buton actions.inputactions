@@ -2,11 +2,11 @@
     "name": "Controller Buton actions",
     "maps": [
         {
-            "name": "Pause Map",
+            "name": "Controller buttons",
             "id": "eb134d8d-5db6-49d8-a4a8-993f44439727",
             "actions": [
                 {
-                    "name": "Pause Game",
+                    "name": "Bass Controller button",
                     "type": "Button",
                     "id": "13a742ec-d877-435b-947b-aa6d29f71fe5",
                     "expectedControlType": "",
@@ -19,22 +19,22 @@
                 {
                     "name": "",
                     "id": "d723bb4c-2c78-4c2b-91c6-76c7cd2d309a",
-                    "path": "<XRController>{LeftHand}/{Menu}",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/primarybutton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pause Game",
+                    "action": "Bass Controller button",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "779513cd-e2e6-45a9-8e93-4315bc94299f",
-                    "path": "<XRController>{RightHand}/{MenuButton}",
+                    "path": "<OculusRemote>/{PrimaryButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pause Game",
+                    "action": "Bass Controller button",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
