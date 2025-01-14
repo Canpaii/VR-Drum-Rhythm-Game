@@ -2,15 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Melanchall.DryWetMidi.Common;
-using Melanchall.DryWetMidi.Composing;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
-using Melanchall.DryWetMidi.Multimedia;
-using Melanchall.DryWetMidi.Standards;
-using UnityEngine.Serialization;
-using UnityEngine.SocialPlatforms.Impl;
-
+using UnityEngine.Networking;
+using System.IO;
 
 public class BeatmapManager : MonoBehaviour
 {
@@ -54,21 +49,18 @@ public class BeatmapManager : MonoBehaviour
         globalTime = 0;
         _leadInTime = distance / noteSpeed; // Calculates how long it takes for the notes to reach the destination
         globalTime = -_leadInTime - startDelay; // Calculates any delays necessary  
-
-        ReadMidiFile(songData.midiFile); // Need to change this for the level selector later 
         songAudioSource.clip = songData.SongAudioClip; // Change audio clip to the appropriate song
+        StartCoroutine(PlaySongWithLeadIn()); // Starts the song after a delay so the notes can catch up 
         
-        // Update the presetSelector in ParticleManage
+          // Update the presetSelector in ParticleManage
         var particleManager = FindObjectOfType<ParticleManage>();
-            particleManager.presetSelector = songData.environmentPreset; // deze dingetje veranderd de enviorment + particle preset :3 hoi can ik heb je script aangeraakt
+        particleManager.presetSelector = songData.environmentPreset; // deze dingetje veranderd de enviorment + particle preset :3 hoi can ik heb je script aangeraakt
         particleManager.isPresetActive = true;
         
-        foreach (var drumStick in drumSticks) // Most things drum roll related is still in the project but they dont do anything since I couldnt make it work
-        {
-            drumStick.CalculateDrumRollFrequency(songData.bpm); // Calculates frequency for the drum roll
-        }
         
-        StartCoroutine(PlaySongWithLeadIn()); // Starts the song after a delay so the notes can catch up 
+        
+        //ReadMidiFile(songData.midiFile); // Need to change this for the level selector later 
+        StartCoroutine(ReadMidiFile(songData.midiFile));
         StartCoroutine(EndSong()); // Starts coroutine to stop song
     }
 
@@ -90,11 +82,44 @@ public class BeatmapManager : MonoBehaviour
     
   #region Extract Drum notes
 
+  /*
   public void ReadMidiFile(string midiFilePath)
   {
       _midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + midiFilePath);
       
       DistributeNotesToPaths();
+  }
+  */
+  private IEnumerator ReadMidiFile(string midiFilePath)
+  {
+      string path = System.IO.Path.Combine(Application.streamingAssetsPath, midiFilePath);
+      
+      Debug.Log($"Loading MIDI file from: {path}");
+
+      UnityWebRequest request = UnityWebRequest.Get(path);
+      yield return request.SendWebRequest();
+
+      if (request.result == UnityWebRequest.Result.Success)
+      {
+          try
+          {
+              byte[] midiData = request.downloadHandler.data;
+              using (var stream = new MemoryStream(midiData))
+              {
+                  _midiFile = MidiFile.Read(stream);
+                  Debug.Log("MIDI file successfully read.");
+                  DistributeNotesToPaths(); // Process the notes from the MIDI file
+              }
+          }
+          catch (System.Exception ex)
+          {
+              Debug.LogError($"Error reading MIDI file: {ex.Message}");
+          }
+      }
+      else
+      {
+          Debug.LogError($"Failed to load MIDI file: {request.error}");
+      }
   }
   private void DistributeNotesToPaths() // distributes the notes to their designed drum kit 
   {

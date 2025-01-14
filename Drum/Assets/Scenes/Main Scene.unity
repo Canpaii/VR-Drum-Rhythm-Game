@@ -5022,7 +5022,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 350707758}
   - {fileID: 997124545}
   - {fileID: 318819321}
   - {fileID: 1775537943}
@@ -5939,80 +5938,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 347270127}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &350707757
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 305242420}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.304
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f49455fd91494584595d1aff948cb287, type: 2}
-    - target: {fileID: 919132149155446097, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_Name
-      value: Vloer
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
---- !u!4 &350707758 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-  m_PrefabInstance: {fileID: 350707757}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &352291424
 GameObject:
   m_ObjectHideFlags: 0
@@ -13753,7 +13678,7 @@ MonoBehaviour:
     trialMaterial2: {fileID: 2100000, guid: d3e97322592f3f74bbcbf469e5bd1184, type: 2}
     objectsToEnable2:
     - {fileID: 997124544}
-    - {fileID: 949088536}
+    - {fileID: 0}
     objectsToDisable2:
     - {fileID: 318819320}
     - {fileID: 1775537942}
@@ -13769,7 +13694,7 @@ MonoBehaviour:
     objectsToEnable2:
     - {fileID: 318819320}
     objectsToDisable2:
-    - {fileID: 949088536}
+    - {fileID: 0}
     - {fileID: 997124544}
     - {fileID: 1775537942}
     - {fileID: 1493862467}
@@ -13786,7 +13711,7 @@ MonoBehaviour:
     objectsToDisable2:
     - {fileID: 318819320}
     - {fileID: 997124544}
-    - {fileID: 949088536}
+    - {fileID: 0}
     - {fileID: 1493862467}
     skyboxMaterial2: {fileID: 2100000, guid: c4204ed0392812548a799566aad6139b, type: 2}
   - name2: FreePlay!
@@ -13801,7 +13726,7 @@ MonoBehaviour:
     objectsToDisable2:
     - {fileID: 318819320}
     - {fileID: 997124544}
-    - {fileID: 949088536}
+    - {fileID: 0}
     - {fileID: 1775537942}
     skyboxMaterial2: {fileID: 2100000, guid: dcc694506c6f80d4382344c2ebdf825f, type: 2}
   presetIndexFloat2: 0
@@ -16412,11 +16337,6 @@ MonoBehaviour:
   audioSource: {fileID: 73459299}
   heightMultiplier: 10000
   scaleSpeed: 10
---- !u!1 &949088536 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 285c8d06269f3e54dbeb9b9a56fc204d, type: 3}
-  m_PrefabInstance: {fileID: 350707757}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &953067456 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4928788507148617352, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
