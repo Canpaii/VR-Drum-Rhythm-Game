@@ -3,32 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
-{   
+{
     public static EndScreen Instance;
+    public ScoreManager scoreManager;
+
     [SerializeField] private TMP_Text currentScoreText;
     [SerializeField] private TMP_Text highScoreText;
-    [SerializeField] private TMP_Text songDurationText;
     [SerializeField] private TMP_Text songDifficultyText;
-    
+    [SerializeField] private TMP_Text lateHitText;
+    [SerializeField] private TMP_Text earlyHitText;
+    [SerializeField] private TMP_Text missHitText;
+    [SerializeField] private TMP_Text perfectHitText;
+
     [SerializeField] private Image albumCover;
-    public void Awake()
+
+    private void Awake()
     {
         Instance = this;
     }
+
     public void ChangeUI()
     {
-        int scoreInt = (int)ScoreManager.Instance.score ; // Make the score an int so you can display it on screen.
+        // Make the score an int so you can display it on screen.
+        int scoreInt = (int)ScoreManager.Instance.score;
         currentScoreText.text = "Score: " + scoreInt.ToString();
-        
-        
+
+        lateHitText.text = ScoreManager.Instance.lateHits.ToString();
+        earlyHitText.text = ScoreManager.Instance.earlyHits.ToString();
+        perfectHitText.text = ScoreManager.Instance.perfectHits.ToString();
+        missHitText.text = ScoreManager.Instance.missedNotes.ToString();
+
         albumCover.sprite = BeatmapManager.Instance.songData.songIcon;
-        songDurationText.text = "Song Duration: " + BeatmapManager.Instance.songData.songDuration.ToString();
         songDifficultyText.text = "Difficulty: " + BeatmapManager.Instance.songData.difficulty.ToString();
-        highScoreText.text = "HighScore: " + ScoreManager.Instance.GetHighScore(BeatmapManager.Instance.songData.songName);
+        highScoreText.text = "High Score: " + ScoreManager.Instance.GetHighScore(BeatmapManager.Instance.songData.songName);
     }
+
     public void RestartSong()
     {
         BeatmapManager.Instance.StartSong();
@@ -38,7 +50,7 @@ public class EndScreen : MonoBehaviour
 
     public void GoToLevelSelector()
     {
-       StateManager.Instance.SetState(DrumState.LevelSelect);
-       ScoreManager.Instance.ResetScore();
+        StateManager.Instance.SetState(DrumState.LevelSelect);
+        ScoreManager.Instance.ResetScore();
     }
 }
