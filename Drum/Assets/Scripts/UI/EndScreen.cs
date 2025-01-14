@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class EndScreen : MonoBehaviour
 {
     public static EndScreen Instance;
-    public ScoreManager scoreManager;
 
+    [Header("TMP Text")]
     [SerializeField] private TMP_Text currentScoreText;
     [SerializeField] private TMP_Text highScoreText;
     [SerializeField] private TMP_Text songDifficultyText;
@@ -17,7 +17,8 @@ public class EndScreen : MonoBehaviour
     [SerializeField] private TMP_Text earlyHitText;
     [SerializeField] private TMP_Text missHitText;
     [SerializeField] private TMP_Text perfectHitText;
-
+    
+    [Header("UI Image")]
     [SerializeField] private Image albumCover;
 
     private void Awake()
@@ -39,6 +40,8 @@ public class EndScreen : MonoBehaviour
         albumCover.sprite = BeatmapManager.Instance.songData.songIcon;
         songDifficultyText.text = "Difficulty: " + BeatmapManager.Instance.songData.difficulty.ToString();
         highScoreText.text = "High Score: " + ScoreManager.Instance.GetHighScore(BeatmapManager.Instance.songData.songName);
+        
+        ScoreSlider.Instance.BeginFill();
     }
 
     public void RestartSong()

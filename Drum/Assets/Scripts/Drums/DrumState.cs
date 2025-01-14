@@ -4,6 +4,6 @@ public enum DrumState // The different states the drums can be in
     LevelSelect,
     Options,
     InGame, 
+    Pause,
     EndOfSong,
 }  
-

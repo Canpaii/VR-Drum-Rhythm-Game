@@ -12,6 +12,7 @@ public class Drum : MonoBehaviour
     [Header("Events")]
     [SerializeField] private UnityEvent mainMenuFunction; // Function of the drum when in the main menu
     [SerializeField] private UnityEvent levelSelectFunction; // Function of this drum when selecting a level
+    [SerializeField] private UnityEvent pauseFunction;
     [SerializeField] private UnityEvent optionsFunction; // Function of this drum when changing options
     [SerializeField] private UnityEvent endScreenFunction; // Function of this drum when song ended;
     
@@ -100,6 +101,19 @@ public class Drum : MonoBehaviour
     #endregion
     
     
+    #region PauseBehaviour
+
+    private void PauseBehaviour()
+    {
+        if (pauseFunction != null)
+        {
+            pauseFunction?.Invoke();
+        }
+    }
+    
+    #endregion
+    
+    
     #region EndOfSongDrumBehviour
     private void EndOfSongDrumBehviour()
     {
@@ -152,10 +166,6 @@ public class Drum : MonoBehaviour
         {
             EarlyHit(noteObject);
         }
-       /* else
-        {
-            Miss(noteObject);
-        } */
     }
     private void PerfectHit(GameObject note)
     {

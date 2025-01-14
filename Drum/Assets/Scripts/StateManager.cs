@@ -83,15 +83,21 @@ public class StateManager : MonoBehaviour
         uiPanels?[2].SetActive(true);
     }
 
+    private void Pause()
+    {
+        drumPortraits?[2].SetActive(false);
+        uiPanels?[3].SetActive(true);
+    }
+    
     private void LevelSelect()
     {
-        drumPortraits?[2].SetActive(true);
-        uiPanels?[3].SetActive(true);
+        drumPortraits?[3].SetActive(true);
+        uiPanels?[4].SetActive(true);
     }
 
     private void EndOfSong()
     {
-        drumPortraits?[3].SetActive(true);
-        uiPanels?[4].SetActive(true);
+        drumPortraits?[4].SetActive(true);
+        uiPanels?[5].SetActive(true);
     }
 }
