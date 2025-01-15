@@ -45,11 +45,12 @@ public class BeatmapManager : MonoBehaviour
     public void StartSong() // should make this into a function you can call through UI instead of just a start 
     {
         StateManager.Instance.SetState(DrumState.InGame); // Set GameState to ingame
-        
+        ScoreManager.Instance.ResetScore();// Resets previous data
         globalTime = 0;
         _leadInTime = distance / noteSpeed; // Calculates how long it takes for the notes to reach the destination
         globalTime = -_leadInTime - startDelay; // Calculates any delays necessary  
         songAudioSource.clip = songData.SongAudioClip; // Change audio clip to the appropriate song
+        
         StartCoroutine(PlaySongWithLeadIn()); // Starts the song after a delay so the notes can catch up 
         
           // Update the presetSelector in ParticleManage

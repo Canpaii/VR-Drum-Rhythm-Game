@@ -42,7 +42,7 @@ public class Options : MonoBehaviour
         print("next setting");
         _currentSettingIndex = (_currentSettingIndex + 1) % 4; 
         // Should add UI indicator for which option ur changing
-        index.text = _currentSettingIndex.ToString(); // testing purposes 
+        index.text = "Setting: " +  _currentSettingIndex.ToString(); // testing purposes 
     }
 
     public void ChangeValue(int value)

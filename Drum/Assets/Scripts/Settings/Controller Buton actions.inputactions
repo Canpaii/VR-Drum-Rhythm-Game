@@ -30,7 +30,7 @@
                 {
                     "name": "",
                     "id": "779513cd-e2e6-45a9-8e93-4315bc94299f",
-                    "path": "<OculusRemote>/{PrimaryButton}",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{RightHand}/primarybutton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -103,6 +103,13 @@ public class ScoreManager : MonoBehaviour
    public void ResetScore()
    {
       score = 0;
+      perfectHits = 0;
+      lateHits = 0;
+      earlyHits = 0;
+      missedNotes = 0;
+      
+      noteCount = 0;
+      noteWorth = 0;
       UpdateScore();
    }
 }

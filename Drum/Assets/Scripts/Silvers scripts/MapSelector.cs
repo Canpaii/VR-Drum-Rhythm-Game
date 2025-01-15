@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -13,7 +14,8 @@ public class MapSelector : MonoBehaviour
         public Sprite songImage; // Image to display for the map/song.
         public AudioClip songSample; // Audio sample of the song to play
     }
-
+    public static MapSelector instance;
+    
     [Header("Dependencies")]
     public LevelSelector levelSelector; // Reference to the LevelSelector script.
     public AudioSource audioSource;     // AudioSource to play the song sample.
@@ -34,6 +36,11 @@ public class MapSelector : MonoBehaviour
     public int currentIndex = 0;
     private float targetAngle = 0f;
     private float currentAngle = 0f;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -162,15 +169,34 @@ public class MapSelector : MonoBehaviour
         }
     }
 
-    public void SwipeLeft()
+    public void SwipeRight()
     {
         currentIndex = (currentIndex - 1 + panels.Count) % panels.Count;
         targetAngle += 360f / panels.Count;
     }
 
-    public void SwipeRight()
+    public void SwipeLeft()
     {
         currentIndex = (currentIndex + 1) % panels.Count;
         targetAngle -= 360f / panels.Count;
+    }
+    
+    public void ResetHighScoreUI() // I dont feel like rewriting this whole script so this is the solution for resetting the highscore for now
+    {
+        foreach (var panel in panels)
+        {
+            var highScoreText = panel.transform.Find("Highscore")?.GetComponent<TMP_Text>();
+            if (highScoreText != null)
+            {
+                
+                var nameText = panel.transform.Find("SongName")?.GetComponent<TMP_Text>();
+                if (nameText != null)
+                {
+                    string songName = nameText.text;
+                    
+                    highScoreText.text = "Highscore: " +  ScoreManager.Instance.GetHighScore(songName);;
+                }
+            }
+        }
     }
 }

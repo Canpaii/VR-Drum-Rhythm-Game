@@ -93,6 +93,8 @@ public class StateManager : MonoBehaviour
     {
         drumPortraits?[3].SetActive(true);
         uiPanels?[4].SetActive(true);
+        
+        MapSelector.instance.ResetHighScoreUI();
     }
 
     private void EndOfSong()
