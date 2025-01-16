@@ -4963,7 +4963,7 @@ Transform:
   m_GameObject: {fileID: 1521282677695636824}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.165, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1202, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9947,7 +9947,7 @@ Transform:
   m_GameObject: {fileID: 2554450597548631111}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 4.036}
+  m_LocalPosition: {x: 0, y: 0.462, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29917,7 +29917,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f0d761f53bb4e6c4e885dde570fc810d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.662
+      value: 0.651
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0d761f53bb4e6c4e885dde570fc810d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29925,7 +29925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0d761f53bb4e6c4e885dde570fc810d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.16850007
+      value: -0.107
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0d761f53bb4e6c4e885dde570fc810d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30091,6 +30091,10 @@ PrefabInstance:
       propertyPath: hapticAmplitude
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4800873096934294820, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5518899284880179291, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_Name
       value: OnFireVignette
@@ -30159,16 +30163,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Complete XR Origin Set Up Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 9055507725164956792, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1297457794136033959, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
     - {fileID: 5518899284880179293, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
     - {fileID: 3639148551234328385, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5518899284880179291, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5518899284880179291, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2750295990253055751}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
 --- !u!114 &4530354900100918667 stripped
 MonoBehaviour:
@@ -30181,26 +30187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b734f2bd29eeddd4d85afb0c266228c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4928788507148617352 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5518899284880179291, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
-  m_PrefabInstance: {fileID: 644439846738183891}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2750295990253055751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4928788507148617352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eade979dc4b80c640897c5051bb005f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  comboTracker: {fileID: 0}
-  comboThreshold: 5
-  chargeSpeed: 0.5
 --- !u!114 &6259323741923540823 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6785824473521764740, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
@@ -30413,7 +30399,19 @@ MonoBehaviour:
       m_Calls: []
   levelSelectFunction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CreditsPanel, Assembly-CSharp
+        m_MethodName: DisablePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   pauseFunction:
     m_PersistentCalls:
       m_Calls: []
@@ -30424,8 +30422,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   perfectMargin: 0.1
-  normalHitMargin: 0.12
-  missMargin: 0.14
+  normalHitMargin: 0.2
+  missMargin: 0.3
   path: {fileID: 3524812564425942428}
   audio: {fileID: 1016518199942432291}
   particle: {fileID: 8902115772772260614}
@@ -30700,6 +30698,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CreditsPanel, Assembly-CSharp
+        m_MethodName: DisablePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   pauseFunction:
     m_PersistentCalls:
       m_Calls:
@@ -30734,8 +30744,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   perfectMargin: 0.1
-  normalHitMargin: 0.12
-  missMargin: 0.14
+  normalHitMargin: 0.2
+  missMargin: 0.3
   path: {fileID: 5457556242983757900}
   audio: {fileID: 824399359615845836}
   particle: {fileID: 2301270767749338681, guid: fe1498c77e682074fb18e0503a6bd054, type: 3}
@@ -31515,7 +31525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dd8c293f694218543ba113cede8edf61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.811
+      value: -0.748
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dd8c293f694218543ba113cede8edf61, type: 3}
       propertyPath: m_LocalRotation.w
@@ -31581,7 +31591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26464bae8e280cc4db1060dee34d6a20, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.811
+      value: -0.748
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26464bae8e280cc4db1060dee34d6a20, type: 3}
       propertyPath: m_LocalRotation.w
@@ -31696,6 +31706,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CreditsPanel, Assembly-CSharp
+        m_MethodName: EnablePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   pauseFunction:
     m_PersistentCalls:
       m_Calls: []
@@ -31718,8 +31740,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   perfectMargin: 0.1
-  normalHitMargin: 0.12
-  missMargin: 0.14
+  normalHitMargin: 0.2
+  missMargin: 0.3
   path: {fileID: 5162778796869810256}
   audio: {fileID: 7355351579968726510}
   particle: {fileID: 3274267749027213466, guid: 6a110e0e6350c24479e568097f2e8308, type: 3}
@@ -31970,6 +31992,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CreditsPanel, Assembly-CSharp
+        m_MethodName: DisablePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   pauseFunction:
     m_PersistentCalls:
       m_Calls:
@@ -32016,8 +32050,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   perfectMargin: 0.1
-  normalHitMargin: 0.12
-  missMargin: 0.14
+  normalHitMargin: 0.2
+  missMargin: 0.3
   path: {fileID: 7487263295427260464}
   audio: {fileID: 3163184048235986105}
   particle: {fileID: 1242639317969467524, guid: dde5880310b6b6e49adbbbbd976e54f0, type: 3}
@@ -32342,6 +32376,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CreditsPanel, Assembly-CSharp
+        m_MethodName: DisablePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   pauseFunction:
     m_PersistentCalls:
       m_Calls: []
@@ -32364,8 +32410,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   perfectMargin: 0.1
-  normalHitMargin: 0.12
-  missMargin: 0.14
+  normalHitMargin: 0.2
+  missMargin: 0.3
   path: {fileID: 4439174533960709650}
   audio: {fileID: 9171001703014877280}
   particle: {fileID: 8323919456101790016, guid: d1063e4733700854898f27dae6708c81, type: 3}
@@ -32626,6 +32672,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CreditsPanel, Assembly-CSharp
+        m_MethodName: DisablePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   pauseFunction:
     m_PersistentCalls:
       m_Calls:
@@ -32672,8 +32730,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   perfectMargin: 0.1
-  normalHitMargin: 0.12
-  missMargin: 0.14
+  normalHitMargin: 0.2
+  missMargin: 0.3
   path: {fileID: 2580176027282787397}
   audio: {fileID: 1144146685548310348}
   particle: {fileID: 3913562572840919905, guid: 562d9c549cf157d4fa1a57f4784e8616, type: 3}
@@ -32979,7 +33037,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6007711
+      value: 0.58977115
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -32987,7 +33045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.25711238
+      value: -0.19561231
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33053,9 +33111,6 @@ PrefabInstance:
       addedObject: {fileID: 6499547182990565347}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1396012414902063648}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5742493810936534599}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
       insertIndex: -1
@@ -33110,6 +33165,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CreditsPanel, Assembly-CSharp
+        m_MethodName: DisablePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   pauseFunction:
     m_PersistentCalls:
       m_Calls: []
@@ -33132,12 +33199,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   perfectMargin: 0.1
-  normalHitMargin: 0.12
-  missMargin: 0.14
+  normalHitMargin: 0.2
+  missMargin: 0.3
   path: {fileID: 7719187356722509386}
   audio: {fileID: 6262468855596808139}
   particle: {fileID: 2301270767749338681, guid: fe1498c77e682074fb18e0503a6bd054, type: 3}
-  particlePOS: {fileID: 1830567321322153994, guid: e5d0b5b8c9165f747a0dcebdc1dbfa66, type: 3}
+  particlePOS: {fileID: 8520585155217987618}
 --- !u!82 &6262468855596808139
 AudioSource:
   m_ObjectHideFlags: 0
@@ -33235,28 +33302,6 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 4
 --- !u!64 &6499547182990565347
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8514630982323408249}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2212009239438826721, guid: c2bf54464c23e304ab2919b617d0618a, type: 3}
---- !u!64 &1396012414902063648
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

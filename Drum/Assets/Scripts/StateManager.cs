@@ -24,6 +24,11 @@ public class StateManager : MonoBehaviour
             Destroy(gameObject);
         }
         
+        
+    }
+
+    private void Start()
+    {
         SetState(DrumState.MainMenu);
     }
 

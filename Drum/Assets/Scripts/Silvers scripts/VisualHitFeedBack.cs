@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class HitFeedbackManager : MonoBehaviour
 {
+    public static HitFeedbackManager instance;
     // Referenties naar de GameObjects voor feedback
     public GameObject perfectHitObject;
     public GameObject earlyHitObject;
@@ -27,38 +29,42 @@ public class HitFeedbackManager : MonoBehaviour
     // Huidig actieve feedbackobject
     private GameObject currentFeedbackObject;
 
+    private void Awake()
+    {
+         instance = this;
+    }
+
     private void Start()
     {
-        // Sla de initiële waarden op
+        // Sla de initiï¿½le waarden op
         previousPerfectHits = scoreManager.perfectHits;
         previousEarlyHits = scoreManager.earlyHits;
         previousLateHits = scoreManager.lateHits;
         previousMissedNotes = scoreManager.missedNotes;
     }
-
-    private void Update()
+    public void ShowPerfect()
     {
-        if (scoreManager.perfectHits > previousPerfectHits)
-        {
-            ShowFeedback(perfectHitObject);
-            SpawnPerfectHitParticles(); // Spawn particles bij een perfecte hit
-            previousPerfectHits = scoreManager.perfectHits;
-        }
-        else if (scoreManager.earlyHits > previousEarlyHits)
-        {
-            ShowFeedback(earlyHitObject);
-            previousEarlyHits = scoreManager.earlyHits;
-        }
-        else if (scoreManager.lateHits > previousLateHits)
-        {
-            ShowFeedback(lateHitObject);
-            previousLateHits = scoreManager.lateHits;
-        }
-        else if (scoreManager.missedNotes > previousMissedNotes)
-        {
-            ShowFeedback(missedNoteObject);
-            previousMissedNotes = scoreManager.missedNotes;
-        }
+        ShowFeedback(perfectHitObject);
+        SpawnPerfectHitParticles(); // Spawn particles bij een perfecte hit
+        previousPerfectHits = scoreManager.perfectHits;
+    }
+
+    public void ShowEarly()
+    {
+        ShowFeedback(earlyHitObject);
+        previousEarlyHits = scoreManager.earlyHits;
+    }
+
+    public void ShowLate()
+    {
+        ShowFeedback(lateHitObject);
+        previousLateHits = scoreManager.lateHits;
+    }
+
+    public void ShowMissed()
+    {
+        ShowFeedback(missedNoteObject);
+        previousMissedNotes = scoreManager.missedNotes;
     }
 
     private void ShowFeedback(GameObject feedbackObject)

@@ -13471,7 +13471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &817080544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25440,17 +25440,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d88638a6ba013b14f9e149017cfc3b32, type: 2}
   - {fileID: 11400000, guid: 569f69df43766ca439fc8ee3d60e8fbd, type: 2}
   - {fileID: 11400000, guid: 955856480eba9f545b89ae994f041fe6, type: 2}
-  - {fileID: 11400000, guid: c92751281eb0da043bd68157db6f0460, type: 2}
-  - {fileID: 11400000, guid: d2bbfc97951c65a43a88823c202b88b3, type: 2}
-  - {fileID: 11400000, guid: 1291f212e2e73f9469361ac62ca773f4, type: 2}
   - {fileID: 11400000, guid: 574db86e7c9db7644bd7c655d7616faa, type: 2}
-  - {fileID: 11400000, guid: 13d1e8fbdf1d14a4d9380f21963473cc, type: 2}
-  - {fileID: 11400000, guid: 4577a2795f9a22b449e6fe8514082f37, type: 2}
+  - {fileID: 11400000, guid: d2bbfc97951c65a43a88823c202b88b3, type: 2}
   - {fileID: 11400000, guid: 4d972544b3f3573449b98132b5f27ac3, type: 2}
+  - {fileID: 11400000, guid: 1291f212e2e73f9469361ac62ca773f4, type: 2}
   - {fileID: 11400000, guid: 8c0d0bae876d70d40b51bd1bf3e8e1e7, type: 2}
-  - {fileID: 11400000, guid: f69258e6ccbf455478a7bddac6f1f10e, type: 2}
-  - {fileID: 11400000, guid: d6ffa9828d04adc44a6eaf80e1ec4674, type: 2}
+  - {fileID: 11400000, guid: c92751281eb0da043bd68157db6f0460, type: 2}
   - {fileID: 11400000, guid: eb25a2d981af5994bb1fda492916d45d, type: 2}
+  - {fileID: 11400000, guid: 13d1e8fbdf1d14a4d9380f21963473cc, type: 2}
+  - {fileID: 11400000, guid: d6ffa9828d04adc44a6eaf80e1ec4674, type: 2}
+  - {fileID: 11400000, guid: 4577a2795f9a22b449e6fe8514082f37, type: 2}
   currentLevelIndex: 0
   mapSelector: {fileID: 1408670206}
   albumCover: {fileID: 452613469}
@@ -28105,11 +28104,6 @@ MonoBehaviour:
   audioSource: {fileID: 73459299}
   heightMultiplier: 2700
   scaleSpeed: 10
---- !u!4 &1522389218 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8520585155217987618, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-  m_PrefabInstance: {fileID: 627210565124918432}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1524375486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33941,7 +33935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7296480420533880378, guid: bbb556306ab5f964a89559948d523006, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7394225636064830649, guid: bbb556306ab5f964a89559948d523006, type: 3}
       propertyPath: m_text
@@ -34957,7 +34951,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705246250}
   m_LocalRotation: {x: -0.023879912, y: -0, z: -0, w: 0.99971485}
-  m_LocalPosition: {x: 0, y: 0, z: 4.94}
+  m_LocalPosition: {x: 0, y: 0, z: 6.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34966,7 +34960,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -2.737, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.12}
+  m_AnchoredPosition: {x: 0, y: 4.79}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1709763711
@@ -36936,7 +36930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drumPortraits:
-  - {fileID: 440055990}
+  - {fileID: 1969612298}
   - {fileID: 2086263}
   - {fileID: 2078857234}
   - {fileID: 575620106}
@@ -38568,7 +38562,7 @@ Transform:
   m_GameObject: {fileID: 1878050657}
   serializedVersion: 2
   m_LocalRotation: {x: 0.33975714, y: -0, z: -0, w: 0.94051325}
-  m_LocalPosition: {x: 0, y: -2.27, z: 18.11}
+  m_LocalPosition: {x: 0, y: 2.46, z: 22.04}
   m_LocalScale: {x: 1, y: 1.0006268, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43747,29 +43741,25 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1216456662}
+    - target: {fileID: 824399359615845836, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 862565224647317133, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_Name
       value: FullDrum
       objectReference: {fileID: 0}
-    - target: {fileID: 2750295990253055751, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: comboTracker
-      value: 
-      objectReference: {fileID: 125853060}
-    - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: missMargin
-      value: 0.3
+    - target: {fileID: 1016518199942432291, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: perfectMargin
-      value: 0.1
+    - target: {fileID: 1144146685548310348, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: normalHitMargin
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+    - target: {fileID: 3163184048235986105, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: optionsFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -43780,10 +43770,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1366728534}
     - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728531}
@@ -43791,38 +43777,6 @@ PrefabInstance:
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1366728537}
-    - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DisablePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: CreditsPanel, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4080591422761222288, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: missMargin
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: perfectMargin
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: normalHitMargin
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: optionsFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -43832,10 +43786,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1366728534}
     - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728531}
@@ -43843,42 +43793,10 @@ PrefabInstance:
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1366728537}
-    - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: EnablePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: CreditsPanel, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148097220214189748, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4420793707884075382, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1216456662}
-    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: missMargin
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: perfectMargin
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: normalHitMargin
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: pauseFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -43892,10 +43810,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1366728534}
     - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728531}
@@ -43903,82 +43817,10 @@ PrefabInstance:
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1366728537}
-    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DisablePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: CreditsPanel, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4797270454933897639, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5355239574506324983, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5602772436975881646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: missMargin
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5602772436975881646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: perfectMargin
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5602772436975881646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: normalHitMargin
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5602772436975881646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5602772436975881646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5602772436975881646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728537}
-    - target: {fileID: 5602772436975881646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5602772436975881646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisablePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 5602772436975881646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CreditsPanel, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5602772436975881646, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: missMargin
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: perfectMargin
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: normalHitMargin
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: pauseFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -43996,10 +43838,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1366728533}
     - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728531}
@@ -44008,20 +43846,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1366728537}
     - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
+      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextSong
       objectReference: {fileID: 0}
-    - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DisablePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: CreditsPanel, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166547222350711786, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+    - target: {fileID: 6262468855596808139, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6363231410009865061, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44063,36 +43893,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7686502023339533606, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.462
-      objectReference: {fileID: 0}
-    - target: {fileID: 7686502023339533606, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: missMargin
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: perfectMargin
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: normalHitMargin
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: pauseFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: pauseFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+    - target: {fileID: 7355351579968726510, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
@@ -44100,10 +43902,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1366728535}
     - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: pauseFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1366728535}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: optionsFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728532}
@@ -44111,23 +43909,11 @@ PrefabInstance:
       propertyPath: mainMenuFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728534}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: pauseFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: endScreenFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728533}
     - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: pauseFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UnpauseGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728531}
@@ -44136,52 +43922,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1366728537}
     - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DisablePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: pauseFunction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: PauzeMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: CreditsPanel, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: pauseFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264517754286440804, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8456109647561788075, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: missMargin
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: particlePOS
-      value: 
-      objectReference: {fileID: 1522389218}
-    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: perfectMargin
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: normalHitMargin
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PreviousSong
       objectReference: {fileID: 0}
     - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: optionsFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -44192,10 +43934,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1366728534}
     - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1366728531}
@@ -44203,29 +43941,13 @@ PrefabInstance:
       propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1366728537}
-    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
+    - target: {fileID: 9171001703014877280, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DisablePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: optionsFunction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: CreditsPanel, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8988357257061790858, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
-      propertyPath: levelSelectFunction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 4928788507148617352, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+    m_RemovedComponents:
+    - {fileID: 5742493810936534599, guid: 4c9be3023b416e04e9721197346bd016, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c9be3023b416e04e9721197346bd016, type: 3}

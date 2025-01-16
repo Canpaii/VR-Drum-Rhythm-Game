@@ -47,6 +47,8 @@ public class ScoreManager : MonoBehaviour
 
       UpdateScore();
       comboTracker.AddToCombo();
+      
+      HitFeedbackManager.instance.ShowPerfect();
    }
 
    public void EarlyHit() // call this when note registration is Early 
@@ -56,6 +58,8 @@ public class ScoreManager : MonoBehaviour
 
       UpdateScore();
       comboTracker.AddToCombo();
+      
+      HitFeedbackManager.instance.ShowEarly();
    }
    public void LateHit() // call this when note registration is Late
    {
@@ -64,6 +68,8 @@ public class ScoreManager : MonoBehaviour
 
       UpdateScore();
       comboTracker.AddToCombo();
+      
+      HitFeedbackManager.instance.ShowLate();
    }
 
    public void Miss() // call this when the note registration is miss
@@ -72,6 +78,8 @@ public class ScoreManager : MonoBehaviour
       missedNotes++;
       
       comboTracker.ResetCombo();
+      
+      HitFeedbackManager.instance.ShowMissed();
    }
 
    public void UpdateScore() // updates the score that is visible to the player ingame

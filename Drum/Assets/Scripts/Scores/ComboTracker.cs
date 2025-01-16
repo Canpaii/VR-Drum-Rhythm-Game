@@ -57,7 +57,7 @@ public class ComboTracker : MonoBehaviour
     {
         if (comboText != null)
         {
-            comboText.text = "Combo: " + combo.ToString();
+            comboText.text = combo.ToString();
         }
     }
 }
