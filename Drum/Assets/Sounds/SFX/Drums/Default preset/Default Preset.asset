@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Default Preset
   m_EditorClassIdentifier: 
   snareClip: {fileID: 8300000, guid: 342db1c0407204b4f936eccc07ae5113, type: 3}
-  bassClip: {fileID: 8300000, guid: df9bace2c1edf6b41b262cc22f1566ea, type: 3}
+  bassClip: {fileID: 8300000, guid: 98e88ec15d9ab534fa603f2e3f3462eb, type: 3}
   crashCymbalClip: {fileID: 8300000, guid: 56ab64aef1725284b829e94b63113581, type: 3}
   midTomClip: {fileID: 8300000, guid: cd22035923c018c4583449fc54ccd5c4, type: 3}
   highTomClip: {fileID: 8300000, guid: af224001ff3a2254ea3c65c546cd58f2, type: 3}
